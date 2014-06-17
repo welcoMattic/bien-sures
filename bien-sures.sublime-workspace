@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"Session",
+				"Session-set	Session-set"
+			],
+			[
+				"Sess",
+				"Session-push	Session-push"
+			],
+			[
 				"syn",
 				"synonymes"
 			],
@@ -155,13 +163,61 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 1347,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/database/seeds/ReplyTableSeeder.php",
+			"settings":
+			{
+				"buffer_size": 206,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/admin/dashboard.blade.php",
+			"settings":
+			{
+				"buffer_size": 63,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 165.0,
+		"height": 127.0,
 		"selected_items":
 		[
+			[
+				"commh",
+				"Snippet: Comment - Section header comment"
+			],
+			[
+				"comm",
+				"Snippet: Comment - Section header comment"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"remove",
 				"Package Control: Remove Package"
@@ -171,20 +227,12 @@
 				"Package Control: Install Package"
 			],
 			[
-				"inst",
-				"Package Control: Install Package"
-			],
-			[
 				"li",
 				"Package Control: List Packages"
 			],
 			[
 				"in",
 				"Package Control: Install Package"
-			],
-			[
-				"html",
-				"HTMLPrettify"
 			],
 			[
 				"jshin",
@@ -201,10 +249,6 @@
 			[
 				"bla",
 				"GitHubinator Blame"
-			],
-			[
-				"comm",
-				"Snippet: Comment - Block style comment"
 			],
 			[
 				"json",
@@ -225,10 +269,6 @@
 			[
 				"synja",
 				"Set Syntax: JavaScript"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"pacontrol",
@@ -268,6 +308,37 @@
 	},
 	"file_history":
 	[
+		"/workspace/bien-sures/app/models/User.php",
+		"/workspace/bien-sures/app/database/migrations/2014_06_15_230435_create_replies_table.php",
+		"/workspace/bien-sures/app/database/seeds/OffensiveTableSeeder.php",
+		"/workspace/bien-sures/app/database/migrations/2014_06_15_230420_create_offensives_table.php",
+		"/workspace/bien-sures/app/controllers/LoginController.php",
+		"/workspace/bien-sures/app/views/admin/layouts/default.blade.php",
+		"/workspace/bien-sures/app/views/admin/login.blade.php",
+		"/workspace/bien-sures/public/css/style.css",
+		"/workspace/bien-sures/app/controllers/BaseController.php",
+		"/workspace/bien-sures/app/views/admin/dashboard.blade.php",
+		"/workspace/bien-sures/app/views/notifications.blade.php",
+		"/Users/welcomattic/Downloads/sb-admin-v2/index.html",
+		"/workspace/bien-sures/.gitattributes",
+		"/Users/welcomattic/Downloads/sb-admin-v2/css/sb-admin.css",
+		"/workspace/bien-sures/public/css/sb-admin.css",
+		"/Users/welcomattic/Downloads/sb-admin-v2/login.html",
+		"/workspace/bien-sures/app/views/hello.php",
+		"/workspace/bien-sures/public/index.php",
+		"/workspace/bien-sures/app/database/migrations/2014_06_14_203040_create_users_table.php",
+		"/workspace/bien-sures/app/database/seeds/DatabaseSeeder.php",
+		"/workspace/bien-sures/app/database/seeds/UserTableSeeder.php",
+		"/workspace/bien-sures/app/routes.php",
+		"/workspace/bien-sures/bootstrap/start.php",
+		"/workspace/bien-sures/app/config/view.php",
+		"/workspace/bien-sures/app/config/local/app.php",
+		"/workspace/bien-sures/app/config/local/database.php",
+		"/workspace/bien-sures/app/config/database.php",
+		"/workspace/bien-sures/app/config/app.php",
+		"/etc/apache2/extra/httpd-vhosts.conf",
+		"/etc/hosts",
+		"/workspace/bien-sures/README.md",
 		"/Users/welcomattic/Downloads/adjectifs.json",
 		"/Users/welcomattic/Downloads/parse-js-blank/index.html",
 		"/workspace/Lab/adjectifs.js",
@@ -351,7 +422,6 @@
 		"/workspace/kontest/api/apps/api/modules/challenge/actions/actions.class.php",
 		"/workspace/kontest/api/config/config.php",
 		"/workspace/kontest/api/lib/vendor/symfony/vendor/phing/system/io/ConsoleReader.php",
-		"/etc/apache2/extra/httpd-vhosts.conf",
 		"/workspace/kontest/v",
 		"/workspace/kontest/app/apps/backend/modules/challenge/actions/actions.class.php",
 		"/workspace/kontest/api/lib/validator/myUniqueAnswerPerPeriodValidator.class.php",
@@ -361,45 +431,15 @@
 		"/workspace/kontest/app/apps/frontend/templates/layout.php",
 		"/workspace/kontest/app/apps/frontend/modules/challenge/templates/_gallery.php",
 		"/etc/apache2/httpd.conf",
-		"/etc/hosts",
 		"/etc/apache2/extra/httpd-ssl.conf",
 		"/workspace/kontest/api/data/challenge_translation/base.json",
 		"/workspace/kontest/api/lib/model/om/BaseSkin.php",
 		"/workspace/kontest/api/lib/model/om/BaseAbuse.php",
-		"/workspace/kontest/app/lib/helper/BootstrapFormHelper.php",
-		"/workspace/kontest/graph/node_modules/gulp/node_modules/vinyl-fs/node_modules/glob-stream/node_modules/glob2base/package.json",
-		"/workspace/kontest/app/web/css/apps/backend/modules/showcase/jobs.css",
-		"/workspace/kontest/app/flash/fotomaton/bin-release/swfobject.js",
-		"/workspace/kontest/api/lib/vendor/symfony/vendor/propel-generator/templates/sql/base/mssql/columns.tpl",
-		"/workspace/kontest/graph/node_modules/gulp/node_modules/vinyl-fs/node_modules/glob-stream/node_modules/glob2base/.npmignore",
-		"/workspace/kontest/app/web/js/apps/backend/modules/showcase/job.js",
-		"/workspace/kontest/api/lib/model/Challenge.php",
-		"/workspace/kontest/app/web/js/apps/shared/uploader/app/util/ApiCall.coffee",
-		"/workspace/kontest/app/apps/backend/modules/challenge/templates/_edit_description.php",
-		"/workspace/kontest/app/apps/backend/modules/challenge/templates/_edit_config.php",
-		"/workspace/kontest/app/apps/frontend/modules/challenge/templates/_show.php",
-		"/workspace/kontest/api/lib/model/Env.php",
-		"/workspace/kontest/api/lib/vendor/symfony/data/i18n/es_DO.dat",
-		"/workspace/kontest/app/apps/backend/modules/env/templates/editInfoSuccess.php",
-		"/workspace/kontest/api/apps/api/modules/answer/validate/edit.yml",
-		"/workspace/kontest/api/config/propel.ini",
-		"/workspace/kontest/app/flash/fotomaton/libs/org/bytearray/gif/errors/FileTypeError.as",
-		"/workspace/kontest/api/lib/vendor/symfony/addon/propel/sfPropelDatabaseSchema.class.php",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/pear/pear-propel-gen",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelOldSQLTask.php",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelOldOMTask.php",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelGraphvizTask.php",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelDataSQLTask.php",
-		"/workspace/kontest/app/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelDataDTDTask.php",
-		"/workspace/kontest/app/lib/vendor/symfony/addon/propel/sfPropelPager.class.php",
-		"/workspace/kontest/app/lib/vendor/symfony/addon/propel/sfPropelData.class.php",
-		"/workspace/kontest/app/lib/vendor/symfony/addon/propel/sfPropelBehavior.class.php",
-		"/workspace/kontest/api/lib/vendor/symfony/vendor/propel-generator/pear/pear-propel-gen",
-		"/workspace/kontest/api/lib/vendor/symfony/vendor/propel-generator/classes/propel/phing/PropelOldSQLTask.php"
+		"/workspace/kontest/app/lib/helper/BootstrapFormHelper.php"
 	],
 	"find":
 	{
-		"height": 25.0
+		"height": 54.0
 	},
 	"find_in_files":
 	{
@@ -422,6 +462,22 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Admin",
+			"Home",
+			"    ",
+			"a ",
+			"*/\n",
+			"i ",
+			"glyphicon",
+			"glyphicon-fw",
+			"fa",
+			"sidebar",
+			"username",
+			"placeholder",
+			"email",
+			"Email",
+			"email",
+			"aaaaagence-poc",
 			"console",
 			"submit",
 			".on",
@@ -533,23 +589,7 @@
 			"instantwin_wintime_start",
 			"form",
 			"function validateUrlParamName",
-			"validateUrlParamName",
-			"getAntispamEmailFilter",
-			"getChallengeProSetting",
-			"getAn",
-			"fields",
-			"getFields",
-			"fields",
-			"fileds",
-			"__call",
-			"getChallengeProSetting",
-			"function getChallengeProSetting",
-			"getAntispamEmailFilter",
-			">\n",
-			"Tracking HTTPS",
-			"getperiod",
-			"period",
-			"getPeriodEndedAt"
+			"validateUrlParamName"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -557,6 +597,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"  ",
 			"Your participation could not be saved. Please try again later.",
 			"me\": \"Spacegray.sublime-theme\",\n  \"colo",
 			"spacegray_color_scheme",
@@ -572,8 +613,240 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								753,
+								753
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 187.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/database/seeds/ReplyTableSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 206,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								206,
+								206
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"open_with_edit": true,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/admin/dashboard.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 63,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								56,
+								56
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close"
+							],
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -615,7 +888,7 @@
 	"project": "bien-sures.sublime-project",
 	"replace":
 	{
-		"height": 46.0
+		"height": 104.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1132,11 +1405,11 @@
 		"selected_items":
 		[
 			[
-				"sh",
-				"/workspace/shaketonbde/shaketonbde.sublime-project"
+				"",
+				"/workspace/kontest/kontest.sublime-project"
 			],
 			[
-				"",
+				"sh",
 				"/workspace/shaketonbde/shaketonbde.sublime-project"
 			]
 		],
