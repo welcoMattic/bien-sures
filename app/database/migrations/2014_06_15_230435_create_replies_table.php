@@ -16,9 +16,10 @@ class CreateRepliesTable extends Migration {
     {
       $table->increments('id');
       $table->longText('quote');
-      $table->foreign('offensive_id')->references('id')->on('offensive');
-      $table->boolean('status_')->nullable();
+      $table->integer('offensive_id')->unsigned();
+      $table->string('status_', 15)->nullable();
       $table->timestamps();
+      $table->foreign('offensive_id')->references('id')->on('offensives');
     });
   }
 

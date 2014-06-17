@@ -16,6 +16,7 @@ class CreateOffensivesTable extends Migration {
     {
       $table->increments('id');
       $table->longText('quote');
+      $table->longText('description');
       $table->timestamps();
     });
   }

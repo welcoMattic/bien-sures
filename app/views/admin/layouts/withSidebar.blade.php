@@ -43,13 +43,56 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="index.html">Bien Sûres - Administration</a>
+        <a class="navbar-brand" href="{{ URL::to('admin') }}">Bien Sûres - Administration</a>
+      </div>
+      <div class="panel-heading">
+        <div class="btn-group pull-right">
+          <a href="{{ URL::to('logout') }}" class="btn btn-danger btn-outline"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
+        </div>
+      </div>
+
+      <div class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+          <ul class="nav" id="side-menu">
+            <li>
+              <a href="#">Bienvenue, {{ Auth::user()->username }}</a>
+            </li>
+            <li>
+              <a href="{{ URL::to('admin') }}"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
+            </li>
+<!--             <li>
+              <a href="#"><i class="glyphicon glyphicon-bar-chart-o glyphicon-fw"></i> Charts<span class="fa arrow"></span></a>
+              <ul class="nav nav-second-level">
+                <li>
+                  <a href="flot.html">Flot Charts</a>
+                </li>
+                <li>
+                  <a href="morris.html">Morris.js Charts</a>
+                </li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="{{ URL::to('admin/users') }}"><i class="glyphicon glyphicon-heart-empty"></i> Utilisateurs</a>
+            </li>
+            <li>
+              <a href="{{ URL::to('offensives') }}"><i class="glyphicon glyphicon-list-alt"></i> Agressions</a>
+            </li>
+            <li>
+              <a href="{{ URL::to('replies') }}"><i class="glyphicon glyphicon-list-alt"></i> Répliques</a>
+            </li>
+            <li>
+              <a href="{{ URL::to('stats') }}"><i class="glyphicon glyphicon-stats"></i> Statistiques</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 
-    <div class="container">
+    <div id="page-wrapper">
       <div class="row">
-        @yield('content')
+        <div class="col-lg-12">
+          @yield('content')
+        </div>
       </div>
     </div>
 

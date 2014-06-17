@@ -23,10 +23,10 @@ Route::get('login', function()
 });
 
 // route to process the form (app/views/admin/login.blade.php)
-Route::post('login', array('uses' => 'LoginController@doLogin'));
+Route::post('login', ['uses' => 'LoginController@doLogin']);
 
 // route to process the logout
-Route::get('logout', array('uses' => 'LoginController@doLogout'));
+Route::get('logout', ['uses' => 'LoginController@doLogout']);
 
 
 /** ------------------------------------------
@@ -34,19 +34,13 @@ Route::get('logout', array('uses' => 'LoginController@doLogout'));
  *  ------------------------------------------
  */
 
-Route::group(array('prefix' => 'admin', 'before' => 'auth'), function()
+Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
 {
 
-  // main page for the admin (app/views/admin/dashboard.blade.php)
-  Route::get('dashboard', function()
-  {
-    return View::make('admin.dashboard');
-  });
+  // main page for the admin (app/views/admin/index.blade.php)
+  Route::get('/', ['uses' => 'AdminController@index']);
 
-  // main page for the user (app/views/admin/user.blade.php)
-  Route::get('user', function()
-  {
-    return View::make('admin.user');
-  });
+  // RESTful resource for the user (app/views/admin/users.*.blade.php)
+  Route::resource('users', 'UsersController');
 
 });
