@@ -47,7 +47,7 @@
       </div>
       <div class="panel-heading">
         <div class="btn-group pull-right">
-          <a href="{{ URL::to('logout') }}" class="btn btn-danger btn-outline"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
+          <a href="{{ URL::to('logout') }}" class="btn btn-danger btn-outline btn-sm"><i class="glyphicon glyphicon-off"></i> Déconnexion</a>
         </div>
       </div>
 

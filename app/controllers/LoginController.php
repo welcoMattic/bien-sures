@@ -16,7 +16,7 @@ class LoginController extends BaseController {
     // if the validator fails, redirect back to the form
     if ($validator->fails()) {
 
-      Session::flash('loginError', "Merci de remplir tous les champs"); // set flash error to display message in view
+      Session::flash('loginError', "Merci de vérifer tous les champs"); // set flash error to display message in view
       Session::flash('alertClass', "warning"); // set class to display the error to the right color
       return Redirect::to('login')
         ->withErrors($validator) // send back all errors to the login form
