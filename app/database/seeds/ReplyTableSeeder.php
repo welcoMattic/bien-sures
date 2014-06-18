@@ -11,6 +11,11 @@ class ReplyTableSeeder extends Seeder
       'offensive_id' => 1,
       'status_'      => 'accepted'
     ));
+    Reply::create(array(
+      'quote'        => "Ça te gratte ?",
+      'offensive_id' => 2,
+      'status_'      => 'accepted'
+    ));
   }
 
 }

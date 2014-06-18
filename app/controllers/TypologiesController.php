@@ -1,6 +1,6 @@
 <?php
 
-class UsersController extends \BaseController {
+class TypologiesController extends \BaseController {
 
   /**
    * Display a listing of the resource.
@@ -9,11 +9,9 @@ class UsersController extends \BaseController {
    */
   public function index()
   {
-    // get users
-    $users = User::get();
+    $typologies = Typology::get();
 
-    // show the view and pass users to it
-    return View::make('admin.users.index', compact('users'));
+    return View::make('admin.typologies.index', compact('typologies'));
   }
 
 
@@ -24,7 +22,7 @@ class UsersController extends \BaseController {
    */
   public function create()
   {
-    return View::make('admin.users.create');
+    return View::make('admin.typologies.create');
   }
 
 
@@ -37,8 +35,7 @@ class UsersController extends \BaseController {
   {
     // validate the info, create rules for the inputs
     $rules = [
-      'username' => 'required',
-      'password' => 'required|alphaNum|min:3'
+      'name' => 'required|max:255'
     ];
 
     // run the validation rules on the inputs from the form
@@ -49,22 +46,20 @@ class UsersController extends \BaseController {
 
       Session::flash('message', "Merci de vérifier tous les champs");
       Session::flash('alertClass', "warning");
-      return Redirect::to('admin/users/create')
-        ->withErrors($validator)
-        ->withInput(Input::except('password'));
+      return Redirect::to('admin/typologies/create')
+        ->withErrors($validator);
 
     } else {
 
       // store validated data
-      $user = new User;
-      $user->username = Input::get('username');
-      $user->password = Hash::make(Input::get('password'));
-      $user->save();
+      $typology = new Typology;
+      $typology->name = Input::get('name');
+      $typology->save();
 
       // redirect
-      Session::flash('message', "Utilisateur créé");
+      Session::flash('message', "Typologie créée");
       Session::flash('alertClass', "success");
-      return Redirect::to('admin/users');
+      return Redirect::to('admin/typologies');
     }
   }
 
@@ -77,7 +72,7 @@ class UsersController extends \BaseController {
    */
   public function show($id)
   {
-    //
+    // send json object to angular
   }
 
 
@@ -89,11 +84,11 @@ class UsersController extends \BaseController {
    */
   public function edit($id)
   {
-    // get the user
-    $user = User::find($id);
+    // get the offensive
+    $typology = Typology::find($id);
 
     // show the edit form and pass the user
-    return View::make('admin.users.edit', compact('user'));
+    return View::make('admin.typologies.edit', compact('typology'));
   }
 
 
@@ -107,7 +102,7 @@ class UsersController extends \BaseController {
   {
     // validate the info, create rules for the inputs
     $rules = [
-      'password' => 'alphaNum|min:3'
+      'name' => 'required|max:255',
     ];
 
     // run the validation rules on the inputs from the form
@@ -118,22 +113,20 @@ class UsersController extends \BaseController {
 
       Session::flash('message', "Merci de vérifier tous les champs");
       Session::flash('alertClass', "warning");
-      return Redirect::to('admin/users/create')
-        ->withErrors($validator)
-        ->withInput(Input::except('password'));
+      return Redirect::to('admin/typologies/create')
+        ->withErrors($validator);
 
     } else {
 
       // store validated data
-      $user = User::find($id);
-      $user->username = Input::get('username');
-      $user->password = Hash::make(Input::get('password'));
-      $user->save();
+      $typology = Typology::find($id);
+      $typology->name = Input::get('name');
+      $typology->save();
 
       // redirect
-      Session::flash('message', 'Utilisateur modifié');
+      Session::flash('message', 'Typologie modifiée');
       Session::flash('alertClass', "success");
-      return Redirect::to('admin/users');
+      return Redirect::to('admin/typologies');
     }
   }
 
@@ -146,14 +139,14 @@ class UsersController extends \BaseController {
    */
   public function destroy($id)
   {
-    // delete the user
-    $user = User::find($id);
-    $user->delete();
+    // delete the typology
+    $typology = Typology::find($id);
+    $typology->delete();
 
     // redirect
-    Session::flash('message', 'Utilisateur supprimé');
+    Session::flash('message', 'Typologie supprimée');
     Session::flash('alertClass', "success");
-    return Redirect::to('admin/users');
+    return Redirect::to('admin/typologies');
   }
 
 

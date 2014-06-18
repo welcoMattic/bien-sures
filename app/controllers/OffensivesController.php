@@ -9,7 +9,9 @@ class OffensivesController extends \BaseController {
    */
   public function index()
   {
-    return Offensive::get();
+    $offensives = Offensive::get();
+
+    return View::make('admin.offensives.index', compact('offensives'));
   }
 
 
@@ -20,7 +22,7 @@ class OffensivesController extends \BaseController {
    */
   public function create()
   {
-    //
+    return View::make('admin.offensives.create');
   }
 
 
@@ -31,7 +33,36 @@ class OffensivesController extends \BaseController {
    */
   public function store()
   {
-    //
+    // validate the info, create rules for the inputs
+    $rules = [
+      'description' => 'required|max:21844',
+      'quote'       => 'required|max:21844'
+    ];
+
+    // run the validation rules on the inputs from the form
+    $validator = Validator::make(Input::all(), $rules);
+
+    // if the validator fails, redirect back to the form
+    if ($validator->fails()) {
+
+      Session::flash('message', "Merci de vérifier tous les champs");
+      Session::flash('alertClass', "warning");
+      return Redirect::to('admin/offensives/create')
+        ->withErrors($validator);
+
+    } else {
+
+      // store validated data
+      $offensive = new Offensive;
+      $offensive->description = Input::get('description');
+      $offensive->quote = Input::get('quote');
+      $offensive->save();
+
+      // redirect
+      Session::flash('message', "Agression créée");
+      Session::flash('alertClass', "success");
+      return Redirect::to('admin/offensives');
+    }
   }
 
 
@@ -43,7 +74,7 @@ class OffensivesController extends \BaseController {
    */
   public function show($id)
   {
-    //
+    // send json object to angular
   }
 
 
@@ -55,7 +86,11 @@ class OffensivesController extends \BaseController {
    */
   public function edit($id)
   {
-    //
+    // get the offensive
+    $offensive = Offensive::find($id);
+
+    // show the edit form and pass the user
+    return View::make('admin.offensives.edit', compact('offensive'));
   }
 
 
@@ -67,7 +102,36 @@ class OffensivesController extends \BaseController {
    */
   public function update($id)
   {
-    //
+    // validate the info, create rules for the inputs
+    $rules = [
+      'description' => 'required|max:21844',
+      'quote'       => 'required|max:21844'
+    ];
+
+    // run the validation rules on the inputs from the form
+    $validator = Validator::make(Input::all(), $rules);
+
+    // if the validator fails, redirect back to the form
+    if ($validator->fails()) {
+
+      Session::flash('message', "Merci de vérifier tous les champs");
+      Session::flash('alertClass', "warning");
+      return Redirect::to('admin/offensives/create')
+        ->withErrors($validator);
+
+    } else {
+
+      // store validated data
+      $offensive = Offensive::find($id);
+      $offensive->description = Input::get('description');
+      $offensive->quote = Input::get('quote');
+      $offensive->save();
+
+      // redirect
+      Session::flash('message', 'Agression modifiée');
+      Session::flash('alertClass', "success");
+      return Redirect::to('admin/offensives');
+    }
   }
 
 
@@ -79,7 +143,14 @@ class OffensivesController extends \BaseController {
    */
   public function destroy($id)
   {
-    //
+    // delete the offensive
+    $offensive = Offensive::find($id);
+    $offensive->delete();
+
+    // redirect
+    Session::flash('message', 'Agression supprimée');
+    Session::flash('alertClass', "success");
+    return Redirect::to('admin/offensives');
   }
 
 

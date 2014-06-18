@@ -2,32 +2,32 @@
 
 @section('content')
 
-<h2>Gestion des Utilisateurs</h2>
+<h2>Gestion des Agressions</h2>
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    Ajout d'un utilisateur
+    Ajout d'une agression
   </div>
   <div class="panel-body">
-    {{ Form::open(['url' => 'admin/users']) }}
+    {{ Form::open(['url' => 'admin/offensives']) }}
       <fieldset>
         @if(Session::has('message'))
           <p class="alert alert-{{ Session::get('alertClass') }}">{{ Session::get('message') }}</p>
         @endif
         <div class="form-group">
-          {{ Form::label('username', "Nom d'utilisateur") }}
+          {{ Form::label('description', "Contexte") }}
           <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            {{ Form::text('username', Input::old('username'), ['placeholder' => 'username', 'class' => 'form-control']) }}
+            <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
+            {{ Form::textarea('description', Input::old('description'), ['placeholder' => 'Contexte', 'class' => 'form-control']) }}
           </div>
         </div>
       </fieldset>
       <fieldset>
         <div class="form-group">
-        {{ Form::label('password', 'Mot de passe') }}
+        {{ Form::label('quote', 'Phrase d\'agression') }}
           <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            {{ Form::password('password', ['class' => 'form-control']) }}
+            <span class="input-group-addon"><i class="glyphicon glyphicon-comment"></i></span>
+            {{ Form::textarea('quote', Input::old('quote'), ['placeholder' => 'Phrase d\'agression', 'class' => 'form-control']) }}
           </div>
         </div>
         {{ Form::submit('Ajouter', ['class' => 'btn btn-success']) }}

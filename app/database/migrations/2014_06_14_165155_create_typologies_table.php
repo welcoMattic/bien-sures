@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOffensivesTable extends Migration {
+class CreateTypologiesTable extends Migration {
 
   /**
    * Run the migrations.
@@ -12,14 +12,11 @@ class CreateOffensivesTable extends Migration {
    */
   public function up()
   {
-    Schema::create('offensives', function(Blueprint $table)
+    Schema::create('typologies', function(Blueprint $table)
     {
       $table->increments('id');
-      $table->longText('quote');
-      $table->longText('description');
-      $table->integer('typology_id')->unsigned();
+      $table->string('name');
       $table->timestamps();
-      $table->foreign('typology_id')->references('id')->on('typologies')->onDelete('cascade');
     });
   }
 
@@ -30,7 +27,7 @@ class CreateOffensivesTable extends Migration {
    */
   public function down()
   {
-    Schema::drop('offensives');
+    Schema::drop('typologies');
   }
 
 }

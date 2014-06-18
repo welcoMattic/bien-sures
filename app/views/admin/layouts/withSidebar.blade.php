@@ -37,12 +37,6 @@
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <a class="navbar-brand" href="{{ URL::to('admin') }}">Bien Sûres - Administration</a>
       </div>
       <div class="panel-heading">
@@ -60,28 +54,20 @@
             <li>
               <a href="{{ URL::to('admin') }}"><i class="glyphicon glyphicon-dashboard"></i> Dashboard</a>
             </li>
-<!--             <li>
-              <a href="#"><i class="glyphicon glyphicon-bar-chart-o glyphicon-fw"></i> Charts<span class="fa arrow"></span></a>
-              <ul class="nav nav-second-level">
-                <li>
-                  <a href="flot.html">Flot Charts</a>
-                </li>
-                <li>
-                  <a href="morris.html">Morris.js Charts</a>
-                </li>
-              </ul>
-            </li> -->
             <li>
               <a href="{{ URL::to('admin/users') }}"><i class="glyphicon glyphicon-heart-empty"></i> Utilisateurs</a>
             </li>
             <li>
-              <a href="{{ URL::to('offensives') }}"><i class="glyphicon glyphicon-list-alt"></i> Agressions</a>
+              <a href="{{ URL::to('admin/typologies') }}"><i class="glyphicon glyphicon-list-alt"></i> Typologies</a>
             </li>
             <li>
-              <a href="{{ URL::to('replies') }}"><i class="glyphicon glyphicon-list-alt"></i> Répliques</a>
+              <a href="{{ URL::to('admin/offensives') }}"><i class="glyphicon glyphicon-list-alt"></i> Agressions</a>
             </li>
             <li>
-              <a href="{{ URL::to('stats') }}"><i class="glyphicon glyphicon-stats"></i> Statistiques</a>
+              <a href="{{ URL::to('admin/replies') }}"><i class="glyphicon glyphicon-list-alt"></i> Répliques</a>
+            </li>
+            <li>
+              <a href="{{ URL::to('admin/stats') }}"><i class="glyphicon glyphicon-stats"></i> Statistiques</a>
             </li>
           </ul>
         </div>

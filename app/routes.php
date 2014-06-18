@@ -19,6 +19,8 @@
 // route to show the login form
 Route::get('login', function()
 {
+  if(Auth::check())
+    return Redirect::to('admin');
   return View::make('admin.login');
 });
 
@@ -40,7 +42,16 @@ Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
   // main page for the admin (app/views/admin/index.blade.php)
   Route::get('/', ['uses' => 'AdminController@index']);
 
-  // RESTful resource for the user (app/views/admin/users.*.blade.php)
+  // RESTful resource for user (app/views/admin/users/*.blade.php)
   Route::resource('users', 'UsersController');
+
+  // RESTful resource for typologies (app/views/admin/typologies/*.blade.php)
+  Route::resource('typologies', 'TypologiesController');
+
+  // RESTful resource for offensives (app/views/admin/offensives/*.blade.php)
+  Route::resource('offensives', 'OffensivesController');
+
+  // RESTful resource for replies (app/views/admin/replies/*.blade.php)
+  Route::resource('replies', 'RepliesController');
 
 });

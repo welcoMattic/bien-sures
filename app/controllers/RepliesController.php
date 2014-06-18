@@ -9,7 +9,9 @@ class RepliesController extends \BaseController {
    */
   public function index()
   {
-    return Reply::get();
+    $replies = Reply::get();
+
+    return View::make('admin.replies.index', compact('replies'));
   }
 
 
@@ -43,7 +45,7 @@ class RepliesController extends \BaseController {
    */
   public function show($id)
   {
-    //
+    // send json object to angular
   }
 
 
@@ -55,7 +57,12 @@ class RepliesController extends \BaseController {
    */
   public function edit($id)
   {
-    //
+    // get the offensive
+    $reply = Reply::find($id);
+    $offensives = Offensive::get();
+
+    // show the edit form and pass the user
+    return View::make('admin.replies.edit', compact('reply', 'offensives'));
   }
 
 
@@ -67,7 +74,7 @@ class RepliesController extends \BaseController {
    */
   public function update($id)
   {
-    //
+    // receive json object from angular
   }
 
 
