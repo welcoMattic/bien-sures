@@ -11,6 +11,10 @@ class OffensivesController extends \BaseController {
   {
     $offensives = Offensive::get();
 
+    if(Request::wantsJson() || Request::is('api/*')) {
+      return $offensives;
+    }
+
     return View::make('admin.offensives.index', compact('offensives'));
   }
 

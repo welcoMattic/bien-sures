@@ -11,6 +11,32 @@
 |
 */
 
+Blade::setContentTags('<%', '%>');           // for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>');  // for escaped data
+
+/** ------------------------------------------
+ *  API Routes
+ *  ------------------------------------------
+ */
+
+// route to process the api initialization (app/views/api/index.blade.php)
+Route::get('/', ['uses' => 'ApiController@index']);
+
+Route::group(['prefix' => 'api'], function()
+{
+  // resource REST routes for user (app/views/admin/users/*.blade.php)
+  Route::resource('users', 'UsersController');
+
+  // resource REST routes for typologies (app/views/admin/typologies/*.blade.php)
+  Route::resource('typologies', 'TypologiesController');
+
+  // resource REST routes for offensives (app/views/admin/offensives/*.blade.php)
+  Route::resource('offensives', 'OffensivesController');
+
+  // resource REST routes for replies (app/views/admin/replies/*.blade.php)
+  Route::resource('replies', 'RepliesController');
+});
+
 /** ------------------------------------------
  *  Login / Logout Routes
  *  ------------------------------------------
@@ -42,16 +68,16 @@ Route::group(['prefix' => 'admin', 'before' => 'auth'], function()
   // main page for the admin (app/views/admin/index.blade.php)
   Route::get('/', ['uses' => 'AdminController@index']);
 
-  // RESTful resource for user (app/views/admin/users/*.blade.php)
+  // resource REST routes for user (app/views/admin/users/*.blade.php)
   Route::resource('users', 'UsersController');
 
-  // RESTful resource for typologies (app/views/admin/typologies/*.blade.php)
+  // resource REST routes for typologies (app/views/admin/typologies/*.blade.php)
   Route::resource('typologies', 'TypologiesController');
 
-  // RESTful resource for offensives (app/views/admin/offensives/*.blade.php)
+  // resource REST routes for offensives (app/views/admin/offensives/*.blade.php)
   Route::resource('offensives', 'OffensivesController');
 
-  // RESTful resource for replies (app/views/admin/replies/*.blade.php)
+  // resource REST routes for replies (app/views/admin/replies/*.blade.php)
   Route::resource('replies', 'RepliesController');
 
 });

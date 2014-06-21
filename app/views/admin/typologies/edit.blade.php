@@ -9,21 +9,21 @@
     Modification d'une typologie
   </div>
   <div class="panel-body">
-    {{ Form::model($typology, ['route' => ['admin.typologies.update', $typology->id], 'method' => 'PUT']) }}
+    <% Form::model($typology, ['route' => ['admin.typologies.update', $typology->id], 'method' => 'PUT']) %>
       <fieldset>
         @if(Session::has('message'))
-          <p class="alert alert-{{ Session::get('alertClass') }}">{{ Session::get('editError') }}</p>
+          <p class="alert alert-<% Session::get('alertClass') %>"><% Session::get('editError') %></p>
         @endif
         <div class="form-group">
-          {{ Form::label('name', "Nom") }}
+          <% Form::label('name', "Nom") %>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-hand-right"></i></span>
-            {{ Form::text('name', Input::old('name'), ['placeholder' => 'Nom', 'class' => 'form-control']) }}
+            <% Form::text('name', Input::old('name'), ['placeholder' => 'Nom', 'class' => 'form-control']) %>
           </div>
         </div>
       </fieldset>
-      {{ Form::submit('Modifier', ['class' => 'btn btn-success']) }}
-    {{ Form::close() }}
+      <% Form::submit('Modifier', ['class' => 'btn btn-success']) %>
+    <% Form::close() %>
   </div>
 </div>
 @stop

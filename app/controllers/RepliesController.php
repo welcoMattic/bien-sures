@@ -11,6 +11,10 @@ class RepliesController extends \BaseController {
   {
     $replies = Reply::get();
 
+    if(Request::wantsJson() || Request::is('api/*')) {
+      return $replies;
+    }
+
     return View::make('admin.replies.index', compact('replies'));
   }
 

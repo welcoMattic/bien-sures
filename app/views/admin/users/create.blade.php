@@ -9,30 +9,30 @@
     Ajout d'un utilisateur
   </div>
   <div class="panel-body">
-    {{ Form::open(['url' => 'admin/users']) }}
+    <% Form::open(['url' => 'admin/users']) %>
       <fieldset>
         @if(Session::has('message'))
-          <p class="alert alert-{{ Session::get('alertClass') }}">{{ Session::get('message') }}</p>
+          <p class="alert alert-<% Session::get('alertClass') %>"><% Session::get('message') %></p>
         @endif
         <div class="form-group">
-          {{ Form::label('username', "Nom d'utilisateur") }}
+          <% Form::label('username', "Nom d'utilisateur") %>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            {{ Form::text('username', Input::old('username'), ['placeholder' => 'username', 'class' => 'form-control']) }}
+            <% Form::text('username', Input::old('username'), ['placeholder' => 'username', 'class' => 'form-control']) %>
           </div>
         </div>
       </fieldset>
       <fieldset>
         <div class="form-group">
-        {{ Form::label('password', 'Mot de passe') }}
+        <% Form::label('password', 'Mot de passe') %>
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            {{ Form::password('password', ['class' => 'form-control']) }}
+            <% Form::password('password', ['class' => 'form-control']) %>
           </div>
         </div>
-        {{ Form::submit('Ajouter', ['class' => 'btn btn-success']) }}
+        <% Form::submit('Ajouter', ['class' => 'btn btn-success']) %>
       </fieldset>
-    {{ Form::close() }}
+    <% Form::close() %>
   </div>
 </div>
 

@@ -11,6 +11,10 @@ class TypologiesController extends \BaseController {
   {
     $typologies = Typology::get();
 
+    if(Request::wantsJson() || Request::is('api/*')) {
+      return $typologies;
+    }
+
     return View::make('admin.typologies.index', compact('typologies'));
   }
 
@@ -84,7 +88,7 @@ class TypologiesController extends \BaseController {
    */
   public function edit($id)
   {
-    // get the offensive
+    // get the typology
     $typology = Typology::find($id);
 
     // show the edit form and pass the user

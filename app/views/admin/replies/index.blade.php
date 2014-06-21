@@ -8,7 +8,7 @@
   <div class="col-lg-12">
   <div class="panel panel-default">
     <div class="panel-heading">
-    <span>{{ count($replies) }} répliques </span>
+    <span><% count($replies) %> répliques </span>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
@@ -23,17 +23,17 @@
       <tbody>
         @foreach ($replies as $reply)
         <tr>
-          <td>{{ $reply->id }}</td>
-          <td>{{ $reply->quote }}</td>
+          <td><% $reply->id %></td>
+          <td><% $reply->quote %></td>
           <td>
-          <a href="{{ URL::to('admin/replies/' . $reply->id . '/edit') }}" class="btn btn-info btn-sm pull-left">Éditer</a>
-          {{ Form::open(['url' => 'admin/replies/' . $reply->id, 'class' => 'pull-left']) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            &nbsp;{{ Form::submit('Supprimer', [
+          <a href="<% URL::to('admin/replies/' . $reply->id . '/edit') %>" class="btn btn-info btn-sm pull-left">Éditer</a>
+          <% Form::open(['url' => 'admin/replies/' . $reply->id, 'class' => 'pull-left']) %>
+            <% Form::hidden('_method', 'DELETE') %>
+            &nbsp;<% Form::submit('Supprimer', [
               'class'   => 'btn btn-danger btn-sm',
               'onclick' => 'return confirm("Êtes-vous sûr de vouloir supprimer cette réplique");'
-            ]) }}
-          {{ Form::close() }}
+            ]) %>
+          <% Form::close() %>
           </td>
         </tr>
         @endforeach

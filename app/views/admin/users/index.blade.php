@@ -8,7 +8,7 @@
   <div class="col-lg-12">
   <div class="panel panel-default">
     <div class="panel-heading">
-    <span>{{ count($users) }} utilisateurs <a href="{{ URL::to('admin/users/create') }}" class="btn btn-info btn-xs pull-right">Créer un utilisateur</a></span>
+    <span><% count($users) %> utilisateurs <a href="<% URL::to('admin/users/create') %>" class="btn btn-info btn-xs pull-right">Créer un utilisateur</a></span>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
@@ -23,17 +23,17 @@
       <tbody>
         @foreach ($users as $user)
         <tr>
-          <td>{{ $user->id }}</td>
-          <td>{{ $user->username }}</td>
+          <td><% $user->id %></td>
+          <td><% $user->username %></td>
           <td>
-          <a href="{{ URL::to('admin/users/' . $user->id . '/edit') }}" class="btn btn-info btn-sm pull-left">Éditer</a>
-          {{ Form::open(['url' => 'admin/users/' . $user->id, 'class' => 'pull-left']) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            &nbsp;{{ Form::submit('Supprimer', [
+          <a href="<% URL::to('admin/users/' . $user->id . '/edit') %>" class="btn btn-info btn-sm pull-left">Éditer</a>
+          <% Form::open(['url' => 'admin/users/' . $user->id, 'class' => 'pull-left']) %>
+            <% Form::hidden('_method', 'DELETE') %>
+            &nbsp;<% Form::submit('Supprimer', [
               'class'   => 'btn btn-danger btn-sm',
               'onclick' => 'return confirm("Êtes-vous sûr de vouloir supprimer ' . $user->username . '");'
-            ]) }}
-          {{ Form::close() }}
+            ]) %>
+          <% Form::close() %>
           </td>
         </tr>
         @endforeach

@@ -8,7 +8,7 @@
   <div class="col-lg-12">
   <div class="panel panel-default">
     <div class="panel-heading">
-    <span>{{ count($offensives) }} agressions <a href="{{ URL::to('admin/offensives/create') }}" class="btn btn-info btn-xs pull-right">Ajouter une agression</a></span>
+    <span><% count($offensives) %> agressions <a href="<% URL::to('admin/offensives/create') %>" class="btn btn-info btn-xs pull-right">Ajouter une agression</a></span>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
@@ -24,18 +24,18 @@
       <tbody>
         @foreach ($offensives as $offensive)
         <tr>
-          <td>{{ $offensive->id }}</td>
-          <td>{{ $offensive->description }}</td>
-          <td>{{ $offensive->quote }}</td>
+          <td><% $offensive->id %></td>
+          <td><% $offensive->description %></td>
+          <td><% $offensive->quote %></td>
           <td>
-          <a href="{{ URL::to('admin/offensives/' . $offensive->id . '/edit') }}" class="btn btn-info btn-sm pull-left">Éditer</a>
-          {{ Form::open(['url' => 'admin/offensives/' . $offensive->id, 'class' => 'pull-left']) }}
-            {{ Form::hidden('_method', 'DELETE') }}
-            &nbsp;{{ Form::submit('Supprimer', [
+          <a href="<% URL::to('admin/offensives/' . $offensive->id . '/edit') %>" class="btn btn-info btn-sm pull-left">Éditer</a>
+          <% Form::open(['url' => 'admin/offensives/' . $offensive->id, 'class' => 'pull-left']) %>
+            <% Form::hidden('_method', 'DELETE') %>
+            &nbsp;<% Form::submit('Supprimer', [
               'class'   => 'btn btn-danger btn-sm',
               'onclick' => 'return confirm("Êtes-vous sûr de vouloir supprimer cette agression");'
-            ]) }}
-          {{ Form::close() }}
+            ]) %>
+          <% Form::close() %>
           </td>
         </tr>
         @endforeach
