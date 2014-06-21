@@ -49,8 +49,8 @@
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="contributor-to"></a>
   </div>
   <div id="wrapper"
-    ng-class="{'': !isActive, 'active': isActive}"
-    ng-init="isActive = true">
+    ng-class="{'': !isSidebarActive, 'active': isSidebarActive}"
+    ng-init="isSidebarActive = true">
 
       <!-- Sidebar -->
             <!-- Sidebar -->
@@ -59,7 +59,7 @@
         <li class="sidebar-brand">
           <div id="menu-toggle" href="#">
             <a href="<% URL::to('/') %>">Bien Sûres</a>
-            <button id="main-icon" class="navbar-toggle" type="button" ng-click="isActive = !isActive">
+            <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -76,12 +76,15 @@
         </ul>
       </div>
 
-      <!-- Page content -->
       <div id="page-content-wrapper">
-        <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row">
-            <div class="col-md-12"></div>
+            <div class="player" ng-controller="PlayerCtrl">
+              <div ng-view=""></div>
+            </div>
+            <div class="col-md-12 wall" ng-controller="WallCtrl">
+              <div ng-view=""></div>
+            </div>
           </div>
         </div>
       </div>
@@ -98,14 +101,21 @@
     ga('send', 'pageview');
   </script>
 
-  <script src="<%asset('js/BSApp/bower_components/angular/angular.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-resource/angular-resource.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-animate/angular-animate.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-touch/angular-touch.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-route/angular-route.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular/angular.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular-animate/angular-animate.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/angular-route/angular-route.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular/videogular.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular-buffering/buffering.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular-controls/controls.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular-overlay-play/overlay-play.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular-poster/poster.min.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/videogular-quiz/quiz.js')%>"></script>
   <script src="<%asset('js/BSApp/app/scripts/app.js')%>"></script>
-  <script src="<%asset('js/BSApp/app/scripts/controllers/main.js')%>"></script>
+  <script src="<%asset('js/BSApp/app/scripts/controllers/player.js')%>"></script>
+  <script src="<%asset('js/BSApp/app/scripts/controllers/wall.js')%>"></script>
 
 </body>
 

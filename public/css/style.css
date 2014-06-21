@@ -3,6 +3,10 @@
     margin-right:0px;
 }
 
+.wall {
+  display: none;
+}
+
 #wrapper {
     padding-left: 70px;
     transition: all .4s ease 0s;

@@ -9,18 +9,24 @@
  * Main module of the application.
  */
 var BSApp = angular.module('BSApp', [
-  'ngAnimate',
-  'ngResource',
-  'ngRoute',
-  'ngSanitize',
-  'ngTouch'
+  "ngAnimate",
+  "ngResource",
+  "ngRoute",
+  "ngSanitize",
+  "ngTouch",
+  "com.2fdevs.videogular",
+  "com.2fdevs.videogular.plugins.controls",
+  "com.2fdevs.videogular.plugins.overlayplay",
+  "com.2fdevs.videogular.plugins.buffering",
+  "com.2fdevs.videogular.plugins.poster",
+  "info.vietnamcode.nampnq.videogular.plugins.quiz"
 ]);
 
 BSApp.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
-      templateUrl: 'js/BSApp/app/views/main.html',
-      controller: 'MainCtrl'
+      templateUrl: 'js/BSApp/app/views/player.html',
+      controller: 'PlayerCtrl'
     })
     .otherwise({
       redirectTo: '/'
