@@ -69,18 +69,18 @@
       <!-- Sidebar -->
             <!-- Sidebar -->
       <div id="sidebar-wrapper">
-      <ul id="sidebar_menu" class="sidebar-nav">
-        <li class="sidebar-brand">
-          <div id="menu-toggle" href="#">
-            <a href="<% URL::to('/') %>">Bien Sûres</a>
-            <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-          </div>
-        </li>
-      </ul>
+        <ul id="sidebar_menu" class="sidebar-nav">
+          <li class="sidebar-brand">
+            <div id="menu-toggle" href="#">
+              <a href="<% URL::to('/') %>">Bien Sûres</a>
+              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+          </li>
+        </ul>
         <ul class="sidebar-nav" id="sidebar">
           <li><a>Accueil<span class="sub_icon glyphicon glyphicon-home"></span></a></li>
           <li><a>Mur de répliques<span class="sub_icon glyphicon glyphicon-bullhorn"></span></a></li>
@@ -115,6 +115,7 @@
     ga('send', 'pageview');
   </script>
 
+  <script src="<%asset('js/BSApp/bower_components/jquery/dist/jquery.min.js')%>"></script>
   <script src="<%asset('js/BSApp/bower_components/angular/angular.min.js')%>"></script>
   <script src="<%asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js')%>"></script>
   <script src="<%asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js')%>"></script>

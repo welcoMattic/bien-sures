@@ -13,7 +13,6 @@ var BSApp = angular.module('BSApp', [
   "ngResource",
   "ngRoute",
   "ngSanitize",
-  "ngTouch",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
   "com.2fdevs.videogular.plugins.overlayplay",
@@ -27,6 +26,14 @@ BSApp.config(function ($routeProvider) {
     .when('/', {
       templateUrl: 'js/BSApp/app/views/player.html',
       controller: 'PlayerCtrl'
+    })
+    .when('/player', {
+      templateUrl: 'js/BSApp/app/views/player.html',
+      controller: 'PlayerCtrl'
+    })
+    .when('/wall', {
+      templateUrl: 'js/BSApp/app/views/wall.html',
+      controller: 'WallCtrl'
     })
     .otherwise({
       redirectTo: '/'
