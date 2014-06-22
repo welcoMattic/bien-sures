@@ -8,6 +8,7 @@
  * Controller of the appApp
  */
 BSApp.controller('PlayerCtrl', function ($scope, $sce, $compile) {
+
   $scope.stretchModes = [
     {label: "None", value: "none"},
     {label: "Fit", value: "fit"},
@@ -37,6 +38,14 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce, $compile) {
         }]
       }
     }
+  };
+
+  $scope.onQuizSubmit = function() {
+
+  };
+
+  $scope.onQuizSkip = function() {
+
   };
 
 });
