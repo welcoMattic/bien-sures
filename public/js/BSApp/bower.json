@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "BSApp",
   "version": "0.0.0",
   "dependencies": {
     "angular": "1.2.16",
@@ -8,10 +8,7 @@
     "angular-resource": "1.2.16",
     "angular-sanitize": "1.2.16",
     "angular-animate": "1.2.16",
-    "angular-touch": "1.2.16",
-    "angular-route": "1.2.16"
-  },
-  "devDependencies": {
+    "angular-route": "1.2.16",
     "angular-mocks": "1.2.16",
     "angular-scenario": "1.2.16",
     "videogular": "*",
@@ -20,7 +17,8 @@
     "videogular-overlay-play": "~0.4.1",
     "videogular-poster": "~0.4.1",
     "videogular-themes-default": "~0.4.1",
-    "videogular-quiz": "~1.0.0"
+    "videogular-quiz": "~1.0.0",
+    "mobile-detect": "hgoebl/mobile-detect.js#~0.3.0"
   },
   "appPath": "app"
 }

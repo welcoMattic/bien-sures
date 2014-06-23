@@ -2,5 +2,5 @@
 
 return array(
 	'debug' => true,
-	'url' => 'http://bien-sures.fr',
+	'url' => 'http://bien-sures.dev',
 );

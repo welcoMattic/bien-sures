@@ -1,4 +1,15 @@
-<videogular vg-width="config.width" vg-height="config.height" vg-theme="config.theme.url" vg-autoplay="config.autoPlay" vg-stretch="config.stretch.value" vg-responsive="config.responsive">
+<videogular
+  vg-player-ready="onPlayerReady"
+  vg-complete="onCompleteVideo"
+  vg-update-time="onUpdateTime"
+  vg-update-size="onUpdateSize"
+  vg-update-volume="onUpdateVolume"
+  vg-update-state="onUpdateState"
+  vg-width="config.width"
+  vg-height="config.height"
+  vg-theme="config.theme.url"
+  vg-autoplay="config.autoPlay"
+  vg-stretch="config.stretch.value">
   <vg-quiz vg-data='config.plugins.quiz.data' vg-quiz-submit="onQuizSubmit" vg-quiz-skip="onQuizSkip"></vg-quiz>
   <video class='videoPlayer' preload='metadata'>
     <source type="video/mp4" src="videos/bunny.mp4" />

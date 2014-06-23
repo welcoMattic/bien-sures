@@ -18,6 +18,7 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce) {
 
   $scope.onPlayerReady = function(API) {
     $scope.API = API;
+    $scope.API.setSize(document.getElementsByClassName('player')[0].clientWidth, window.innerHeight);
   };
 
   $scope.onCompleteVideo = function() {
@@ -43,18 +44,15 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce) {
   };
 
   $scope.stretchModes = [
-    {label: "None", value: "none"},
-    {label: "Fit", value: "fit"},
-    {label: "Fill", value: "fill"}
+    {value: "none"},
+    {value: "fit"},
+    {value: "fill"}
   ];
-console.log(document.getElementsByClassName('player')[0].offsetHeight);
+
   $scope.config = {
-    // width: document.getElementsByClassName('player')[0].offsetWidth,
-    height: document.getElementsByClassName('player')[0].offsetHeight,
     autoHide: true,
-    autoHideTime: 500,
+    autoHideTime: 5000,
     autoPlay: false,
-    responsive: false,
     stretch: $scope.stretchModes[1],
     theme: {
       url: 'js/BSApp/bower_components/videogular-themes-default/videogular.css'
@@ -74,7 +72,6 @@ console.log(document.getElementsByClassName('player')[0].offsetHeight);
       }
     }
   };
-
 
   $scope.onQuizSubmit = function(paramObj) {
 

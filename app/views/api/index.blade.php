@@ -128,6 +128,7 @@
   <script src="<%asset('js/BSApp/bower_components/videogular-overlay-play/overlay-play.min.js')%>"></script>
   <script src="<%asset('js/BSApp/bower_components/videogular-poster/poster.min.js')%>"></script>
   <script src="<%asset('js/BSApp/bower_components/videogular-quiz/quiz.js')%>"></script>
+  <script src="<%asset('js/BSApp/bower_components/mobile-detect/mobile-detect.min.js')%>"></script>
   <script src="<%asset('js/BSApp/app/scripts/app.js')%>"></script>
   <script src="<%asset('js/BSApp/app/scripts/controllers/player.js')%>"></script>
   <script src="<%asset('js/BSApp/app/scripts/controllers/wall.js')%>"></script>
