@@ -2,5 +2,5 @@
 
 return array(
 	'debug' => true,
-	'url' => 'http://bien-sures.dev',
+	'url' => 'http://bien-sures.local',
 );
