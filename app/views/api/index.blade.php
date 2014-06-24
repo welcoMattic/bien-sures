@@ -65,7 +65,6 @@
   <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
 
       <!-- Sidebar -->
-            <!-- Sidebar -->
       <div id="sidebar-wrapper">
        <h1>
           <p>Bien Sûres</p>
@@ -75,6 +74,7 @@
        <!--  <ul id="sidebar_menu" class="sidebar-nav">
           <li class="sidebar-brand">
             <div id="menu-toggle" href="#">
+              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
               <a href="<% URL::to('/') %>">Bien Sûres</a>
               <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive; API.playPause()">
                 <span class="icon-bar"></span>
