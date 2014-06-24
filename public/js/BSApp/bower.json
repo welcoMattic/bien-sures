@@ -18,7 +18,8 @@
     "videogular-poster": "~0.4.1",
     "videogular-themes-default": "~0.4.1",
     "videogular-quiz": "~1.0.0",
-    "mobile-detect": "hgoebl/mobile-detect.js#~0.3.0"
+    "mobile-detect": "hgoebl/mobile-detect.js#~0.3.0",
+    "ngActivityIndicator": "~0.1.3"
   },
   "appPath": "app"
 }

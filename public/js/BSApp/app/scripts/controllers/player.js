@@ -7,7 +7,10 @@
  * # PlayerCtrl
  * Controller of the appApp
  */
-BSApp.controller('PlayerCtrl', function ($scope, $sce) {
+BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndicator, VG_EVENTS) {
+
+  $activityIndicator.startAnimating();
+  $rootScope.isSidebarActive = true;
 
   $scope.currentTime = 0;
   $scope.totalTime = 0;
@@ -18,7 +21,18 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce) {
 
   $scope.onPlayerReady = function(API) {
     $scope.API = API;
-    $scope.API.setSize(document.getElementsByClassName('player')[0].clientWidth, window.innerHeight);
+    //document.getElementsByClassName('player')[0].clientWidth
+    $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
+
+    $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
+      $rootScope.isSidebarActive = false;
+    });
+
+    $rootScope.$on(VG_EVENTS.ON_COMPLETE, function() {
+      $rootScope.isSidebarActive = true;
+    });
+
+    $activityIndicator.stopAnimating();
   };
 
   $scope.onCompleteVideo = function() {
@@ -54,6 +68,7 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce) {
     autoHideTime: 5000,
     autoPlay: false,
     stretch: $scope.stretchModes[1],
+    responsive: false,
     theme: {
       url: 'js/BSApp/bower_components/videogular-themes-default/videogular.css'
     },
@@ -73,8 +88,18 @@ BSApp.controller('PlayerCtrl', function ($scope, $sce) {
     }
   };
 
-  $scope.onQuizSubmit = function(paramObj) {
-
+  $scope.onQuizSubmit = function(result) {
+    var adjs = angular.fromJson(window.adjectifs);
+    var reply = result.reply;
+    angular.forEach(adjs, function(adj, key) {
+      var synonymes = adj.synonymes.split(", ");
+      if(reply === adj.adjectif || synonymes.inArray(reply)) {
+        $scope.API.seekTime(10);
+      } else {
+        $scope.API.seekTime(26);
+      }
+      $scope.API.play();
+    });
   };
 
   $scope.onQuizSkip = function() {

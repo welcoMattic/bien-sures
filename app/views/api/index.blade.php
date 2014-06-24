@@ -62,9 +62,7 @@
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="publisher"></a>
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="contributor-to"></a>
   </div>
-  <div id="wrapper"
-    ng-class="{'': !isSidebarActive, 'active': isSidebarActive}"
-    ng-init="isSidebarActive = true">
+  <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
 
       <!-- Sidebar -->
             <!-- Sidebar -->
@@ -73,7 +71,7 @@
           <li class="sidebar-brand">
             <div id="menu-toggle" href="#">
               <a href="<% URL::to('/') %>">Bien Sûres</a>
-              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
+              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive; API.playPause()">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -94,6 +92,7 @@
         <div class="page-content inset">
           <div class="row">
             <div class="player" ng-controller="PlayerCtrl">
+              <div ng-activity-indicator="CircledWhite"></div>
               <div ng-view=""></div>
             </div>
             <div class="col-md-12 wall" ng-controller="WallCtrl">
@@ -113,25 +112,29 @@
 
     ga('create', 'UA-52124244-1', 'bien-sures.fr');
     ga('send', 'pageview');
+
+    // Adjectifs
+    window.adjectifs = <% $adjectifs %>
   </script>
 
-  <script src="<%asset('js/BSApp/bower_components/jquery/dist/jquery.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular/angular.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-animate/angular-animate.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/angular-route/angular-route.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular/videogular.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular-buffering/buffering.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular-controls/controls.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular-overlay-play/overlay-play.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular-poster/poster.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/videogular-quiz/quiz.js')%>"></script>
-  <script src="<%asset('js/BSApp/bower_components/mobile-detect/mobile-detect.min.js')%>"></script>
-  <script src="<%asset('js/BSApp/app/scripts/app.js')%>"></script>
-  <script src="<%asset('js/BSApp/app/scripts/controllers/player.js')%>"></script>
-  <script src="<%asset('js/BSApp/app/scripts/controllers/wall.js')%>"></script>
+  <script src="<% asset('js/BSApp/bower_components/jquery/dist/jquery.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular/angular.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-animate/angular-animate.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-route/angular-route.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular/videogular.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular-buffering/buffering.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular-controls/controls.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular-overlay-play/overlay-play.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular-poster/poster.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/videogular-quiz/quiz.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/mobile-detect/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/app.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
 
 </body>
 
