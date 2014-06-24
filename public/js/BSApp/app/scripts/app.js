@@ -13,6 +13,7 @@ var BSApp = angular.module('BSApp', [
   "ngResource",
   "ngRoute",
   "ngSanitize",
+  "ngActivityIndicator",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
   "com.2fdevs.videogular.plugins.overlayplay",
@@ -51,3 +52,18 @@ BSApp.config(function ($routeProvider) {
       redirectTo: '/'
     });
 });
+
+
+// Polyfill inArray : true if needle exists in haystack, else false
+Array.prototype.inArray = function(needle, strict) {
+  strict = strict || false;
+  for(var key in this) {
+    if(strict) {
+      if(this[key] === needle)
+        return true;
+    } else if(this[key] == needle) {
+      return true;
+    }
+  }
+  return false;
+};
