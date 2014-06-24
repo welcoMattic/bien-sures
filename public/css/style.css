@@ -26,17 +26,17 @@
   margin-left: .2em;
 }
 
-.iconf-attach:before { content: '\e800'; } 
-.iconf-child:before { content: '\e801'; } 
-.iconf-flag-1:before { content: '\e802'; } 
-.iconf-upload-cloud-outline:before { content: '\e803'; } 
-.iconf-facebook-circled:before { content: '\e804'; } 
-.iconf-twitter-circled:before { content: '\e805'; } 
-.iconf-instagram-circled:before { content: '\e806'; } 
-.iconf-youtube:before { content: '\e807'; } 
-.iconf-pinterest-circled:before { content: '\e808'; } 
-.iconf-play-circled:before { content: '\e809'; } 
-.iconf-quote:before { content: '\e80a'; } 
+.iconf-attach:before { content: '\e800'; }
+.iconf-child:before { content: '\e801'; }
+.iconf-flag-1:before { content: '\e802'; }
+.iconf-upload-cloud-outline:before { content: '\e803'; }
+.iconf-facebook-circled:before { content: '\e804'; }
+.iconf-twitter-circled:before { content: '\e805'; }
+.iconf-instagram-circled:before { content: '\e806'; }
+.iconf-youtube:before { content: '\e807'; }
+.iconf-pinterest-circled:before { content: '\e808'; }
+.iconf-play-circled:before { content: '\e809'; }
+.iconf-quote:before { content: '\e80a'; }
 /**********************/
 
 body {
@@ -47,11 +47,11 @@ body {
 a {
   color: #646464;
   font-weight: bold;
-} 
+}
 
 a:hover {
   color: #00e0df;
-} 
+}
 
 .clear {
   clear: both;
@@ -68,7 +68,7 @@ a:hover {
 
 #wrapper {
     padding-left: 70px;
-    transition: all .4s ease 0s;
+    transition: all .2s ease 0s;
     height: 100%
 }
 
@@ -95,7 +95,7 @@ h1 a {
     position: fixed;
     height: 100%;
     z-index: 10000;
-    transition: all .4s ease 0s;
+    transition: all .2s ease 0s;
 }
 
 .sidebar-nav {
@@ -132,11 +132,11 @@ h1 a {
     display: inline;
     text-decoration: none;
     width: 300px;
-    -webkit-transition: background .8s;
-    -moz-transition: background .8s;
-    -o-transition: background .8s;
-    -ms-transition: background .8s;
-    transition: background .8s;
+    -webkit-transition: background .4s;
+    -moz-transition: background .4s;
+    -o-transition: background .4s;
+    -ms-transition: background .4s;
+    transition: background .4s;
 }
 .sidebar_name {
     padding-top: 25px;
@@ -238,11 +238,11 @@ h1 a {
 #sidebar-wrapper .social-footer li a {
   font-size: 30px;
   color: #646464;
-  -webkit-transition: color .5s;
-    -moz-transition: color .5s;
-    -o-transition: color .5s;
-    -ms-transition: color .5s;
-    transition: color .5s;
+  -webkit-transition: color .3s;
+    -moz-transition: color .3s;
+    -o-transition: color .3s;
+    -ms-transition: color .3s;
+    transition: color .3s;
 }
 #sidebar-wrapper .social-footer li a:hover {
   color: #00e0df;

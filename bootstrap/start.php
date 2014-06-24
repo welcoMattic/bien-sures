@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-  'local' => array('macbookpro-digout'),
+  'local' => array('macbook-air-welcomattic'),
   'production' => array('vps71404'),
 
 ));

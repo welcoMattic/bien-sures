@@ -5,7 +5,7 @@
  * @name BSApp.controller:WallCtrl
  * @description
  * # WallCtrl
- * Controller of the appApp
+ * Controller of the BSApp
  */
 BSApp.controller('WallCtrl', function ($scope, $http) {
 
