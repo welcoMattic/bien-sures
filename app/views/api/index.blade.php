@@ -67,7 +67,12 @@
       <!-- Sidebar -->
             <!-- Sidebar -->
       <div id="sidebar-wrapper">
-        <ul id="sidebar_menu" class="sidebar-nav">
+       <h1>
+          <p>Bien Sûres</p>
+          <a href="<% URL::to('/') %>"><img src="images/logo.png"></a>
+        </h1>
+      <!-- Close / Open button Sidebar -->
+       <!--  <ul id="sidebar_menu" class="sidebar-nav">
           <li class="sidebar-brand">
             <div id="menu-toggle" href="#">
               <a href="<% URL::to('/') %>">Bien Sûres</a>
@@ -77,15 +82,27 @@
                 <span class="icon-bar"></span>
               </button>
             </div>
-          </li>
+          </li> -->
         </ul>
         <ul class="sidebar-nav" id="sidebar">
-          <li><a>Accueil<span class="sub_icon glyphicon glyphicon-home"></span></a></li>
-          <li><a>Mur de répliques<span class="sub_icon glyphicon glyphicon-bullhorn"></span></a></li>
-          <li><a>Besoin d'aide<span class="sub_icon glyphicon glyphicon glyphicon-question-sign"></span></a></li>
-          <li><a>À propos<span class="sub_icon glyphicon glyphicon-info-sign"></span></a></li>
-          <li><a>Contact<span class="sub_icon glyphicon glyphicon-envelope"></span></a></li>
+          <li><a href="<% URL::to('/') %>">Accueil</a></li>
+          <li><a href="<% URL::to('/#/mur-de-paroles') %>">Mur de paroles</a></li>
+          <li><a href="<% URL::to('/#/besoin-d-aide') %>">Besoin d'aide</a></li>
+          <li><a href="<% URL::to('/#/a-propos') %>">À propos</a></li>
+          <li><a href="<% URL::to('/#/contact') %>">Contact</a></li>
         </ul>
+
+        <div id="footer">
+        <p class="joinSocial">Rejoignez nous sur:</p>
+          <ul class="social-footer">
+            <li><a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled"><span>Facebook</span></a></li>
+            <li><a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span>Twitter</span></a></li>
+            <li><a href="http://instagram.com/biensures/" target="_blank" class="iconf-instagram-circled"><span>Instagram</span></a></li>
+            <li><a href="#" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
+            <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"><span>Pinterest</span></a></li>
+          </ul>
+          <p class="copy">copyright © Bien Sûres - 2014 - <a href="#">Mentions légales</a></p>
+        </div>
       </div>
 
       <div id="page-content-wrapper">
@@ -96,6 +113,12 @@
               <div ng-view=""></div>
             </div>
             <div class="col-md-12 wall" ng-controller="WallCtrl">
+              <div ng-view=""></div>
+            </div>
+            <div class="col-md-12 wall" ng-controller="HelpCtrl">
+              <div ng-view=""></div>
+            </div>
+            <div class="col-md-12 wall" ng-controller="AboutCtrl">
               <div ng-view=""></div>
             </div>
           </div>
@@ -135,6 +158,8 @@
   <script src="<% asset('js/BSApp/app/scripts/app.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/help.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/about.js') %>"></script>
 
 </body>
 

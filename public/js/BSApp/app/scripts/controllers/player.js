@@ -5,7 +5,7 @@
  * @name BSApp.controller:PlayerCtrl
  * @description
  * # PlayerCtrl
- * Controller of the appApp
+ * Controller of the BSApp
  */
 BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndicator, VG_EVENTS) {
 
