@@ -65,7 +65,6 @@
   <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
 
       <!-- Sidebar -->
-            <!-- Sidebar -->
       <div id="sidebar-wrapper">
        <h1>
           <p>Bien Sûres</p>
@@ -116,6 +115,12 @@
             <div class="col-md-12 wall" ng-controller="WallCtrl">
               <div ng-view=""></div>
             </div>
+            <div class="col-md-12 wall" ng-controller="HelpCtrl">
+              <div ng-view=""></div>
+            </div>
+            <div class="col-md-12 wall" ng-controller="AboutCtrl">
+              <div ng-view=""></div>
+            </div>
           </div>
         </div>
       </div>
@@ -153,6 +158,8 @@
   <script src="<% asset('js/BSApp/app/scripts/app.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/help.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/about.js') %>"></script>
 
 </body>
 
