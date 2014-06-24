@@ -1,3 +1,62 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+/**** FONTELLO ****/
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello/fontello.eot?13540858');
+  src: url('../fonts/fontello/fontello.eot?13540858#iefix') format('embedded-opentype'),
+       url('../fonts/fontello/fontello.svg?13540858#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="iconf-"]:before, [class*=" iconf-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+}
+
+.iconf-attach:before { content: '\e800'; } 
+.iconf-child:before { content: '\e801'; } 
+.iconf-flag-1:before { content: '\e802'; } 
+.iconf-upload-cloud-outline:before { content: '\e803'; } 
+.iconf-facebook-circled:before { content: '\e804'; } 
+.iconf-twitter-circled:before { content: '\e805'; } 
+.iconf-instagram-circled:before { content: '\e806'; } 
+.iconf-youtube:before { content: '\e807'; } 
+.iconf-pinterest-circled:before { content: '\e808'; } 
+.iconf-play-circled:before { content: '\e809'; } 
+.iconf-quote:before { content: '\e80a'; } 
+/**********************/
+
+body {
+  font-family: 'fontello';
+  color: #646464;
+}
+
+a {
+  color: #646464;
+  font-weight: bold;
+} 
+
+a:hover {
+  color: #00e0df;
+} 
+
+.clear {
+  clear: both;
+}
+
 .row{
     margin-left:0px;
     margin-right:0px;
@@ -13,11 +72,26 @@
     height: 100%
 }
 
+h1 {
+  background-color: #00e0df;
+  margin: 0;
+  padding: 30px 0;
+}
+
+h1 p {
+  display: none;
+}
+
+h1 a {
+  display: block;
+  text-align: center;
+}
+
 #sidebar-wrapper {
     margin-left: -300px;
     left: 70px;
     width: 300px;
-    background: #222;
+    background: #fff;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -26,11 +100,11 @@
 
 .sidebar-nav {
     display: block;
-    float: left;
     width: 300px;
     list-style: none;
     margin: 0;
     padding: 0;
+    margin-top: 60px;
 }
 #page-content-wrapper {
     padding-left: 0;
@@ -54,15 +128,15 @@
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
-    color: #999;
+    color: #000;
     display: inline;
     text-decoration: none;
     width: 300px;
-    -webkit-transition: background .5s;
-    -moz-transition: background .5s;
-    -o-transition: background .5s;
-    -ms-transition: background .5s;
-    transition: background .5s;
+    -webkit-transition: background .8s;
+    -moz-transition: background .8s;
+    -o-transition: background .8s;
+    -ms-transition: background .8s;
+    transition: background .8s;
 }
 .sidebar_name {
     padding-top: 25px;
@@ -76,16 +150,19 @@
 }
 
 .sidebar-nav li a {
-  color: #999999;
+  font-family: 'Lato', Arial, sans-serif;
+  color: #646464;
+  font-weight: normal;
   display: block;
   text-decoration: none;
   cursor: pointer;
+  padding: 10px 0 10px 70px;
 }
 
 .sidebar-nav li a:hover {
   color: #fff;
-  background: rgba(255,255,255,0.2);
   text-decoration: none;
+  background-color: #00e0df;
 }
 
 .sidebar-nav li a:active,
@@ -144,7 +221,50 @@
   color: #FFFFFF;
 }
 
-@media (max-width:767px) {
+/**** FOOTER ****/
+#footer {
+  position: absolute;
+  bottom: 15px;
+  width: 300px;
+}
+#sidebar-wrapper .social-footer {
+  display: block;
+  overflow: hidden;
+}
+#sidebar-wrapper .social-footer li {
+  list-style: none;
+  float: left;
+}
+#sidebar-wrapper .social-footer li a {
+  font-size: 30px;
+  color: #646464;
+  -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -o-transition: color .5s;
+    -ms-transition: color .5s;
+    transition: color .5s;
+}
+#sidebar-wrapper .social-footer li a:hover {
+  color: #00e0df;
+}
+#sidebar-wrapper .social-footer li a span {
+  display: none;
+}
+#sidebar-wrapper .joinSocial {
+  text-align: center;
+  margin: 0;
+}
+#sidebar-wrapper .copy {
+  text-align: center;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+#sidebar-wrapper .copy a {
+}
+
+
+/*@media (max-width:767px) {
   #wrapper {
       padding-left: 70px;
       transition: all .4s ease 0s;
@@ -160,4 +280,7 @@
       width: 150px;
       transition: all .4s ease 0s;
   }
-}
+}*/
+
+
+

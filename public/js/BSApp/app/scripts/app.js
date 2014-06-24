@@ -31,9 +31,21 @@ BSApp.config(function ($routeProvider) {
       templateUrl: 'js/BSApp/app/views/player.html',
       controller: 'PlayerCtrl'
     })
-    .when('/wall', {
+    .when('/mur-de-paroles', {
       templateUrl: 'js/BSApp/app/views/wall.html',
       controller: 'WallCtrl'
+    })
+    .when('/besoin-d-aide', {
+      templateUrl: 'js/BSApp/app/views/help.html',
+      controller: 'HelpCtrl'
+    })
+    .when('/a-propos', {
+      templateUrl: 'js/BSApp/app/views/about.html',
+      controller: 'AboutCtrl'
+    })
+    .when('/contact', {
+      templateUrl: 'js/BSApp/app/views/contact.html',
+      controller: 'AboutCtrl'
     })
     .otherwise({
       redirectTo: '/'
