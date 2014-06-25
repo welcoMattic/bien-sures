@@ -8,5 +8,4 @@
  * Controller of the BSApp
  */
 BSApp.controller('AboutCtrl', function ($scope) {
-
 });

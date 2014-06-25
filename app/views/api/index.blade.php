@@ -89,7 +89,7 @@
           <li><a href="<% URL::to('/#/mur-de-paroles') %>">Mur de paroles</a></li>
           <li><a href="<% URL::to('/#/besoin-d-aide') %>">Besoin d'aide</a></li>
           <li><a href="<% URL::to('/#/a-propos') %>">À propos</a></li>
-          <li><a href="<% URL::to('/#/contact') %>">Contact</a></li>
+          <li><a href="<% URL::to('/#/nous-contacter') %>">Contact</a></li>
         </ul>
 
         <div id="footer">
@@ -108,19 +108,7 @@
       <div id="page-content-wrapper">
         <div class="page-content inset">
           <div class="row">
-            <div class="player" ng-controller="PlayerCtrl">
-              <div ng-activity-indicator="CircledWhite"></div>
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="WallCtrl">
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="HelpCtrl">
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="AboutCtrl">
-              <div ng-view=""></div>
-            </div>
+            <div ng-view=""></div>
           </div>
         </div>
       </div>
@@ -140,12 +128,13 @@
     window.adjectifs = <% $adjectifs %>
   </script>
 
-  <script src="<% asset('js/BSApp/bower_components/jquery/dist/jquery.min.js') %>"></script>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+  <!--<script src="<% asset('js/BSApp/bower_components/jquery/dist/jquery.min.js') %>"></script> -->
   <script src="<% asset('js/BSApp/bower_components/angular/angular.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/angular-animate/angular-animate.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js') %>"></script>
+  <!--<script src="<% asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js') %>"></script>-->
   <script src="<% asset('js/BSApp/bower_components/angular-route/angular-route.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/videogular/videogular.min.js') %>"></script>
@@ -159,6 +148,7 @@
   <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/help.js') %>"></script>
+  <script src="<% asset('js/BSApp/app/scripts/controllers/contact.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/about.js') %>"></script>
 
 </body>
