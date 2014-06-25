@@ -1,0 +1,8 @@
+<form role="form" name="replyForm" class="replyForm">
+  <div class="form-group">
+    <label for="reply">Réplique</label>
+    <input type="text" class="form-control" id="reply" name="reply" placeholder="..." required ng-model="reply">
+  </div>
+  <input class="btn btn-primary quiz-submit-button" data-ng-click="quizSubmit()" type="submit" data-ng-show="submit" ng-disabled="replyForm.$invalid" value="Envoyer"></input>
+  <button class="btn btn-default quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Skip</button>
+</form>

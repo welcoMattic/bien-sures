@@ -108,19 +108,7 @@
       <div id="page-content-wrapper">
         <div class="page-content inset">
           <div class="row">
-            <div class="player" ng-controller="PlayerCtrl">
-              <div ng-activity-indicator="CircledWhite"></div>
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="WallCtrl">
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="HelpCtrl">
-              <div ng-view=""></div>
-            </div>
-            <div class="col-md-12 wall" ng-controller="AboutCtrl">
-              <div ng-view=""></div>
-            </div>
+            <div ng-view=""></div>
           </div>
         </div>
       </div>
@@ -140,26 +128,26 @@
     window.adjectifs = <% $adjectifs %>
   </script>
 
-  <script src="<% asset('js/BSApp/bower_components/jquery/dist/jquery.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular/angular.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-animate/angular-animate.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-touch/angular-touch.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/angular-route/angular-route.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular/videogular.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular-buffering/buffering.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular-controls/controls.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular-overlay-play/overlay-play.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular-poster/poster.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/videogular-quiz/quiz.js') %>"></script>
-  <script src="<% asset('js/BSApp/bower_components/mobile-detect/mobile-detect.min.js') %>"></script>
-  <script src="<% asset('js/BSApp/app/scripts/app.js') %>"></script>
-  <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
-  <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
-  <script src="<% asset('js/BSApp/app/scripts/controllers/help.js') %>"></script>
-  <script src="<% asset('js/BSApp/app/scripts/controllers/about.js') %>"></script>
+  <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-resource.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-sanitize.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-animate.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
+  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
+  <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
+  <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
+  <script src="<% asset('js/vendors/controls.min.js') %>"></script>
+  <script src="<% asset('js/vendors/overlay-play.min.js') %>"></script>
+  <script src="<% asset('js/vendors/poster.min.js') %>"></script>
+  <script src="<% asset('js/vendors/quiz.js') %>"></script>
+  <script src="<% asset('js/vendors/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/app.js') %>"></script>
+  <script src="<% asset('js/controllers/player.js') %>"></script>
+  <script src="<% asset('js/controllers/wall.js') %>"></script>
+  <script src="<% asset('js/controllers/help.js') %>"></script>
+  <script src="<% asset('js/controllers/about.js') %>"></script>
 
 </body>
 

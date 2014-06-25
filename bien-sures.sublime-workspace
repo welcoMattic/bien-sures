@@ -223,15 +223,7 @@
 			"file": "app/views/api/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 7309,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/BSApp/app/scripts/app.js",
-			"settings":
-			{
-				"buffer_size": 1275,
+				"buffer_size": 8239,
 				"line_ending": "Unix"
 			}
 		},
@@ -239,7 +231,7 @@
 			"file": "public/js/BSApp/app/scripts/controllers/player.js",
 			"settings":
 			{
-				"buffer_size": 2580,
+				"buffer_size": 2910,
 				"line_ending": "Unix"
 			}
 		},
@@ -247,15 +239,15 @@
 			"file": "public/js/BSApp/app/views/player.html",
 			"settings":
 			{
-				"buffer_size": 1835,
+				"buffer_size": 1850,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/BSApp/bower_components/videogular-quiz/quiz.js",
+			"file": "public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
 			"settings":
 			{
-				"buffer_size": 4967,
+				"buffer_size": 10228,
 				"line_ending": "Unix"
 			}
 		}
@@ -392,27 +384,76 @@
 	},
 	"file_history":
 	[
-		"/workspace/bien-sures/app/controllers/ApiController.php",
-		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.js",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
+		"/workspace/bien-sures/public/js/BSApp/app/views/player.html",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-controls/controls.js",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.css",
+		"/workspace/bien-sures/vendor/monolog/monolog/tests/Monolog/PsrLogCompatTest.php",
+		"/workspace/bien-sures/phpunit.xml",
+		"/workspace/bien-sures/public/css/flat-ui.css",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/app.js",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/contact.js",
 		"/workspace/bien-sures/app/views/api/index.blade.php",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/help.js",
+		"/workspace/bien-sures/public/js/BSApp/app/views/contact.html",
+		"/workspace/bien-sures/public/js/BSApp/app/views/help.html",
+		"/workspace/bien-sures/public/js/BSApp/app/views/wall.html",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/about.js",
+		"/workspace/bien-sures/.gitignore",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/player.js",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/wall.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-prune.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-cache.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-list.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-link.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-init.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-info.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-home.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/node_modules/coffee-script/lib/coffee-script/helpers.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-wiredep/node_modules/wiredep/lib/helpers.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-contrib-watch/node_modules/gaze/lib/helper.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/karma/lib/helper.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-newer/test/helper.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/node_modules/insight/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/node_modules/update-notifier/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/node_modules/insight/node_modules/configstore/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-contrib-imagemin/node_modules/imagemin/node_modules/imagemin-svgo/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-svgmin/node_modules/svgo/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/google-cdn/node_modules/bower/templates/json/help.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/google-cdn/node_modules/bower/lib/commands/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/lib/action/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/examples/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help.json",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/lib/commands/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/lib/grunt/help.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/lib/help/added_formatters.js",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt/node_modules/js-yaml/node_modules/argparse/lib/help/formatter.js",
+		"/workspace/bien-sures/vendor/predis/predis/lib/Predis/Command/HashLength.php",
+		"/workspace/bien-sures/public/js/BSApp/node_modules/karma/node_modules/http-proxy/examples/http/latent-proxy.js",
+		"/workspace/bien-sures/vendor/predis/predis/lib/Predis/Command/HashExists.php",
+		"/workspace/bien-sures/vendor/nesbot/carbon/history.md",
+		"/workspace/bien-sures/app/config/local/app.php",
+		"/workspace/bien-sures/bootstrap/start.php",
+		"/workspace/bien-sures/app/config/local/database.php",
+		"/workspace/bien-sures/app/config/app.php",
+		"/workspace/bien-sures/public/css/style.css",
+		"/workspace/bien-sures/public/fonts/fontello/config.json",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.js",
+		"/workspace/bien-sures/app/controllers/ApiController.php",
 		"/workspace/Lab/adjectifs.js",
 		"/workspace/Lab/adjectifs.json",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular/videogular.js",
-		"/workspace/bien-sures/public/js/BSApp/app/views/player.html",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.html",
-		"/workspace/bien-sures/public/js/BSApp/app/scripts/app.js",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.js",
-		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.min.js",
-		"/workspace/bien-sures/app/config/local/database.php",
 		"/workspace/bien-sures/public/js/BSApp/bower.json",
-		"/workspace/bien-sures/bootstrap/start.php",
-		"/workspace/bien-sures/app/config/local/app.php",
-		"/workspace/bien-sures/app/config/app.php",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-themes-default/videogular.min.css",
-		"/workspace/bien-sures/public/css/style.css",
 		"/workspace/bien-sures/public/js/BSApp/app/styles/main.css",
-		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/wall.js",
 		"/workspace/bien-sures/landing_page/index.html",
 		"/workspace/bien-sures/landing_page/style.css",
 		"/workspace/bien-sures/public/index.php",
@@ -422,7 +463,6 @@
 		"/Users/welcomattic/Downloads/Beaver-master/index.html",
 		"/Users/welcomattic/Downloads/Beaver-master/js/app.js",
 		"/workspace/bien-sures/public/css/admin-style.css",
-		"/workspace/bien-sures/public/css/flat-ui.css",
 		"/Users/welcomattic/Downloads/Flat-UI-master/css/flat-ui.css",
 		"/workspace/bien-sures/app/views/admin/layouts/default.blade.php",
 		"/workspace/bien-sures/app/views/admin/layouts/withSidebar.blade.php",
@@ -471,55 +511,7 @@
 		"/workspace/bien-sures/public/js/app",
 		"/Users/welcomattic/Downloads/angular.min.js",
 		"/workspace/bien-sures/app/controllers/AdminController.php",
-		"/workspace/bien-sures/app/controllers/UsersController.php",
-		"/workspace/bien-sures/app/models/Typology.php",
-		"/workspace/bien-sures/app/models/Reply.php",
-		"/workspace/bien-sures/app/database/migrations/2014_06_15_230435_create_replies_table.php",
-		"/workspace/bien-sures/app/database/migrations/2014_06_15_230420_create_offensives_table.php",
-		"/workspace/bien-sures/app/database/seeds/TypologyTableSeeder.php",
-		"/workspace/bien-sures/app/database/seeds/ReplyTableSeeder.php",
-		"/workspace/bien-sures/app/database/migrations/2014_06_14_165155_create_typologies_table.php",
-		"/workspace/bien-sures/app/database/seeds/OffensiveTableSeeder.php",
-		"/workspace/bien-sures/app/models/Offensive.php",
-		"/workspace/bien-sures/app/database/seeds/DatabaseSeeder.php",
-		"/workspace/bien-sures/app/database/migrations/2014_06_18_170107_create_typology_fk_offensives.php",
-		"/workspace/bien-sures/app/database/migrations/2014_06_18_170052_create_tyopology_fk_offensives.php",
-		"/Users/welcomattic/Downloads/sb-admin-v2/forms.html",
-		"/workspace/bien-sures/app/database/seeds/UserTableSeeder.php",
-		"/workspace/bien-sures/vendor/predis/predis/lib/Predis/ResponseObjectInterface.php",
-		"/workspace/bien-sures/README.md",
-		"/workspace/bien-sures/app/controllers/LoginController.php",
-		"/etc/apache2/extra/httpd-vhosts.conf",
-		"/etc/apache2/httpd.conf",
-		"/Users/welcomattic/Downloads/sb-admin-v2/panels-wells.html",
-		"/Users/welcomattic/Downloads/sb-admin-v2/css/sb-admin.css",
-		"/Users/welcomattic/Downloads/sb-admin-v2/tables.html",
-		"/Users/welcomattic/Downloads/sb-admin-v2/blank.html",
-		"/workspace/bien-sures/vendor/nesbot/carbon/tests/SubTest.php",
-		"/workspace/bien-sures/server.php",
-		"/workspace/bien-sures/app/views/admin/users.index.blade.php",
-		"/workspace/bien-sures/app/views/admin/dashboard.blade.php",
-		"/workspace/bien-sures/app/views/admin/user.blade.php",
-		"/workspace/bien-sures/app/models/User.php",
-		"/workspace/bien-sures/app/database/production.sqlite",
-		"/workspace/bien-sures/app/database/migrations/2014_06_14_203040_create_users_table.php",
-		"/workspace/bien-sures/app/controllers/BaseController.php",
-		"/workspace/bien-sures/app/views/notifications.blade.php",
-		"/Users/welcomattic/Downloads/sb-admin-v2/index.html",
-		"/workspace/bien-sures/.gitattributes",
-		"/workspace/bien-sures/public/css/sb-admin.css",
-		"/Users/welcomattic/Downloads/sb-admin-v2/login.html",
-		"/workspace/bien-sures/app/views/hello.php",
-		"/workspace/bien-sures/app/config/view.php",
-		"/workspace/bien-sures/app/config/database.php",
-		"/etc/hosts",
-		"/Users/welcomattic/Downloads/adjectifs.json",
-		"/Users/welcomattic/Downloads/parse-js-blank/index.html",
-		"/workspace/Lab/adjectifs.html",
-		"/Users/welcomattic/Downloads/convertcsv.json",
-		"/Users/welcomattic/Library/Caches/com.binarynights.ForkLift2/#1/index.html",
-		"/Users/welcomattic/Library/Caches/com.binarynights.ForkLift2/#0/index.html",
-		"/workspace/kontest/api/lib/services/google-api-php-client/src/contrib/Google_OrkutService.php"
+		"/workspace/bien-sures/app/controllers/UsersController.php"
 	],
 	"find":
 	{
@@ -530,6 +522,7 @@
 		"height": 154.0,
 		"where_history":
 		[
+			"<project>",
 			"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz",
 			"/workspace/bien-sures/app/views/admin",
 			"<project>",
@@ -548,6 +541,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".iconButton",
+			"iconButton play",
+			"vgPlayPauseButton",
+			"adj",
+			"elp",
+			"volume",
+			"PlayerCtrl",
+			"transition",
 			"quizSubmit",
 			"maligne",
 			"adjectifs",
@@ -667,15 +668,7 @@
 			"fa",
 			"sidebar",
 			"username",
-			"placeholder",
-			"email",
-			"Email",
-			"email",
-			"aaaaagence-poc",
-			"console",
-			"submit",
-			".on",
-			"submit"
+			"placeholder"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -711,7 +704,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -720,15 +713,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7309,
+						"buffer_size": 8239,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3297,
-								3297
+								5742,
+								5742
 							]
 						],
 						"settings":
@@ -736,26 +729,30 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -764,14 +761,6 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -779,34 +768,38 @@
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
-								"bh_default_close"
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
 							],
 							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 892.0,
+						"translation.x": 4.0,
+						"translation.y": 1619.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "public/js/BSApp/app/scripts/app.js",
+					"file": "public/js/BSApp/app/scripts/controllers/player.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1275,
+						"buffer_size": 2910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								911,
-								911
+								2776,
+								2776
 							]
 						],
 						"settings":
@@ -814,26 +807,30 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -842,14 +839,6 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -857,34 +846,116 @@
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
-								"bh_default_close"
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
 							],
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 236.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "public/js/BSApp/app/scripts/controllers/player.js",
+					"file": "public/js/BSApp/app/views/player.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2580,
+						"buffer_size": 1850,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2468,
-								2468
+								1836,
+								808
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10228,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								791,
+								791
 							]
 						],
 						"settings":
@@ -893,26 +964,30 @@
 							"SideBarAutoAddFoldersForOpenedFiles": 1,
 							"bh_regions":
 							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -921,14 +996,6 @@
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -936,173 +1003,20 @@
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
-								"bh_default_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1281.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "public/js/BSApp/app/views/player.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1835,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								237,
-								237
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
+								"bh_default_close",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close"
+								"bh_tag_close"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 18.0,
+						"translation.y": 316.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "public/js/BSApp/bower_components/videogular-quiz/quiz.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4967,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3896,
-								3896
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1516.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1154,6 +1068,26 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"player",
+				"public/js/BSApp/app/views/player.html"
+			],
+			[
+				"p/scripts/controllers/about.js",
+				"public/js/BSApp/app/scripts/controllers/about.js"
+			],
+			[
+				"public/js/bsapp/app/scripts/controllers/help.js",
+				"public/js/BSApp/app/scripts/controllers/help.js"
+			],
+			[
+				"help.j",
+				"public/js/BSApp/node_modules/grunt/lib/grunt/help.js"
+			],
+			[
+				"app/views/api/index.blade.php",
+				"app/views/api/index.blade.php"
+			],
 			[
 				"default",
 				"bien-sures/app/views/api/layouts/default.blade.php"
@@ -1645,26 +1579,6 @@
 			[
 				"upload_type_show",
 				"app/web/js/apps/backend/modules/challenge/_edit_photo/templates/upload_type_show.php"
-			],
-			[
-				"app.st",
-				"app/apps/backend/config/app.staging.yml"
-			],
-			[
-				"scratchcus",
-				"app/web/template/scratchcard/custom.js"
-			],
-			[
-				"api/apps/api/config/mediamanager.yml",
-				"api/apps/api/config/mediaManager.yml"
-			],
-			[
-				"_show",
-				"app/apps/frontend/modules/challenge/templates/_show.php"
-			],
-			[
-				"routin",
-				"api/apps/api/config/routing.yml"
 			]
 		],
 		"width": 0.0
