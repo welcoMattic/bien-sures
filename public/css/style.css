@@ -226,6 +226,17 @@ h1 a {
 #main-icon.navbar-toggle:hover:before {
   color: #00e0df;
 }
+/**** WALL ****/
+#wall div {
+ /* height: 150px;
+  width: 150px;
+  background-color: black;
+  margin: 10px 10px 0 0;
+  float: left;*/
+}
+#replie {
+  width: 400px;
+}
 
 /**** FOOTER ****/
 #footer {

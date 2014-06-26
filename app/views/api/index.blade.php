@@ -86,7 +86,7 @@
           <li><a href="<% URL::to('/#/mur-de-paroles') %>">Mur de paroles</a></li>
           <li><a href="<% URL::to('/#/besoin-d-aide') %>">Besoin d'aide</a></li>
           <li><a href="<% URL::to('/#/a-propos') %>">À propos</a></li>
-          <li><a href="<% URL::to('/#/contact') %>">Contact</a></li>
+          <li><a href="<% URL::to('/#/nous-contacter') %>">Contact</a></li>
         </ul>
 
         <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">

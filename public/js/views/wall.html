@@ -1,2 +1,37 @@
-<h2>Mur de paroles</h2>
-<a>ajouter une réplique</a>
+<div class="col-lg-12" id="wall">
+
+	<h2>Ajouter:</h2>
+
+	<p>Type de l'agression:
+		<select>
+  			<option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
+		</select>
+	</p>
+
+	<p>Réplique: (140 caractères):</p>
+	<textarea id="replie"></textarea>
+	<a ng-click="submit()" href="javascript:void(0);" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
+
+<hr>
+
+	<h2>Filtres:</h2>
+
+	<!--  data-ng-model='types.{{filter.id}}' -->
+	<ul>
+		<li ng-repeat="type in Types">
+			<input type="checkbox" checked="checked">{{type.name}}
+		</li>
+	</ul>
+
+<hr>
+
+	<h2>Les répliques:</h2>
+
+	<div ng-repeat="data in Datas">
+		
+		<p>{{data.quote}}</p>
+		<hr>
+
+	</div>
+
+</div>
