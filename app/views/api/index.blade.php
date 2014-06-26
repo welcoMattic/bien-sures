@@ -50,6 +50,7 @@
   <link rel="stylesheet" href="<%asset('css/bootstrap.min.css')%>">
   <link rel="stylesheet" href="<%asset('css/flat-ui.css')%>">
   <link rel="stylesheet" href="<%asset('css/style.css')%>">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
@@ -66,25 +67,21 @@
 
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-       <h1>
-          <p>Bien Sûres</p>
-          <a href="<% URL::to('/') %>"><img src="images/logo.png"></a>
-        </h1>
-      <!-- Close / Open button Sidebar -->
-       <!--  <ul id="sidebar_menu" class="sidebar-nav">
-          <li class="sidebar-brand">
-            <div id="menu-toggle" href="#">
-              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
-              <a href="<% URL::to('/') %>">Bien Sûres</a>
+        <ul class="sidebar-nav" id="sidebar">
+          <li id="burger">
+            <div id="menu-toggle">
+              <h1>
+                <p>Bien Sûres</p>
+                <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo.png" alt="Bien Sûres" /></a>
+                <a href="<% URL::to('/') %>" id="brand-mini-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo-mini.png" alt="Bien Sûres" /></a>
+              </h1>
               <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive; API.playPause()">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
             </div>
-          </li> -->
-        </ul>
-        <ul class="sidebar-nav" id="sidebar">
+          </li>
           <li><a href="<% URL::to('/') %>">Accueil</a></li>
           <li><a href="<% URL::to('/#/mur-de-paroles') %>">Mur de paroles</a></li>
           <li><a href="<% URL::to('/#/besoin-d-aide') %>">Besoin d'aide</a></li>
@@ -92,14 +89,14 @@
           <li><a href="<% URL::to('/#/contact') %>">Contact</a></li>
         </ul>
 
-        <div id="footer">
+        <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">
         <p class="joinSocial">Rejoignez nous sur:</p>
           <ul class="social-footer">
             <li><a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled"><span>Facebook</span></a></li>
             <li><a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span>Twitter</span></a></li>
             <li><a href="http://instagram.com/biensures/" target="_blank" class="iconf-instagram-circled"><span>Instagram</span></a></li>
-            <li><a href="#" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
             <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"><span>Pinterest</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
           </ul>
           <p class="copy">copyright © Bien Sûres - 2014 - <a href="#">Mentions légales</a></p>
         </div>
@@ -125,7 +122,8 @@
     ga('send', 'pageview');
 
     // Adjectifs
-    window.adjectifs = <% $adjectifs %>
+    window.adjectifs = <% $adjectifs %>;
+    window.videoSrc = "<% $videoSrc %>";
   </script>
 
   <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
@@ -148,6 +146,7 @@
   <script src="<% asset('js/controllers/wall.js') %>"></script>
   <script src="<% asset('js/controllers/help.js') %>"></script>
   <script src="<% asset('js/controllers/about.js') %>"></script>
+  <script src="<% asset('js/controllers/contact.js') %>"></script>
 
 </body>
 

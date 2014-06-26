@@ -7,6 +7,6 @@
  * # AboutCtrl
  * Controller of the BSApp
  */
-BSApp.controller('AboutCtrl', function ($scope) {
-
+BSApp.controller('AboutCtrl', function ($rootScope, $scope) {
+  $rootScope.isSidebarActive = true;
 });

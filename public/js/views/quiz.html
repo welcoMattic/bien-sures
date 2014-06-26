@@ -1,8 +1,15 @@
-<form role="form" name="replyForm" class="replyForm">
-  <div class="form-group">
-    <label for="reply">Réplique</label>
-    <input type="text" class="form-control" id="reply" name="reply" placeholder="..." required ng-model="reply">
+<div class="row intro-form">
+  <div class="col-md-12">
+    <h4>Camille répond à l'agresseur de façon ...</h4>
   </div>
-  <input class="btn btn-primary quiz-submit-button" data-ng-click="quizSubmit()" type="submit" data-ng-show="submit" ng-disabled="replyForm.$invalid" value="Envoyer"></input>
-  <button class="btn btn-default quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Skip</button>
-</form>
+</div>
+
+<div class="row form-container">
+  <div class="col-md-offset-3 col-md-6">
+    <form accept-charset="UTF-8" action="" method="post" role="form" name="replyForm" class="replyForm form-inline">
+      <div class="col-md-10"><input type="text" class="form-control input-lg" id="reply" name="reply" placeholder="écris un adjectif" required autofocus ng-model="reply" /></div>
+      <button class="btn btn-success btn-lg quiz-submit-button" data-ng-click="quizSubmit()" type="submit" data-ng-show="submit" ng-disabled="replyForm.$invalid">Ok</button>
+      <button class="btn btn-inverse btn-lg btn-block quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Mode aléatoire</button>
+    </form>
+  </div>
+</div>
