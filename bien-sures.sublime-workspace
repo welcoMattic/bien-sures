@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"padding-",
+				"padding-right"
+			],
+			[
 				"va",
 				"value	AngularJS"
 			],
@@ -223,31 +227,15 @@
 			"file": "app/views/api/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 8239,
+				"buffer_size": 7672,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/js/BSApp/app/scripts/controllers/player.js",
+			"file": "public/css/style.css",
 			"settings":
 			{
-				"buffer_size": 2910,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/BSApp/app/views/player.html",
-			"settings":
-			{
-				"buffer_size": 1850,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
-			"settings":
-			{
-				"buffer_size": 10228,
+				"buffer_size": 6164,
 				"line_ending": "Unix"
 			}
 		}
@@ -384,8 +372,23 @@
 	},
 	"file_history":
 	[
-		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
+		"/workspace/bien-sures/public/js/controllers/player.js",
+		"/workspace/bien-sures/public/css/videogular.min.css",
+		"/workspace/bien-sures/public/js/app.js",
+		"/workspace/bien-sures/public/js/controllers/contact.js",
+		"/workspace/bien-sures/public/js/controllers/help.js",
+		"/workspace/bien-sures/public/js/controllers/about.js",
+		"/workspace/bien-sures/public/js/controllers/wall.js",
+		"/workspace/bien-sures/public/js/vendors/quiz.js",
+		"/Users/welcomattic/.Trash/bower_components/videogular-themes-default/videogular.css",
+		"/workspace/bien-sures/public/css/quiz.css",
+		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/player.js",
 		"/workspace/bien-sures/public/js/BSApp/app/views/player.html",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.html",
+		"/workspace/bien-sures/public/js/BSApp/app/index.html",
+		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
+		"/workspace/bien-sures/vendor/laravel/framework/src/Illuminate/Queue/QueueInterface.php",
+		"/workspace/bien-sures/app/config/queue.php",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-controls/controls.js",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.css",
 		"/workspace/bien-sures/vendor/monolog/monolog/tests/Monolog/PsrLogCompatTest.php",
@@ -400,7 +403,6 @@
 		"/workspace/bien-sures/public/js/BSApp/app/views/wall.html",
 		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/about.js",
 		"/workspace/bien-sures/.gitignore",
-		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/player.js",
 		"/workspace/bien-sures/public/js/BSApp/app/scripts/controllers/wall.js",
 		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-prune.json",
 		"/workspace/bien-sures/public/js/BSApp/node_modules/grunt-google-cdn/node_modules/bower/templates/json/help-cache.json",
@@ -448,7 +450,6 @@
 		"/workspace/Lab/adjectifs.js",
 		"/workspace/Lab/adjectifs.json",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular/videogular.js",
-		"/workspace/bien-sures/public/js/BSApp/bower_components/videogular-quiz/quiz.html",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.js",
 		"/workspace/bien-sures/public/js/BSApp/bower_components/ngActivityIndicator/ngActivityIndicator.min.js",
 		"/workspace/bien-sures/public/js/BSApp/bower.json",
@@ -498,20 +499,7 @@
 		"/workspace/bien-sures/app/views/admin/typologies/index.blade.php",
 		"/workspace/bien-sures/app/views/admin/typologies/edit.blade.php",
 		"/workspace/bien-sures/app/views/admin/typologies/create.blade.php",
-		"/workspace/bien-sures/app/views/admin/replies/index.blade.php",
-		"/workspace/bien-sures/app/views/admin/replies/edit.blade.php",
-		"/workspace/bien-sures/app/views/admin/offensives/index.blade.php",
-		"/workspace/bien-sures/app/views/admin/login.blade.php",
-		"/workspace/bien-sures/app/views/admin/index.blade.php",
-		"/workspace/bien-sures/app/views/admin/offensives/edit.blade.php",
-		"/workspace/bien-sures/app/views/admin/offensives/create.blade.php",
-		"/workspace/bien-sures/app/controllers/AppController.php",
-		"/Users/welcomattic/Desktop/index.html",
-		"/Users/welcomattic/Desktop/style.css",
-		"/workspace/bien-sures/public/js/app",
-		"/Users/welcomattic/Downloads/angular.min.js",
-		"/workspace/bien-sures/app/controllers/AdminController.php",
-		"/workspace/bien-sures/app/controllers/UsersController.php"
+		"/workspace/bien-sures/app/views/admin/replies/index.blade.php"
 	],
 	"find":
 	{
@@ -541,6 +529,14 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"cssAnimation",
+			"main-icon",
+			"#wrapper",
+			"wrapper",
+			"fonts",
+			"/BSApp/app/",
+			"BSApp/app/scripts/",
+			"BSApp/bower_components/",
 			".iconButton",
 			"iconButton play",
 			"vgPlayPauseButton",
@@ -660,15 +656,7 @@
 			"Admin",
 			"Home",
 			"    ",
-			"a ",
-			"*/\n",
-			"i ",
-			"glyphicon",
-			"glyphicon-fw",
-			"fa",
-			"sidebar",
-			"username",
-			"placeholder"
+			"a "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -713,15 +701,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8239,
+						"buffer_size": 7672,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5742,
-								5742
+								3754,
+								3769
 							]
 						],
 						"settings":
@@ -778,190 +766,33 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 4.0,
-						"translation.y": 1619.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "public/js/BSApp/app/scripts/controllers/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2910,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2776,
-								2776
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "public/js/BSApp/app/views/player.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1850,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1836,
-								808
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close"
-							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 908.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "public/js/BSApp/bower_components/videogular-themes-default/videogular.css",
+					"buffer": 1,
+					"file": "public/css/style.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10228,
+						"buffer_size": 6164,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								791,
-								791
+								3981,
+								3987
 							]
 						],
 						"settings":
 						{
 							"BracketHighlighterBusy": false,
-							"SideBarAutoAddFoldersForOpenedFiles": 1,
 							"bh_regions":
 							[
 								"bh_curly",
@@ -1010,13 +841,14 @@
 								"bh_tag_close"
 							],
 							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 316.0,
+						"translation.y": 3460.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1068,6 +900,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"quihtml",
+				"public/js/BSApp/bower_components/videogular-quiz/quiz.html"
+			],
 			[
 				"player",
 				"public/js/BSApp/app/views/player.html"
@@ -1575,10 +1411,6 @@
 			[
 				"edit_photo",
 				"app/apps/backend/modules/challenge/templates/_edit_photo.php"
-			],
-			[
-				"upload_type_show",
-				"app/web/js/apps/backend/modules/challenge/_edit_photo/templates/upload_type_show.php"
 			]
 		],
 		"width": 0.0

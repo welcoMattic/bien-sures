@@ -7,6 +7,6 @@
  * # HelpCtrl
  * Controller of the BSApp
  */
-BSApp.controller('HelpCtrl', function ($scope) {
-
+BSApp.controller('HelpCtrl', function ($rootScope, $scope) {
+  $rootScope.isSidebarActive = true;
 });

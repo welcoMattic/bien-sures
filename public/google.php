@@ -1,0 +1,1 @@
+<?php header('Location:https://plus.google.com/u/0/112605449457151257853/about?hl=fr'); ?>

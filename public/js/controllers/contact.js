@@ -7,6 +7,6 @@
  * # ContactCtrl
  * Controller of the BSApp
  */
-BSApp.controller('ContactCtrl', function ($scope) {
-
+BSApp.controller('ContactCtrl', function ($rootScope, $scope) {
+  $rootScope.isSidebarActive = true;
 });

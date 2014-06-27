@@ -35,6 +35,9 @@ Route::group(['prefix' => 'api'], function()
 
   // resource REST routes for replies (app/views/admin/replies/*.blade.php)
   Route::resource('replies', 'RepliesController');
+
+  // resource to send email
+  Route::resource('sendmail', 'MailController');
 });
 
 /** ------------------------------------------

@@ -1,3 +1,19 @@
+<div class="row onCompleted" ng-class="{true: '', false: 'hidden'}[isCompleted]">
+  <div class="col-md-12" ng-class="{true: 'col-md-offset-1', false: ''}[isSidebarActive]">
+    <h4>Partage ton expérience sur :</h4>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="sharingBtns">
+        <a class="iconf iconf-facebook-circled" href="#"></a>
+        <a class="iconf iconf-twitter-circled" href="#"></a>
+      </div>
+      <a class="glyphicon glyphicon-repeat" id="btn-replay" href="#" ng-click="API.play();"></a>
+      <h4>Découvre les autres expériences :</h4>
+      <button ng-click="loadVideo(prevVideo)">lien</button>
+      <button ng-click="loadVideo(nextVideo)">lien</button>
+    </div>
+  </div>
+</div>
+
 <videogular
   vg-player-ready="onPlayerReady"
   vg-complete="onCompleteVideo"
@@ -13,7 +29,7 @@
   vg-responsive="config.responsive">
   <vg-quiz vg-data='config.plugins.quiz.data' vg-quiz-submit="onQuizSubmit" vg-quiz-skip="onQuizSkip"></vg-quiz>
   <video class='videoPlayer' preload='metadata'>
-    <source type="video/mp4" src="videos/bunny.mp4" />
+    <source type="video/mp4" src="{{ videoSrc }}" />
   </video>
   <vg-poster-image vg-url='config.plugins.poster.url' vg-stretch="config.stretch.value"></vg-poster-image>
   <vg-buffering></vg-buffering>

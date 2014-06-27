@@ -13,6 +13,7 @@ var BSApp = angular.module('BSApp', [
   "ngResource",
   "ngRoute",
   "ngSanitize",
+  "autocomplete",
   "ngActivityIndicator",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
@@ -28,6 +29,10 @@ BSApp.config(function ($routeProvider) {
       templateUrl: 'js/views/player.html',
       controller: 'PlayerCtrl'
     })
+    .when('/player', {
+      templateUrl: 'js/views/player.html',
+      controller: 'PlayerCtrl'
+    })
     .when('/mur-de-paroles', {
       templateUrl: 'js/views/wall.html',
       controller: 'WallCtrl'
@@ -40,7 +45,7 @@ BSApp.config(function ($routeProvider) {
       templateUrl: 'js/views/about.html',
       controller: 'AboutCtrl'
     })
-    .when('/contact', {
+    .when('/nous-contacter', {
       templateUrl: 'js/views/contact.html',
       controller: 'ContactCtrl'
     })
@@ -50,16 +55,14 @@ BSApp.config(function ($routeProvider) {
 });
 
 
-// Polyfill inArray : true if needle exists in haystack, else false
-Array.prototype.inArray = function(needle, strict) {
-  strict = strict || false;
-  for(var key in this) {
-    if(strict) {
-      if(this[key] === needle)
-        return true;
-    } else if(this[key] == needle) {
-      return true;
-    }
-  }
-  return false;
-};
+BSApp.factory('Typologies', ['$resource',function($resource) {
+  return $resource('/api/typologies/');
+}]);
+
+BSApp.factory('Replies', ['$resource',function($resource) {
+  return $resource('/api/replies/');
+}]);
+
+BSApp.factory('Mail', ['$resource',function($resource) {
+  return $resource('/api/sendmail/');
+}]);

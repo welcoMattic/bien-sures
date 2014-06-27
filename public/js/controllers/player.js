@@ -4,13 +4,46 @@
  * @ngdoc function
  * @name BSApp.controller:PlayerCtrl
  * @description
+ * This controller contains all code for the interactive video player.
+ * Main functions are :
+ *
  * # PlayerCtrl
  * Controller of the BSApp
  */
-BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndicator, VG_EVENTS) {
+BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
 
-  $activityIndicator.startAnimating();
   $rootScope.isSidebarActive = true;
+  $rootScope.onCompleted = false;
+
+  $scope.videos = angular.fromJson(window.videos);
+
+  $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
+  $scope.videoSrc = 'videos/' + $scope.video.file + '.mp4';
+  $scope.videoEnds = [
+    $scope.video.end1,
+    $scope.video.end2,
+    $scope.video.end3,
+    $scope.video.end4
+  ];
+
+  if($scope.video.file == 'video1') {
+    $scope.prevVideo = 3;
+    $scope.nextVideo = 2;
+  } else if($scope.video.file == 'video2') {
+    $scope.prevVideo = 1;
+    $scope.nextVideo = 3;
+  } else if($scope.video.file == 'video3') {
+    $scope.prevVideo = 2;
+    $scope.nextVideo = 1;
+  }
+
+  var adjs = $scope.video.end1.adjectifs;
+  adjs.concat(
+    $scope.video.end2.adjectifs,
+    $scope.video.end3.adjectifs,
+    $scope.video.end4.adjectifs
+  );
+  $scope.adjs = adjs
 
   $scope.currentTime = 0;
   $scope.totalTime = 0;
@@ -21,23 +54,19 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndi
 
   $scope.onPlayerReady = function(API) {
     $scope.API = API;
-    //document.getElementsByClassName('player')[0].clientWidth
     $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
       $rootScope.isSidebarActive = false;
-
     });
-
-    $rootScope.$on(VG_EVENTS.ON_COMPLETE, function() {
-      console.log('plpolpo');
-      $rootScope.isSidebarActive = true;
-    });
-
-    $activityIndicator.stopAnimating();
   };
 
   $scope.onCompleteVideo = function() {
+    $scope.$apply(function() {
+      $rootScope.isSidebarActive = true;
+      $rootScope.onCompleted = true;
+      console.log($rootScope.onCompleted);
+    });
     $scope.isCompleted = true;
   };
 
@@ -46,6 +75,11 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndi
   };
 
   $scope.onUpdateTime = function(currentTime, totalTime) {
+    var curr = parseFloat(currentTime).toFixed(0);
+    var seekTime = 0;
+    if($scope.video.file == 'video1' && ['17','44','68','96'].indexOf(curr)) seekTime = 142;
+    else if($scope.video.file == 'video2') seekTime = 142;
+    else if($scope.video.file == 'video3') seekTime = 142;
     $scope.currentTime = currentTime;
     $scope.totalTime = totalTime;
   };
@@ -59,16 +93,9 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndi
     $scope.config.height = height;
   };
 
-  $scope.stretchModes = [
-    {value: "none"},
-    {value: "fit"},
-    {value: "fill"}
-  ];
-
   $scope.config = {
-    autoHide: false,
     autoPlay: false,
-    stretch: $scope.stretchModes[1],
+    stretch: {value: "fit"},
     responsive: false,
     theme: {
       url: 'css/videogular.min.css'
@@ -79,42 +106,39 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $activityIndi
       },
       quiz: {
         data: [{
-          "time": "2",
-          "html": "<input type='text' />",
+          "time": "1",
           "background": "color",
-          "background_src": "black",
-          "post_answer_url": "https:\/\/bien-sures.dev\/api\/replies\/offensive_id="
+          "background_src": "rgba(0,0,0,0.5)"
         }]
       }
     }
   };
 
+  $scope.loadVideo = function(videoId) {
+    $scope.video = $scope.videos[videoId - 1];
+  };
+
   $scope.onQuizSubmit = function(result) {
-    var adjs = angular.fromJson(window.adjectifs);
     var reply = result.reply;
-    for (var i = 0; i < adjs.length; i++) {
-      var synonymes = adjs[i].synonymes.split(", ");
-      if(reply === adjs[i].adjectif || synonymes.inArray(reply)) {
-        // on renvoie à la fin qui correspond à l'adjs[0].adjectif
-        switch(adjs[i].adjectif) {
-          case 'agressive':
-            break;
-          case 'agressive':
-            break;
-          case 'agressive':
-            break;
-        }
-        $scope.API.seekTime(10);
+    for (var i = 0; i < $scope.videoEnds.length; i++) {
+      var adjsArray = $scope.videoEnds[i].adjectifs.split(', ');
+      var seekTime = 0;
+      if($.inArray(reply, adjsArray) != -1) {
+          seekTime = $scope.videoEnds[i].timecode;
+          break;
       } else {
-        $scope.API.seekTime(20);
+        if($scope.video.file == 'video1') seekTime = 120;
+        else if($scope.video.file == 'video2') seekTime = 120;
+        else if($scope.video.file == 'video3') seekTime = 120;
       }
-      $scope.API.play();
-      break;
-    };
+    }
+    $scope.API.seekTime(seekTime);
+    $scope.API.play();
   };
 
   $scope.onQuizSkip = function() {
-    console.log('skiped');
+    var rand = Math.floor(Math.random() * (3 - 0 + 1));
+    $scope.API.seekTime($scope.videoEnds[rand].timecode);
   };
 
 });

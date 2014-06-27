@@ -47,7 +47,7 @@ p.baseline, p.teasing, p.date {
   color: #FFF;
   font-family: 'Open Sans';
   text-align: center;
-  text-shadow: 1px 2px 3px #000;
+  text-shadow: 1px 1px 3px #575757;
   text-transform: uppercase;
 }
 
@@ -95,7 +95,7 @@ p.social a {
   border-radius: 50%;
   padding: 10px;
   margin: 0 15px;
-  text-shadow: 1px 2px 3px #000;
+  text-shadow: 1px 1px 3px #575757;
 }
 
 p.social a:hover {
