@@ -50,6 +50,10 @@ class TypologiesController extends \BaseController {
 
       Session::flash('message', "Merci de vérifier tous les champs");
       Session::flash('alertClass', "warning");
+
+      if(Request::wantsJson() || Request::is('api/*')) {
+        return $typologies;
+      }
       return Redirect::to('admin/typologies/create')
         ->withErrors($validator);
 

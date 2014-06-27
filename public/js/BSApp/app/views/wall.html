@@ -1,37 +1,60 @@
-<div class="col-lg-12" id="wall">
-
-	<h2>Ajouter:</h2>
-
-	<p>Type de l'agression:
-		<select>
-  			<option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
-		</select>
-	</p>
-
-	<p>Réplique: (140 caractères):</p>
-	<textarea id="replie"></textarea>
-	<a ng-click="submit()" href="javascript:void(0);" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
-
-<hr>
-
+<!-- 
 	<h2>Filtres:</h2>
 
-	<!--  data-ng-model='types.{{filter.id}}' -->
-	<ul>
+	<ul id="filters">
 		<li ng-repeat="type in Types">
-			<input type="checkbox" checked="checked">{{type.name}}
+			<input ng-click="filtersContexts()" type="checkbox" checked="checked" value="{{type.id}}">{{type.name}}
 		</li>
 	</ul>
 
-<hr>
+<hr>  -->
 
-	<h2>Les répliques:</h2>
+<div id="wall">
 
-	<div ng-repeat="data in Datas">
+	<div id="addReply" ng-mouseleave="hideAddReply()">
 		
-		<p>{{data.quote}}</p>
-		<hr>
+		<h3>Propose ta réplique</h3>
+		
+		<select id="type">
+	  		<option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
+		</select>
+		
+		<p>Réplique (<span ng-bind="replyLength"></span> caractères) :</p>		
+		
+		<textarea ng-keyup="liveLength()" maxlength="140"></textarea>
 
+		<a ng-click="addReply()" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
+	
 	</div>
+
+	<div id="reply" ng-mouseleave="hideReply()">
+		<h3></h3>
+		<div class="blocContent">
+			<p></p>
+		</div>
+		<div class="shareReply">
+			<p class="txt">Partagez la réplique sur:</p>
+			<p>
+				<a ng-click="shareFB()" target="_blank" class="iconf-facebook-circled"><span></span></a>
+            	<a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
+			</p>
+		</div>
+	</div>
+	 
+	<ul id="wallContainer" isotope-container="isotope-container">
+
+		<li class="addReply" ng-click="showAddReply()">
+			<span class="fui-plus"></span>
+		</li>
+		<li class="filtersShow">
+			<span class="fui-search"></span>
+		</li>
+
+		<li ng-repeat="reply in filtredDatas" isotope-item="isotope-item" class="typologie_{{reply.typologie_id}}" ng-mouseover="showReply( $event, reply )">
+			<p>{{reply.quote}}</p>
+			<div></div>
+		</li>
+
+	</ul>
 
 </div>

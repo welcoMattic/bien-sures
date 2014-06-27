@@ -19,7 +19,8 @@ var BSApp = angular.module('BSApp', [
   "com.2fdevs.videogular.plugins.overlayplay",
   "com.2fdevs.videogular.plugins.buffering",
   "com.2fdevs.videogular.plugins.poster",
-  "info.vietnamcode.nampnq.videogular.plugins.quiz"
+  "info.vietnamcode.nampnq.videogular.plugins.quiz",
+  "iso"
 ]);
 
 BSApp.config(function ($routeProvider) {
@@ -58,7 +59,7 @@ BSApp.factory('Typologies', ['$resource',function($resource) {
   return $resource('/api/typologies/');
 }]);
 
-BSApp.factory('Replies', ['$resource',function($resource) {
+BSApp.factory('Reply', ['$resource',function($resource) {
   return $resource('/api/replies/');
 }]);
 
@@ -66,16 +67,13 @@ BSApp.factory('Mail', ['$resource',function($resource) {
   return $resource('/api/sendmail/');
 }]);
 
-// Polyfill inArray : true if needle exists in haystack, else false
-Array.prototype.inArray = function(needle, strict) {
-  strict = strict || false;
-  for(var key in this) {
-    if(strict) {
-      if(this[key] === needle)
-        return true;
-    } else if(this[key] == needle) {
-      return true;
-    }
-  }
-  return false;
+document.addEventListener("DOMContentLoaded", getWindowSize(), false);
+
+window.onresize = function( event ) {
+  getWindowSize()
 };
+
+function getWindowSize() {
+    $( 'html' ).attr('window-width', window.innerWidth );
+    $( 'html' ).attr('window-height', window.innerHeight );
+}

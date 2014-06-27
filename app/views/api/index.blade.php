@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html window-height="" window-width="">
 <head>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>
-    Bien Sûres - Administration
+    Bien Sûres
   </title>
 
   <meta name="author" content="Bien Sûres" />
@@ -70,6 +70,7 @@
           <p>Bien Sûres</p>
           <a href="<% URL::to('/') %>"><img src="images/logo.png"></a>
         </h1>
+        <p>{{height}}</p>
       <!-- Close / Open button Sidebar -->
        <!--  <ul id="sidebar_menu" class="sidebar-nav">
           <li class="sidebar-brand">
@@ -128,8 +129,7 @@
     window.adjectifs = <% $adjectifs %>
   </script>
 
-  <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
-  <!--<script src="<% asset('js/BSApp/bower_components/jquery/dist/jquery.min.js') %>"></script> -->
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
   <script src="<% asset('js/BSApp/bower_components/angular/angular.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/angular-resource/angular-resource.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/angular-sanitize/angular-sanitize.min.js') %>"></script>
@@ -144,12 +144,38 @@
   <script src="<% asset('js/BSApp/bower_components/videogular-poster/poster.min.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/videogular-quiz/quiz.js') %>"></script>
   <script src="<% asset('js/BSApp/bower_components/mobile-detect/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-isotope/dist/jquery.isotope.js') %>"></script>
+  <script src="<% asset('js/BSApp/bower_components/angular-isotope/dist/angular-isotope.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/app.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/player.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/wall.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/help.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/contact.js') %>"></script>
   <script src="<% asset('js/BSApp/app/scripts/controllers/about.js') %>"></script>
+
+  <script>
+    __URL = "<% URL::to('/') %>/";
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '648023928625681', 
+        channelUrl : __URL,
+        status     : false, 
+        cookie     : false, 
+        xfbml      : false  
+      });
+      };
+   
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/fr_FR/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+
+  <div id="fb-root"></div>
 
 </body>
 

@@ -9,7 +9,7 @@ class RepliesController extends \BaseController {
    */
   public function index()
   {
-    $replies = Reply::get();
+    $replies = DB::table('replies')->where( 'status_', 'accepted' )->get();
 
     if(Request::wantsJson() || Request::is('api/*')) {
       return $replies;
@@ -36,8 +36,45 @@ class RepliesController extends \BaseController {
    * @return Response
    */
   public function store()
-  {
-    //
+  { 
+    // validate the info, create rules for the inputs
+    $rules = [
+      'quote'       => 'required|max:140',
+      'typologie_id' => 'required'
+    ];
+
+    // run the validation rules on the inputs from the form
+    $validator = Validator::make(Input::all(), $rules);
+
+    // if the validator fails, redirect back to the form
+    if ($validator->fails()) {
+
+      if(Request::wantsJson() || Request::is('api/*')) {
+        return Response::json(array('status' => 'error'));
+      }
+
+      Session::flash('message', "Merci de vérifier tous les champs");
+      Session::flash('alertClass', "warning");
+      return Redirect::to('admin/offensives/create')
+        ->withErrors($validator);
+
+    } else {
+
+      // store validated data
+      $Replie = new Reply;
+      $Replie->quote = Input::get('quote');
+      $Replie->typologie_id = Input::get('typologie_id');
+      $Replie->save();
+
+      if(Request::wantsJson() || Request::is('api/*')) {
+        return Response::json(array('status' => 'success'));
+      }
+
+      // redirect
+      Session::flash('message', "Agression créée");
+      Session::flash('alertClass', "success");
+      return Redirect::to('admin/offensives');
+    }
   }
 
 
