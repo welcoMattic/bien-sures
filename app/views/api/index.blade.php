@@ -75,7 +75,11 @@
                 <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo.png" alt="Bien Sûres" /></a>
                 <a href="<% URL::to('/') %>" id="brand-mini-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo-mini.png" alt="Bien Sûres" /></a>
               </h1>
+<<<<<<< HEAD
               <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
+=======
+              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive; API.playPause()">
+>>>>>>> a80cd009fdaf8beb40364596f07e2fc50b51ca1b
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>

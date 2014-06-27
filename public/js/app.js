@@ -33,6 +33,10 @@ BSApp.config(function ($routeProvider) {
       templateUrl: 'js/views/player.html',
       controller: 'PlayerCtrl'
     })
+    .when('/player', {
+      templateUrl: 'js/views/player.html',
+      controller: 'PlayerCtrl'
+    })
     .when('/mur-de-paroles', {
       templateUrl: 'js/views/wall.html',
       controller: 'WallCtrl'
