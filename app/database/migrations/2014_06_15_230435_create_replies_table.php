@@ -15,11 +15,11 @@ class CreateRepliesTable extends Migration {
     Schema::create('replies', function(Blueprint $table)
     {
       $table->increments('id');
-      $table->longText('quote');
-      $table->string('status_', 15)->nullable();
-      $table->integer('offensive_id')->unsigned();
+      $table->longText('quote', 140);
+      $table->string('status_', 15 )->nullable()->default( 'waiting' );
+      $table->integer('typologie_id')->unsigned();
       $table->timestamps();
-      $table->foreign('offensive_id')->references('id')->on('offensives')->onDelete('cascade');
+      $table->foreign('typologie_id')->references('id')->on('typologies')->onDelete('cascade');
     });
   }
 

@@ -9,13 +9,15 @@ class RepliesController extends \BaseController {
    */
   public function index()
   {
-    $replies = Reply::get();
 
     if(Request::wantsJson() || Request::is('api/*')) {
+      $replies = DB::table('replies')->where( 'status_', 'accepted' )->get();
       return $replies;
+    } else {
+      $replies = Reply::get();
+      return View::make('admin.replies.index', compact('replies'));
     }
 
-    return View::make('admin.replies.index', compact('replies'));
   }
 
 
@@ -37,7 +39,44 @@ class RepliesController extends \BaseController {
    */
   public function store()
   {
-    //
+    // validate the info, create rules for the inputs
+    $rules = [
+      'quote'       => 'required|max:140',
+      'typologie_id' => 'required'
+    ];
+
+    // run the validation rules on the inputs from the form
+    $validator = Validator::make(Input::all(), $rules);
+
+    // if the validator fails, redirect back to the form
+    if ($validator->fails()) {
+
+      if(Request::wantsJson() || Request::is('api/*')) {
+        return Response::json(array('status' => 'error'));
+      }
+
+      Session::flash('message', "Merci de vérifier tous les champs");
+      Session::flash('alertClass', "warning");
+      return Redirect::to('admin/offensives/create')
+        ->withErrors($validator);
+
+    } else {
+
+      // store validated data
+      $Replie = new Reply;
+      $Replie->quote = Input::get('quote');
+      $Replie->typologie_id = Input::get('typologie_id');
+      $Replie->save();
+
+      if(Request::wantsJson() || Request::is('api/*')) {
+        return Response::json(array('status' => 'success'));
+      }
+
+      // redirect
+      Session::flash('message', "Agression créée");
+      Session::flash('alertClass', "success");
+      return Redirect::to('admin/offensives');
+    }
   }
 
 
@@ -78,7 +117,15 @@ class RepliesController extends \BaseController {
    */
   public function update($id)
   {
-    // receive json object from angular
+    // store validated data
+    $reply = reply::find($id);
+    $reply->status = Input::get('status_');
+    $reply->save();
+
+    // redirect
+    Session::flash('message', 'Typologie modifiée');
+    Session::flash('alertClass', "success");
+    return Redirect::to('admin/typologies');
   }
 
 

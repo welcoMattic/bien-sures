@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html window-height="" window-width="">
 <head>
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>
-    Bien Sûres - Administration
+    Bien Sûres
   </title>
 
   <meta name="author" content="Bien Sûres" />
@@ -133,6 +133,8 @@
   <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
   <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
+  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
   <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
@@ -147,6 +149,30 @@
   <script src="<% asset('js/controllers/help.js') %>"></script>
   <script src="<% asset('js/controllers/about.js') %>"></script>
   <script src="<% asset('js/controllers/contact.js') %>"></script>
+
+  <script>
+    __URL = "<% URL::to('/') %>/";
+
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '648023928625681',
+        channelUrl : __URL,
+        status     : false,
+        cookie     : false,
+        xfbml      : false
+      });
+      };
+
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/fr_FR/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+
+  <div id="fb-root"></div>
 
 </body>
 

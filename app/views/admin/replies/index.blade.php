@@ -24,9 +24,13 @@
         @foreach ($replies as $reply)
         <tr>
           <td><% $reply->id %></td>
-          <td><% $reply->quote %></td>
+          <td style="max-width:840px;"><% $reply->quote %></td>
           <td>
-          <a href="<% URL::to('admin/replies/' . $reply->id . '/edit') %>" class="btn btn-info btn-sm pull-left">Éditer</a>
+          <% Form::open(['url' => 'admin/replies/' . $reply->id, 'class' => 'pull-left']) %>
+          <% Form::hidden('_method', 'PUT') %>
+          <% Form::hidden('status_', 'accepted') %>
+          <% Form::submit('Valider', ['class' => 'btn btn-success btn-sm']) %>
+          &nbsp;<a href="<% URL::to('admin/replies/' . $reply->id . '/edit') %>" class="btn btn-info btn-sm">Éditer</a>
           <% Form::open(['url' => 'admin/replies/' . $reply->id, 'class' => 'pull-left']) %>
             <% Form::hidden('_method', 'DELETE') %>
             &nbsp;<% Form::submit('Supprimer', [
