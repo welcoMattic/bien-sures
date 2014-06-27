@@ -13,7 +13,6 @@
 BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
 
   $rootScope.isSidebarActive = true;
-<<<<<<< HEAD
   $rootScope.onCompleted = false;
 
   $scope.videos = angular.fromJson(window.videos);
