@@ -1,0 +1,19 @@
+<div class="row intro-form">
+  <div class="col-md-12">
+    <h4>Camille répond à l'agresseur de façon ...</h4>
+  </div>
+</div>
+
+<div class="row form-container">
+  <div class="col-md-offset-3 col-md-6">
+    <form accept-charset="UTF-8" action="" method="post" role="form" name="replyForm" class="replyForm form-inline">
+      <div class="col-md-9">
+        <input type="text" class="form-control input-lg" id="reply" name="reply" placeholder="écris un adjectif" autocomplete="off" required autofocus
+          ng-autocomplete data="adjs" on-type="updateAdjs"
+          ng-model="reply" />
+      </div>
+      <button class="btn btn-success quiz-submit-button" data-ng-click="quizSubmit()" type="submit" data-ng-show="submit" ng-disabled="replyForm.$invalid">Ok</button>
+      <button class="btn btn-inverse btn-xs pull-right quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Mode aléatoire</button>
+    </form>
+  </div>
+</div>

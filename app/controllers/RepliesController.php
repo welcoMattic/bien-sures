@@ -9,13 +9,15 @@ class RepliesController extends \BaseController {
    */
   public function index()
   {
-    $replies = DB::table('replies')->where( 'status_', 'accepted' )->get();
 
     if(Request::wantsJson() || Request::is('api/*')) {
+      $replies = DB::table('replies')->where( 'status_', 'accepted' )->get();
       return $replies;
+    } else {
+      $replies = Reply::get();
+      return View::make('admin.replies.index', compact('replies'));
     }
 
-    return View::make('admin.replies.index', compact('replies'));
   }
 
 
@@ -36,7 +38,7 @@ class RepliesController extends \BaseController {
    * @return Response
    */
   public function store()
-  { 
+  {
     // validate the info, create rules for the inputs
     $rules = [
       'quote'       => 'required|max:140',
@@ -115,7 +117,15 @@ class RepliesController extends \BaseController {
    */
   public function update($id)
   {
-    // receive json object from angular
+    // store validated data
+    $reply = reply::find($id);
+    $reply->status = Input::get('status_');
+    $reply->save();
+
+    // redirect
+    Session::flash('message', 'Typologie modifiée');
+    Session::flash('alertClass', "success");
+    return Redirect::to('admin/typologies');
   }
 
 
