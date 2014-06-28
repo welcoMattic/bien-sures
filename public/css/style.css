@@ -137,7 +137,7 @@ h1 a {
     margin-left: -310px;
     left: 70px;
     width: 300px;
-    background: #fff;
+    background: #f6f6f6;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -173,7 +173,7 @@ h1 a {
 }
 
 #sidebar_menu li a:hover {
-  color: #FFFFFF;
+  color: #f6f6f6;
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
@@ -189,7 +189,7 @@ h1 a {
 }
 .sidebar_name {
     padding-top: 25px;
-    color: #fff;
+    color: #f6f6f6;
     opacity: .7;
 }
 
@@ -209,7 +209,7 @@ h1 a {
 }
 
 .sidebar-nav li:not(#burger) a:hover {
-  color: #fff;
+  color: #f6f6f6;
   text-decoration: none;
   background-color: #00e0df;
 }
@@ -230,7 +230,7 @@ h1 a {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
+  color: #f6f6f6;
   background: none;
 }
 
@@ -308,7 +308,7 @@ h1 a {
   text-align: center;
   font-size: 15px;
   margin: 20px 0;
-  color: #fff;
+  color: #f6f6f6;
 }
 #wall #reply .blocContent {
   display: table;
@@ -318,7 +318,7 @@ h1 a {
 }
 #wall #reply p {
   text-transform: uppercase;
-  color: #fff;
+  color: #f6f6f6;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
@@ -339,7 +339,7 @@ h1 a {
 }
 #wall #reply .shareReply p a {
   font-size: 35px;
-  color: #fff;
+  color: #f6f6f6;
   cursor: pointer;
 }
 #wall #reply .shareReply p a:hover {
@@ -656,7 +656,7 @@ vg-controls {
 .intro-form h4, .onCompleted h4 {
   text-align: center;
   margin-bottom: 40px;
-  color: #FFF;
+  color: #f6f6f6;
   text-transform: uppercase;
   font-family: 'high_tidebold'
 }
@@ -716,7 +716,7 @@ vg-controls {
 
 .onCompleted a.glyphicon {
   font-size: 70px;
-  color: #FFFFFF;
+  color: #f6f6f6;
 }
 
 .onCompleted a.glyphicon:hover {
@@ -731,12 +731,12 @@ vg-controls {
 /* help view */
 
 #help h3 {
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-family: 'high_tidebold'
 }
 
 #help p {
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-family: 'Lato';
   font-size: 16px;
   line-height: 24px;
@@ -759,7 +759,7 @@ vg-controls {
   border: 2px solid #00e0df;
   margin-right: -2px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #f6f6f6;
   padding: 0;
 }
 
@@ -792,7 +792,7 @@ vg-controls {
   bottom: 5px;
   cursor: pointer;
   display: inline;
-  color: #FFFFFF;
+  color: #f6f6f6;
   transition: none;
 }
 
@@ -807,7 +807,7 @@ vg-controls {
 
 #help .partners .col-md-4:hover .plus:before {
   content: 'voir le site';
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-size: 14px;
   text-transform: lowercase;
   text-decoration: none;
@@ -828,7 +828,7 @@ vg-controls {
 /* about */
 
 #about h3 {
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-family: 'high_tidebold'
 }
 
@@ -838,8 +838,8 @@ vg-controls {
 }
 
 #about .intro {
-  color: #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
+  color: #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
   padding: 0;
   min-height: 140px;
   font-size: 16px;
@@ -860,8 +860,8 @@ vg-controls {
 }
 
 #about .caret {
-  border-bottom-color: #FFFFFF;
-  border-top-color: #FFFFFF;
+  border-bottom-color: #f6f6f6;
+  border-top-color: #f6f6f6;
   left: 50%;
   bottom: -9px;
 }
@@ -870,7 +870,7 @@ vg-controls {
   display: block;
   text-align: center;
   width: 100%;
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-style: italic;
 }
 
@@ -890,7 +890,7 @@ vg-controls {
 }
 
 #about .stats .col-md-4 {
-  color: #FFFFFF;
+  color: #f6f6f6;
   text-transform: uppercase;
   float: left;
 }
@@ -916,7 +916,7 @@ vg-controls {
   border: 2px solid #00e0df;
   margin-right: -2px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #f6f6f6;
   padding: 0;
 }
 
