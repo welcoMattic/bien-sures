@@ -98,7 +98,7 @@
             <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"><span>Pinterest</span></a></li>
             <li><a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
           </ul>
-          <p class="copy">copyright © Bien Sûres - 2014 - <a href="#">Mentions légales</a></p>
+          <p class="copy">copyright © Bien Sûres - 2014 - <a href="<% URL::to('/#/mentions') %>">Mentions légales</a></p>
         </div>
       </div>
 
@@ -126,15 +126,16 @@
   </script>
 
   <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
+  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
+  <script src="<% asset('js/vendors/bootstrap.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-resource.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-sanitize.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-animate.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
-  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
   <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
+  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
   <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
@@ -149,6 +150,7 @@
   <script src="<% asset('js/controllers/help.js') %>"></script>
   <script src="<% asset('js/controllers/about.js') %>"></script>
   <script src="<% asset('js/controllers/contact.js') %>"></script>
+  <script src="<% asset('js/controllers/mentions.js') %>"></script>
 
   <script>
     __URL = "<% URL::to('/') %>/";

@@ -119,13 +119,13 @@ class RepliesController extends \BaseController {
   {
     // store validated data
     $reply = reply::find($id);
-    $reply->status = Input::get('status_');
+    $reply->status_ = Input::get('status_');
     $reply->save();
 
     // redirect
-    Session::flash('message', 'Typologie modifiée');
+    Session::flash('message', 'Réplique acceptée');
     Session::flash('alertClass', "success");
-    return Redirect::to('admin/typologies');
+    return Redirect::to('admin/replies');
   }
 
 

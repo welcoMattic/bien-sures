@@ -17,9 +17,9 @@ class CreateRepliesTable extends Migration {
       $table->increments('id');
       $table->longText('quote', 140);
       $table->string('status_', 15 )->nullable()->default( 'waiting' );
-      $table->integer('typologie_id')->unsigned();
+      $table->integer('typology_id')->unsigned();
       $table->timestamps();
-      $table->foreign('typologie_id')->references('id')->on('typologies')->onDelete('cascade');
+      $table->foreign('typology_id')->references('id')->on('typologies')->onDelete('cascade');
     });
   }
 

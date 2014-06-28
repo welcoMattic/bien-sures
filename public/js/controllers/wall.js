@@ -12,6 +12,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
   $rootScope.$sideBar = $('#sidebar-wrapper');
+  $('#wrapper').css({'background-color':'#00e0df'});
 
   $scope.Types = [];
   $scope.Datas = [];
@@ -46,15 +47,15 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     var $element = $($event.target),
         elementIsActive = $($event.target).attr( 'isActive' );
 
-        if( elementIsActive == 'true') 
+        if( elementIsActive == 'true')
         {
           $($event.target).addClass( 'filter_off' );
           $($event.target).attr( 'isActive', 'false' );
-        } 
+        }
         else
         {
           $($event.target).removeClass( 'filter_off' );
-          $($event.target).attr( 'isActive', 'true' );  
+          $($event.target).attr( 'isActive', 'true' );
         }
 
     var $elements = $scope.$filters.find('li[isActive=true]'),
@@ -68,7 +69,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
         newArray = [];
 
     for (var i = 0; i < copyData.length; i++) {
-      if( $.inArray(copyData[i].typologie_id.toString(), showTypes) != -1) 
+      if( $.inArray(copyData[i].typology_id.toString(), showTypes) != -1)
       {
         newArray.push( copyData[i] );
       }
@@ -126,6 +127,20 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       return false;
     }
 
+    FB.ui({
+      method: 'feed',
+      name: 'Bien Sûres ! Contre le harcèlement de rue',
+      caption: 'DÉNONCER RÉAGIR AIDER',
+      description: (
+        'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
+        '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
+      ),
+      link: __URL,
+      picture: __URL + 'images/share.jpg'
+    },
+    function(response) {
+      if (response && response.post_id) {} else {}
+    });
   }
 
   $scope.positionReply = function($element) {
@@ -135,13 +150,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
 
-    // if($rootScope.isSidebarActive == false) 
-    // {
-    //   elementPosition.left = elementPosition.left - 29;
-    // }
-
     if (windowWidth < (elementPosition.left + 401)) {
-      elementPosition.left = elementPosition.left - 201;
+      elementPosition.left = elementPosition.left - 191;
     }
 
     if (windowHeight < (elementPosition.top + 401)) {
@@ -155,8 +165,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   }
 
   $scope.showReply = function($event, data) {
-    var typologie = $.grep($scope.Types, function(e) {
-      return e.id == data.typologie_id;
+    var typology = $.grep($scope.Types, function(e) {
+      return e.id == data.typology_id;
     });
 
     var $element = $($event.target),
@@ -168,11 +178,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     $scope.positionReply($element);
 
-    $scope.$reply.find('h3').html(typologie[0].name);
+    $scope.$reply.find('h3').html(typology[0].name);
     $scope.$reply.find('.blocContent p').html(data.quote);
 
     $scope.$reply.removeClass();
-    $scope.$reply.addClass('replyHover_' + data.typologie_id);
+    $scope.$reply.addClass('replyHover_' + data.typology_id);
 
     // $element.animate(
     //  {height: "401px", width: "401px" }
@@ -217,7 +227,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     var newReply = new Reply();
     newReply.quote = reply;
-    newReply.typologie_id = typeId;
+    newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
         $scope.hideAddReply();
@@ -245,7 +255,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.hideSelect(); 
   }
 
-  twttr.ready(function(twttr) {       
+  twttr.ready(function(twttr) {
       twttr.events.bind('tweet', function (event) {
           $scope.share( 'twitter' );
       });
