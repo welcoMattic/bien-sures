@@ -12,6 +12,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
   $rootScope.$sideBar = $('#sidebar-wrapper');
+  $('#wrapper').css({'background-color':'#00e0df'});
 
   $scope.Types = [];
   $scope.Datas = [];

@@ -37,6 +37,7 @@
 .iconf-pinterest-circled:before { content: '\e808'; }
 .iconf-play-circled:before { content: '\e809'; }
 .iconf-quote:before { content: '\e80a'; }
+.iconf-hammer:before { content: '\e80b'; }
 
 @font-face {
   font-family: 'high_tidesans';
@@ -737,7 +738,89 @@ vg-controls {
 #help p {
   color: #FFFFFF;
   font-family: 'Lato';
-  margin-left: 55px;
   font-size: 16px;
   line-height: 24px;
+}
+
+#help p.intro {
+  margin-left: 55px;
+  margin-bottom: 60px;
+}
+
+#help .partners:nth-child(odd) {
+  min-height: 400px;
+}
+
+#help .partners {
+  margin-left: 10px;
+}
+
+#help .partners .col-md-4 {
+  border: 2px solid #00e0df;
+  margin-right: -2px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 0;
+}
+
+#help .partners .col-md-4:nth-child(even) {
+  margin-top: 47px;
+}
+
+#help .partners .col-md-4 div {
+  padding: 5px 15px;
+  font-family: 'high_tidesans';
+  font-size: 24px;
+  line-height: 36px;
+  background-color: #00e0df;
+}
+
+#help .partners .col-md-4 .caret {
+  position: absolute;
+  right: 25px;
+  border-width: 10px 10px;
+}
+
+#help .partners .col-md-4 p {
+  padding: 15px 10px 10px 10px;
+  text-transform: none;
+}
+
+#help .partners .col-md-4 .plus {
+  position: absolute;
+  right: 15px;
+  bottom: 5px;
+  cursor: pointer;
+  display: inline;
+  color: #FFFFFF;
+  transition: none;
+}
+
+#help .partners .col-md-4:hover p {
+  color: #8c8c8c;
+}
+
+#help .partners .col-md-4:hover .plus {
+  color: #272727;
+  right: 5px;
+}
+
+#help .partners .col-md-4:hover .plus:before {
+  content: 'voir le site';
+  color: #FFFFFF;
+  font-size: 14px;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+/* mentions */
+
+#mentions h3.col-md-12 {
+  text-transform: uppercase;
+  font-family: 'high_tidebold';
+}
+
+#mentions h4 {
+  color: #00e0df;
+  font-style: italic;
 }

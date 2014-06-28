@@ -98,7 +98,7 @@
             <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"><span>Pinterest</span></a></li>
             <li><a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
           </ul>
-          <p class="copy">copyright © Bien Sûres - 2014 - <a href="#">Mentions légales</a></p>
+          <p class="copy">copyright © Bien Sûres - 2014 - <a href="<% URL::to('/#/mentions') %>">Mentions légales</a></p>
         </div>
       </div>
 
@@ -150,6 +150,7 @@
   <script src="<% asset('js/controllers/help.js') %>"></script>
   <script src="<% asset('js/controllers/about.js') %>"></script>
   <script src="<% asset('js/controllers/contact.js') %>"></script>
+  <script src="<% asset('js/controllers/mentions.js') %>"></script>
 
   <script>
     __URL = "<% URL::to('/') %>/";

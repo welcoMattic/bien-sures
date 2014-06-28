@@ -979,8 +979,8 @@ fieldset[disabled] .btn-link:focus {
 }
 .caret {
   border-width: 8px 6px;
-  border-bottom-color: #34495e;
-  border-top-color: #34495e;
+  border-bottom-color: #00e0df;
+  border-top-color: #00e0df;
   border-style: solid;
   border-bottom-style: none;
   -webkit-transition: 0.25s;
