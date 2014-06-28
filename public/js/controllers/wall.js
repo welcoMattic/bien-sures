@@ -11,8 +11,13 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
+
+
+  $rootScope.reloadWall = function() {
+    // $scope.$emit('iso-method', {name:null, params:null});
+  }
+
   $rootScope.$sideBar = $('#sidebar-wrapper');
-  $('#wrapper').css({'background-color':'#00e0df'});
 
   $scope.Types = [];
   $scope.Datas = [];
@@ -36,11 +41,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.filtredDatas = response;
   });
 
-
   // $( '#main-icon' ).hide();
   // $( '#main-icon' ).click(function(){
   //   $scope.$emit('iso-method', {name:null, params:null});
-  //   console.log( 'ok' );
+    // console.log( 'ok' );
   // });
 
   $scope.filtersContexts = function( $event ) {
@@ -151,7 +155,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
 
     if (windowWidth < (elementPosition.left + 401)) {
-      elementPosition.left = elementPosition.left - 191;
+      elementPosition.left = elementPosition.left - 201;
     }
 
     if (windowHeight < (elementPosition.top + 401)) {
@@ -230,9 +234,9 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
-        $scope.hideAddReply();
         $scope.clearAddReply();
       }
+      $scope.hideAddReply();
     });
 
     return false;
@@ -259,6 +263,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       twttr.events.bind('tweet', function (event) {
           $scope.share( 'twitter' );
       });
+  });
+
+  $scope.$watch($rootScope.isSidebarActive, function(){
+    console.log('ok');
+    // $scope.$emit('iso-method', {name:null, params:null});
   });
 
 });

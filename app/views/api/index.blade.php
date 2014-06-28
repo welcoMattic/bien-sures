@@ -63,6 +63,21 @@
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="publisher"></a>
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="contributor-to"></a>
   </div>
+  
+  <div id="loader">
+    <img src="<% URL::to('/') %>/images/logo_loader.png" alt="logo">
+    <div class="txt">
+      <p>Contre le harcèlement de rue</p>
+      <p><span>D</span>énoncer <span>ré</span>agir aider</p>
+    </div>
+    <div class="loaderContent">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
   <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
 
       <!-- Sidebar -->
@@ -75,7 +90,7 @@
                 <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo.png" alt="Bien Sûres" /></a>
                 <a href="<% URL::to('/') %>" id="brand-mini-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo-mini.png" alt="Bien Sûres" /></a>
               </h1>
-              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive">
+              <button id="main-icon" class="navbar-toggle" type="button" ng-click="isSidebarActive = !isSidebarActive; reloadWall()">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -113,6 +128,12 @@
     </div>
 
   <script>
+    
+    __URL = "<% URL::to('/') %>/";
+
+    // Adjectifs
+    window.videos = '<% $videos %>';
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -120,40 +141,6 @@
 
     ga('create', 'UA-52124244-1', 'bien-sures.fr');
     ga('send', 'pageview');
-
-    // Adjectifs
-    window.videos = '<% $videos %>';
-  </script>
-
-  <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
-  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
-  <script src="<% asset('js/vendors/bootstrap.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-resource.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-sanitize.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-animate.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
-  <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
-  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
-  <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
-  <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
-  <script src="<% asset('js/vendors/controls.min.js') %>"></script>
-  <script src="<% asset('js/vendors/overlay-play.min.js') %>"></script>
-  <script src="<% asset('js/vendors/poster.min.js') %>"></script>
-  <script src="<% asset('js/vendors/quiz.js') %>"></script>
-  <script src="<% asset('js/vendors/mobile-detect.min.js') %>"></script>
-  <script src="<% asset('js/app.js') %>"></script>
-  <script src="<% asset('js/controllers/player.js') %>"></script>
-  <script src="<% asset('js/controllers/wall.js') %>"></script>
-  <script src="<% asset('js/controllers/help.js') %>"></script>
-  <script src="<% asset('js/controllers/about.js') %>"></script>
-  <script src="<% asset('js/controllers/contact.js') %>"></script>
-  <script src="<% asset('js/controllers/mentions.js') %>"></script>
-
-  <script>
-    __URL = "<% URL::to('/') %>/";
 
     window.fbAsyncInit = function() {
       FB.init({
@@ -182,6 +169,34 @@
     }(document, "script", "twitter-wjs"));
 
   </script>
+
+  <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
+  <script src="<% asset('js/vendors/pxloader.js') %>"></script>
+  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
+  <script src="<% asset('js/vendors/bootstrap.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-resource.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-sanitize.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-animate.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
+  <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
+  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
+  <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
+  <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
+  <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
+  <script src="<% asset('js/vendors/controls.min.js') %>"></script>
+  <script src="<% asset('js/vendors/overlay-play.min.js') %>"></script>
+  <script src="<% asset('js/vendors/poster.min.js') %>"></script>
+  <script src="<% asset('js/vendors/quiz.js') %>"></script>
+  <script src="<% asset('js/vendors/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/app.js') %>"></script>
+  <script src="<% asset('js/controllers/player.js') %>"></script>
+  <script src="<% asset('js/controllers/wall.js') %>"></script>
+  <script src="<% asset('js/controllers/help.js') %>"></script>
+  <script src="<% asset('js/controllers/about.js') %>"></script>
+  <script src="<% asset('js/controllers/contact.js') %>"></script>
+
 
   <div id="fb-root"></div>
 

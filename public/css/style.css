@@ -119,6 +119,192 @@ textarea {
   opacity: 0.9;
 }
 
+#loader {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: absolute;
+  z-index: 99999;
+  overflow: hidden;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    height: 290px;
+    width: 290px;
+  }
+  50% {
+    height: 310px;
+    width: 310px;
+  }
+  100% {
+    height: 290px;
+    width: 290px;
+  }
+}
+@-moz-keyframes loader {
+  0% {
+    height: 290px;
+    width: 290px;
+  }
+  50% {
+    height: 310px;
+    width: 310px;
+  }
+  100% {
+    height: 290px;
+    width: 290px;
+  }
+}
+@-o-keyframes loader {
+  0% {
+    height: 290px;
+    width: 290px;
+  }
+  50% {
+    height: 310px;
+    width: 310px;
+  }
+  100% {
+    height: 290px;
+    width: 290px;
+  }
+}
+@keyframes loader {
+  0% {
+    height: 290px;
+    width: 290px;
+  }
+  50% {
+    height: 310px;
+    width: 310px;
+  }
+  100% {
+    height: 290px;
+    width: 290px;
+  }
+}
+
+#loader img {
+  display: block;
+  width: 290px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -290px;
+  margin-left: -150px;
+  -webkit-animation: loader 2.5s infinite; 
+  -moz-animation:    loader 2.5s infinite; 
+  -o-animation:      loader 2.5s infinite; 
+  animation:         loader 2.5s infinite; 
+}
+#loader .txt {
+  margin-top: 550px;
+}
+#loader p {
+  color: #fff;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: block;
+}
+
+#loader p span {
+  color: #00e0df;
+}
+#loader div.loaderContent{
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  height: 30px;
+}
+#loader .loaderContent div {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background-color: #00e0df;
+  /*top: 45%;*/
+  border-radius: 50%;
+}
+
+@-webkit-keyframes moveloader {
+  0% {left: 0%;}
+  100% {left:100%;}
+}
+@-moz-keyframes moveloader {
+  0% {left: 0%;}
+  100% {left:100%;}
+}
+@-o-keyframes moveloader {
+  0% {left: 0%;}
+  100% {left:100%;}
+}
+@keyframes moveloader {
+  0% {left: 0%;}
+  100% {left:100%;}
+}
+
+#loader .loaderContent div:nth-child(1) {
+  opacity: 1;
+  -webkit-animation: moveloader 2s infinite cubic-bezier(.2,.64,.81,.23);
+  -moz-animation:    moveloader 2s infinite cubic-bezier(.2,.64,.81,.23);
+  -o-animation:      moveloader 2s infinite cubic-bezier(.2,.64,.81,.23);
+  animation: moveloader 2s infinite cubic-bezier(.2,.64,.81,.23);
+}
+#loader .loaderContent div:nth-child(2) {
+  opacity: 0.9;
+  -webkit-animation: moveloader 2s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+  -moz-animation:    moveloader 2s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+  -o-animation:      moveloader 2s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+  animation: moveloader 2s 150ms infinite cubic-bezier(.2,.64,.81,.23);
+}
+#loader .loaderContent div:nth-child(3) {
+  opacity: 0.8;
+  -webkit-animation: moveloader 2s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+  -moz-animation:    moveloader 2s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+  -o-animation:      moveloader 2s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+  animation: moveloader 2s 300ms infinite cubic-bezier(.2,.64,.81,.23);
+}
+#loader .loaderContent div:nth-child(4) {
+  opacity: 0.7;
+  -webkit-animation: moveloader 2s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+  -moz-animation:    moveloader 2s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+  -o-animation:      moveloader 2s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+  animation: moveloader 2s 450ms infinite cubic-bezier(.2,.64,.81,.23);
+}
+
+@-webkit-keyframes removeLoader {
+  0% {top: 0%;}
+  100% {top:-100%;
+    opacity: 0;}
+}
+@-moz-keyframes removeLoader {
+  0% {top: 0%;}
+  100% {top:-100%;
+    opacity: 0;}
+}
+@-o-keyframes removeLoader {
+  0% {top: 0%;}
+  100% {top:-100%;
+    opacity: 0;}
+}
+@keyframes removeLoader {
+  0% {top: 0%;
+    opacity: 0;}
+  100% {top:-100%;
+    opacity: 0;}
+}
+
+#loader.remove {
+  -webkit-animation: removeLoader 2.5s; 
+  -moz-animation:    removeLoader 2.5s; 
+  -o-animation:      removeLoader 2.5s; 
+  animation:         removeLoader 2.5s;   
+}
+
 #wrapper {
     padding-left: 60px;
     transition: all .2s ease 0s;
