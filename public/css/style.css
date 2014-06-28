@@ -1187,7 +1187,6 @@ vg-controls {
 }
 
 #about .team .col-md-2 div.name {
-  /*padding: 5px 5px;*/
   font-family: 'high_tidebold';
   font-size: 18px;
   line-height: 26px;
@@ -1230,4 +1229,31 @@ vg-controls {
   color: #00e0df;
   font-style: italic;
   font-family: 'Lato';
+}
+
+/* contact */
+
+#contact {
+  color: #f6f6f6;
+}
+
+#formContactContainer label {
+  color: #f6f6f6;
+}
+
+#formContactContainer textarea {
+  height: 145px;
+}
+
+#contact h3.col-md-12 {
+  text-transform: uppercase;
+  font-family: 'high_tidebold';
+}
+
+#contact p.col-md-5 {
+  margin-left: 70px;
+}
+
+#loader {
+  display: none;
 }

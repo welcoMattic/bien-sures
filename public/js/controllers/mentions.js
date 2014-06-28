@@ -8,6 +8,6 @@
  * Controller of the BSApp
  */
 BSApp.controller('MentionsCtrl', function ($rootScope, $scope) {
-  $('#wrapper').css({'background-color':'#FFFFFF'});
+  $('#wrapper').css({'background-color':'#f6f6f6'});
   $rootScope.isSidebarActive = true;
 });

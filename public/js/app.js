@@ -79,8 +79,8 @@ window.onresize = function( event ) {
 };
 
 function getWindowSize() {
-    $( 'html' ).attr('window-width', window.innerWidth );
-    $( 'html' ).attr('window-height', window.innerHeight );
+  $( 'html' ).attr('window-width', window.innerWidth );
+  $( 'html' ).attr('window-height', window.innerHeight );
 }
 
 // LOADER
