@@ -40,14 +40,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       showTypes.push($($elements[i]).val());
     }
 
-    console.log(showTypes);
-
     $scope.filtredDatas = $scope.Datas;
 
     for (var i = 0; i < $scope.filtredDatas.length; i++) {
-      if (!$.inArray($scope.filtredDatas[i].typologie_id, showTypes)) {
-        console.log('unset=');
-        console.log($scope.filtredDatas[i]);
+      if (!$.inArray($scope.filtredDatas[i].typology_id, showTypes)) {
         $scope.filtredDatas.splice($scope.filtredDatas[i]);
       }
     }
@@ -73,19 +69,19 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     }
 
     FB.ui({
-        method: 'feed',
-        name: 'Bien Sûres ! Contre le harcèlement de rue',
-        caption: 'DÉNONCER RÉAGIR AIDER',
-        description: (
-          'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
-          '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
-        ),
-        link: __URL,
-        picture: __URL + 'images/share.jpg'
-      },
-      function(response) {
-        if (response && response.post_id) {} else {}
-      });
+      method: 'feed',
+      name: 'Bien Sûres ! Contre le harcèlement de rue',
+      caption: 'DÉNONCER RÉAGIR AIDER',
+      description: (
+        'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
+        '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
+      ),
+      link: __URL,
+      picture: __URL + 'images/share.jpg'
+    },
+    function(response) {
+      if (response && response.post_id) {} else {}
+    });
   }
 
   $scope.positionReply = function($element) {
@@ -93,10 +89,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       windowWidth = $('html').attr('window-width'),
       windowHeight = $('html').attr('window-height');
 
-    elementPosition.left = elementPosition.left + $rootScope.$sideBar.width();
+    elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
 
     if (windowWidth < (elementPosition.left + 401)) {
-      elementPosition.left = elementPosition.left - 201;
+      elementPosition.left = elementPosition.left - 191;
     }
 
     if (windowHeight < (elementPosition.top + 401)) {
@@ -110,8 +106,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   }
 
   $scope.showReply = function($event, data) {
-    var typologie = $.grep($scope.Types, function(e) {
-      return e.id == data.typologie_id;
+    var typology = $.grep($scope.Types, function(e) {
+      return e.id == data.typology_id;
     });
 
     var $element = $($event.target),
@@ -123,11 +119,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     $scope.positionReply($element);
 
-    $scope.$reply.find('h3').html(typologie[0].name);
+    $scope.$reply.find('h3').html(typology[0].name);
     $scope.$reply.find('.blocContent p').html(data.quote);
 
     $scope.$reply.removeClass();
-    $scope.$reply.addClass('replyHover_' + data.typologie_id);
+    $scope.$reply.addClass('replyHover_' + data.typology_id);
 
     // $element.animate(
     //  {height: "401px", width: "401px" }
@@ -168,7 +164,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     var newReply = new Reply();
     newReply.quote = reply;
-    newReply.typologie_id = typeId;
+    newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
         // TODO: action after call

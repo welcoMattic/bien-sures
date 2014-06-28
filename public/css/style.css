@@ -335,7 +335,7 @@ h1 a {
   background-color: #28599a;
 }
 
-/*.typologie {*/
+/*.typology {*/
 #wall #addReply h3 {
   font-style: italic;
   text-align: center;
@@ -348,28 +348,28 @@ h1 a {
   margin: 0;
   padding: 0;
 }
-.typologie_1 {
+.typology_1 {
   background: url('/images/wall/bg_replies/1_regards-concupiscents.png');
 }
-.typologie_2 {
+.typology_2 {
   background: url('/images/wall/bg_replies/2_sifflements.png');
 }
-.typologie_3 {
+.typology_3 {
   background: url('/images/wall/bg_replies/3_bruits_de_baisers.png');
 }
-.typologie_4 {
+.typology_4 {
   background: url('/images/wall/bg_replies/4_coups_de_klaxons.png');
 }
-.typologie_5 {
+.typology_5 {
   background: url('/images/wall/bg_replies/5_commentaires_sur_apparence.png');
 }
-.typologie_6 {
+.typology_6 {
   background: url('/images/wall/bg_replies/6_gestes_vulgaires.png');
 }
-.typologie_7 {
+.typology_7 {
   background: url('/images/wall/bg_replies/7_exhibition_sexuelle.png');
 }
-.typologie_8 {
+.typology_8 {
   background: url('/images/wall/bg_replies/8_frotteurisme.png');
 }
 #wallContainer li  {

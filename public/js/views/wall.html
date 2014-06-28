@@ -1,60 +1,59 @@
-<!-- 
-	<h2>Filtres:</h2>
+<!--
+  <h2>Filtres:</h2>
 
-	<ul id="filters">
-		<li ng-repeat="type in Types">
-			<input ng-click="filtersContexts()" type="checkbox" checked="checked" value="{{type.id}}">{{type.name}}
-		</li>
-	</ul>
+  <ul id="filters">
+    <li ng-repeat="type in Types">
+      <input ng-click="filtersContexts()" type="checkbox" checked="checked" value="{{type.id}}">{{type.name}}
+    </li>
+  </ul>
 
 <hr>  -->
-
 <div id="wall">
 
-	<div id="addReply" ng-mouseleave="hideAddReply()">
-		
-		<h3>Propose ta réplique</h3>
-		
-		<select id="type">
-	  		<option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
-		</select>
-		
-		<p>Réplique (<span ng-bind="replyLength"></span> caractères) :</p>		
-		
-		<textarea ng-keyup="liveLength()" maxlength="140"></textarea>
+  <div id="addReply" ng-mouseleave="hideAddReply()">
 
-		<a ng-click="addReply()" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
-	
-	</div>
+    <h3>Propose ta réplique</h3>
 
-	<div id="reply" ng-mouseleave="hideReply()">
-		<h3></h3>
-		<div class="blocContent">
-			<p></p>
-		</div>
-		<div class="shareReply">
-			<p class="txt">Partagez la réplique sur:</p>
-			<p>
-				<a ng-click="shareFB()" target="_blank" class="iconf-facebook-circled"><span></span></a>
-            	<a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
-			</p>
-		</div>
-	</div>
-	 
-	<ul id="wallContainer" isotope-container="isotope-container">
+    <select id="type">
+      <option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
+    </select>
 
-		<li class="addReply" ng-click="showAddReply()">
-			<span class="fui-plus"></span>
-		</li>
-		<li class="filtersShow">
-			<span class="fui-search"></span>
-		</li>
+    <p>Réplique (<span ng-bind="replyLength"></span> caractères) :</p>
 
-		<li ng-repeat="reply in filtredDatas" isotope-item="isotope-item" class="typologie_{{reply.typologie_id}}" ng-mouseover="showReply( $event, reply )">
-			<p>{{reply.quote}}</p>
-			<div></div>
-		</li>
+    <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
 
-	</ul>
+    <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
+
+  </div>
+
+  <div id="reply" ng-mouseleave="hideReply()">
+    <h3></h3>
+    <div class="blocContent">
+      <p></p>
+    </div>
+    <div class="shareReply">
+      <p class="txt">Partagez la réplique sur:</p>
+      <p>
+        <a ng-click="shareFB()" target="_blank" class="iconf-facebook-circled"><span></span></a>
+        <a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
+      </p>
+    </div>
+  </div>
+
+  <ul id="wallContainer" isotope-container="isotope-container">
+
+    <li class="addReply" ng-click="showAddReply()">
+      <span class="fui-plus"></span>
+    </li>
+    <li class="filtersShow">
+      <span class="fui-search"></span>
+    </li>
+
+    <li ng-repeat="reply in filtredDatas" isotope-item="isotope-item" class="typology_{{reply.typology_id}}" ng-mouseover="showReply($event, reply)">
+      <p>{{reply.quote}}</p>
+      <div></div>
+    </li>
+
+  </ul>
 
 </div>
