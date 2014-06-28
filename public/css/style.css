@@ -193,10 +193,10 @@ textarea {
   left: 50%;
   margin-top: -290px;
   margin-left: -150px;
-  -webkit-animation: loader 2.5s infinite; 
-  -moz-animation:    loader 2.5s infinite; 
-  -o-animation:      loader 2.5s infinite; 
-  animation:         loader 2.5s infinite; 
+  -webkit-animation: loader 2.5s infinite;
+  -moz-animation:    loader 2.5s infinite;
+  -o-animation:      loader 2.5s infinite;
+  animation:         loader 2.5s infinite;
 }
 #loader .txt {
   margin-top: 550px;
@@ -299,10 +299,10 @@ textarea {
 }
 
 #loader.remove {
-  -webkit-animation: removeLoader 2.5s; 
-  -moz-animation:    removeLoader 2.5s; 
-  -o-animation:      removeLoader 2.5s; 
-  animation:         removeLoader 2.5s;   
+  -webkit-animation: removeLoader 2.5s;
+  -moz-animation:    removeLoader 2.5s;
+  -o-animation:      removeLoader 2.5s;
+  animation:         removeLoader 2.5s;
 }
 
 #wrapper {
@@ -331,7 +331,7 @@ h1 a {
     margin-left: -310px;
     left: 70px;
     width: 300px;
-    background: #fff;
+    background: #f6f6f6;
     position: fixed;
     height: 100%;
     z-index: 10000;
@@ -367,7 +367,7 @@ h1 a {
 }
 
 #sidebar_menu li a:hover {
-  color: #FFFFFF;
+  color: #f6f6f6;
 }
 
 #sidebar_menu li a, .sidebar-nav li a {
@@ -383,7 +383,7 @@ h1 a {
 }
 .sidebar_name {
     padding-top: 25px;
-    color: #fff;
+    color: #f6f6f6;
     opacity: .7;
 }
 
@@ -403,7 +403,7 @@ h1 a {
 }
 
 .sidebar-nav li:not(#burger) a:hover {
-  color: #fff;
+  color: #f6f6f6;
   text-decoration: none;
   background-color: #00e0df;
 }
@@ -424,7 +424,7 @@ h1 a {
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
-  color: #fff;
+  color: #f6f6f6;
   background: none;
 }
 
@@ -498,7 +498,7 @@ h1 a {
   border-top: #000 solid 1px;
 }
 #wall #addReply ul li {
-  padding-bottom: 5px; 
+  padding-bottom: 5px;
   font-size: 13px;
   padding-left: 20px;
   padding-right: 112px;
@@ -525,7 +525,7 @@ h1 a {
   text-align: center;
   font-size: 15px;
   margin: 20px 0;
-  color: #fff;
+  color: #f6f6f6;
 }
 #wall #reply .blocContent {
   display: table;
@@ -535,7 +535,7 @@ h1 a {
 }
 #wall #reply p {
   text-transform: uppercase;
-  color: #fff;
+  color: #f6f6f6;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
@@ -556,7 +556,7 @@ h1 a {
 }
 #wall #reply .shareReply p a {
   font-size: 35px;
-  color: #fff;
+  color: #f6f6f6;
   cursor: pointer;
 }
 #wall #reply .shareReply p a:hover {
@@ -616,7 +616,7 @@ h1 a {
 }
 .open {
   transition-duration: 0.8s;
-  -moz-transform: rotate(90deg); 
+  -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -916,7 +916,7 @@ vg-controls {
 .intro-form h4, .onCompleted h4 {
   text-align: center;
   margin-bottom: 40px;
-  color: #FFF;
+  color: #f6f6f6;
   text-transform: uppercase;
   font-family: 'high_tidebold'
 }
@@ -976,7 +976,7 @@ vg-controls {
 
 .onCompleted a.glyphicon {
   font-size: 70px;
-  color: #FFFFFF;
+  color: #f6f6f6;
 }
 
 .onCompleted a.glyphicon:hover {
@@ -991,12 +991,12 @@ vg-controls {
 /* help view */
 
 #help h3 {
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-family: 'high_tidebold'
 }
 
 #help p {
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-family: 'Lato';
   font-size: 16px;
   line-height: 24px;
@@ -1019,7 +1019,7 @@ vg-controls {
   border: 2px solid #00e0df;
   margin-right: -2px;
   text-transform: uppercase;
-  color: #FFFFFF;
+  color: #f6f6f6;
   padding: 0;
 }
 
@@ -1052,7 +1052,7 @@ vg-controls {
   bottom: 5px;
   cursor: pointer;
   display: inline;
-  color: #FFFFFF;
+  color: #f6f6f6;
   transition: none;
 }
 
@@ -1067,7 +1067,7 @@ vg-controls {
 
 #help .partners .col-md-4:hover .plus:before {
   content: 'voir le site';
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-size: 14px;
   text-transform: lowercase;
   text-decoration: none;
@@ -1087,8 +1087,11 @@ vg-controls {
 
 /* about */
 
+#about {
+  color: #f6f6f6;
+}
+
 #about h3 {
-  color: #FFFFFF;
   font-family: 'high_tidebold'
 }
 
@@ -1098,8 +1101,7 @@ vg-controls {
 }
 
 #about .intro {
-  color: #FFFFFF;
-  border-bottom: 1px solid #FFFFFF;
+  border-bottom: 1px solid #f6f6f6;
   padding: 0;
   min-height: 140px;
   font-size: 16px;
@@ -1120,8 +1122,8 @@ vg-controls {
 }
 
 #about .caret {
-  border-bottom-color: #FFFFFF;
-  border-top-color: #FFFFFF;
+  border-bottom-color: #f6f6f6;
+  border-top-color: #f6f6f6;
   left: 50%;
   bottom: -9px;
 }
@@ -1130,7 +1132,7 @@ vg-controls {
   display: block;
   text-align: center;
   width: 100%;
-  color: #FFFFFF;
+  color: #f6f6f6;
   font-style: italic;
 }
 
@@ -1150,7 +1152,6 @@ vg-controls {
 }
 
 #about .stats .col-md-4 {
-  color: #FFFFFF;
   text-transform: uppercase;
   float: left;
 }
@@ -1169,19 +1170,64 @@ vg-controls {
 }
 
 #about .team .col-md-2:nth-child(even) {
-  margin-top: 100px;
+  margin-top: 123px;
+}
+
+#about .team .col-md-2:nth-child(even):hover {
+  margin-top: 33px;
 }
 
 #about .team .col-md-2 {
-  border: 2px solid #00e0df;
-  margin-right: -2px;
-  text-transform: uppercase;
-  color: #FFFFFF;
   padding: 0;
 }
 
+#about .team .col-md-2 .people {
+  border: 2px solid #00e0df;
+  text-align: center;
+}
+
+#about .team .col-md-2 div.name {
+  /*padding: 5px 5px;*/
+  font-family: 'high_tidebold';
+  font-size: 18px;
+  line-height: 26px;
+  background-color: #00e0df;
+  color: #272727;
+}
+
+#about .team .col-md-2 div.name .firstname {
+  font-family: 'high_tidesans';
+}
+
 #about .team .col-md-2 .caret {
-  position: absolute;
-  right: 25px;
   border-width: 10px 10px;
+  border-bottom-color: #00e0df;
+  border-top-color: #00e0df;
+  position: absolute;
+}
+
+#about .team .col-md-2:nth-child(odd) .caret {
+  top: 52px;
+  left: 125px;
+}
+
+#about .team .col-md-2:nth-child(even) .caret {
+  bottom: 132px;
+  left: 125px;
+}
+
+#about .team .col-md-2 p {
+  padding: 15px 10px 10px 10px;
+  text-transform: none;
+}
+
+#about .team .col-md-2 .description, #about .team .col-md-2:hover .job {
+  display: none;
+}
+
+#about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
+  display: block;
+  color: #00e0df;
+  font-style: italic;
+  font-family: 'Lato';
 }

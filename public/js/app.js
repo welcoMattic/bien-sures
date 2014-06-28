@@ -75,7 +75,7 @@ BSApp.factory('Mail', ['$resource',function($resource) {
 document.addEventListener("DOMContentLoaded", getWindowSize(), false);
 
 window.onresize = function( event ) {
-  getWindowSize()
+  getWindowSize();
 };
 
 function getWindowSize() {
@@ -84,11 +84,11 @@ function getWindowSize() {
 }
 
 // LOADER
-var loader = new PxLoader(), 
-    video = loader.addVideo( __URL + 'videos/video1.mp4' ),
-    image = loader.addImage( __URL + 'images/example-image.jpg') ;
+var loader = new PxLoader(),
+    video = loader.addVideo( __URL + 'videos/video1.mp4'),
+    image = loader.addImage( __URL + 'images/example-image.jpg');
 
-loader.addCompletionListener(function() { 
+loader.addCompletionListener(function() {
     console.log('ok');
     setTimeout(function(){
       $('#loader').animate({
@@ -97,11 +97,8 @@ loader.addCompletionListener(function() {
       }, 1500, function() {
         $(this).hide();
       });
-
-
     },3000);
-}); 
- 
-// begin downloading images 
-loader.start(); 
+});
 
+// begin downloading images
+loader.start();
