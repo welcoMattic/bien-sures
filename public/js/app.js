@@ -72,6 +72,10 @@ BSApp.factory('Mail', ['$resource',function($resource) {
   return $resource('/api/sendmail/');
 }]);
 
+BSApp.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
+  $scope.$location = $location;
+}]);
+
 document.addEventListener("DOMContentLoaded", getWindowSize(), false);
 
 window.onresize = function( event ) {
@@ -89,15 +93,14 @@ var loader = new PxLoader(),
     image = loader.addImage( __URL + 'images/example-image.jpg');
 
 loader.addCompletionListener(function() {
-    console.log('ok');
-    setTimeout(function(){
-      $('#loader').animate({
-        opacity: 0,
-        top: "-100%",
-      }, 1500, function() {
-        $(this).hide();
-      });
-    },3000);
+  setTimeout(function(){
+    $('#loader').animate({
+      opacity: 0,
+      top: "-100%",
+    }, 1500, function() {
+      $(this).hide();
+    });
+  },3000);
 });
 
 // begin downloading images

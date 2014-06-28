@@ -14,7 +14,9 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   $('#wrapper').css({'background-color':'#00e0df'});
 
   $rootScope.reloadWall = function() {
-    // $scope.$emit('iso-method', {name:null, params:null});
+    setTimeout(function() {
+      $scope.$emit('iso-method', {name:null, params:null});
+    }, 400);
   }
 
   $rootScope.$sideBar = $('#sidebar-wrapper');
@@ -252,7 +254,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$addReplySelect.hide();
   }
 
-  $scope.seltectRemplace = function( $event ) {
+  $scope.selectRemplace = function( $event ) {
     var $target = $($event.target);
     $scope.$addReply.find( '.select .typeTxt' ).html( $target.html() );
     $scope.$addReply.find( '.select' ).attr( 'data-value', $target.attr('data-value') );
@@ -263,11 +265,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       twttr.events.bind('tweet', function (event) {
           $scope.share( 'twitter' );
       });
-  });
-
-  $scope.$watch($rootScope.isSidebarActive, function(){
-    console.log('ok');
-    // $scope.$emit('iso-method', {name:null, params:null});
   });
 
 });
