@@ -111,8 +111,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           name: 'Bien Sûres ! Contre le harcèlement de rue',
           caption: 'DÉNONCER RÉAGIR AIDER',
           description: (
-            'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
-            '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
+            'En réponse aux ' + agressionType.toLowerCase() + ':<b>' +
+            '"' + $scope.$reply.find('.blocContent p').html() + '"</b>'
           ),
           link: __URL,
           picture: __URL + 'images/share.jpg'
@@ -214,7 +214,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     newReply.typologie_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
-        // TODO: action after call
         $scope.hideAddReply();
         $scope.clearAddReply();
       }
