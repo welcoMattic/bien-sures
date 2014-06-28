@@ -11,8 +11,13 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
+
+
+  $rootScope.reloadWall = function() {
+    // $scope.$emit('iso-method', {name:null, params:null});
+  }
+
   $rootScope.$sideBar = $('#sidebar-wrapper');
-  $('#wrapper').css({'background-color':'#00e0df'});
 
   $scope.Types = [];
   $scope.Datas = [];
@@ -21,6 +26,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   $scope.$wall = $('#wall');
 
   $scope.$addReply = $('#addReply');
+  $scope.$addReplySelect = $('#addReply ul');
   $scope.$reply = $('#reply');
   $scope.$filters = $('#filters');
 
@@ -35,11 +41,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.filtredDatas = response;
   });
 
-
   // $( '#main-icon' ).hide();
   // $( '#main-icon' ).click(function(){
   //   $scope.$emit('iso-method', {name:null, params:null});
-  //   console.log( 'ok' );
+    // console.log( 'ok' );
   // });
 
   $scope.filtersContexts = function( $event ) {
@@ -94,7 +99,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   }
 
   $scope.clearAddReply = function() {
-    $scope.$addReply.find('select option[value=0]').attr('selected','selected');
+    $scope.$addReply.find( '.select .typeTxt' ).html( "Type d'agression" );
+    $scope.$addReply.find( '.select' ).attr( 'data-value', 'null' );
     $scope.$addReply.find('textarea').val('');
     $scope.replyLength = 140;
   }
@@ -149,7 +155,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
 
     if (windowWidth < (elementPosition.left + 401)) {
-      elementPosition.left = elementPosition.left - 191;
+      elementPosition.left = elementPosition.left - 201;
     }
 
     if (windowHeight < (elementPosition.top + 401)) {
@@ -195,6 +201,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$reply.hide();
   }
 
+  $scope.addReplySelect = function() {
+
+  }
+
   $scope.liveLength = function() {
     $scope.replyLength = 140 - ($scope.$addReply.find('textarea').val().length);
     // if( $scope.replieLength == 0 )
@@ -204,11 +214,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   }
 
   $scope.addReply = function() {
-    var typeId = $scope.$addReply.find('#type').val(),
+    var typeId = $scope.$addReply.find( '.select' ).attr( 'data-value' ),
       reply = $scope.$addReply.find('textarea').val(),
       validToInsert = true;
 
-    if (!typeId || !reply || typeId == "0") {
+    if (!typeId || !reply || typeId == "null") {
       validToInsert = false;
       return false;
     }
@@ -224,18 +234,40 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
-        $scope.hideAddReply();
         $scope.clearAddReply();
       }
+      $scope.hideAddReply();
     });
 
     return false;
+  }
+
+  $scope.showSelect = function() {
+    $( '.btnList' ).addClass( 'open' );
+    $scope.$addReplySelect.show();
+  }
+
+  $scope.hideSelect = function() {
+    $( '.btnList' ).removeClass( 'open' );
+    $scope.$addReplySelect.hide();
+  }
+
+  $scope.seltectRemplace = function( $event ) {
+    var $target = $($event.target);
+    $scope.$addReply.find( '.select .typeTxt' ).html( $target.html() );
+    $scope.$addReply.find( '.select' ).attr( 'data-value', $target.attr('data-value') );
+    $scope.hideSelect(); 
   }
 
   twttr.ready(function(twttr) {
       twttr.events.bind('tweet', function (event) {
           $scope.share( 'twitter' );
       });
+  });
+
+  $scope.$watch($rootScope.isSidebarActive, function(){
+    console.log('ok');
+    // $scope.$emit('iso-method', {name:null, params:null});
   });
 
 });
