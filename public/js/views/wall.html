@@ -17,11 +17,8 @@
     <select id="type">
       <option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
     </select>
-
     <p>Réplique (<span ng-bind="replyLength"></span> caractères) :</p>
-
     <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
-
     <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary">ENVOYER</a>
 
   </div>

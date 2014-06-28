@@ -126,15 +126,16 @@
   </script>
 
   <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
+  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
+  <script src="<% asset('js/vendors/bootstrap.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-resource.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-sanitize.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-animate.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-touch.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
-  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/vendors/jquery.isotope.js') %>"></script>
   <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
+  <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
   <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
