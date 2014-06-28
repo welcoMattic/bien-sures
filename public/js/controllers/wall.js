@@ -67,7 +67,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
         newArray = [];
 
     for (var i = 0; i < copyData.length; i++) {
-      if( $.inArray(copyData[i].typologie_id.toString(), showTypes) != -1)
+      if( $.inArray(copyData[i].typology_id.toString(), showTypes) != -1)
       {
         newArray.push( copyData[i] );
       }
