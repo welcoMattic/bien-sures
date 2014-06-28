@@ -1,14 +1,3 @@
-<!-- 
-	<h2>Filtres:</h2>
-
-	<ul id="filters">
-		<li ng-repeat="type in Types">
-			<input ng-click="filtersContexts()" type="checkbox" checked="checked" value="{{type.id}}">{{type.name}}
-		</li>
-	</ul>
-
-<hr>  -->
-
 <div id="wall">
 
 	<div id="addReply" ng-mouseleave="hideAddReply()">
@@ -16,7 +5,7 @@
 		<h3>Propose ta réplique</h3>
 		
 		<select id="type">
-			<option selected="selected">Type de l'agressio</option>
+			<option selected="selected" value="0">Type d'agression</option>
 	  		<option ng-repeat="type in Types" value="{{type.id}}">{{type.name}}</option>
 		</select>
 		
@@ -28,6 +17,16 @@
 	
 	</div>
 
+	<div id="filters" ng-mouseleave="hideFilters()">
+
+		<h3>Choisis ton contexte</h3>
+
+		<ul>
+			<li ng-click="filtersContexts( $event )" ng-repeat="type in Types" class="filter_typologie_{{type.id}}" data-id="{{type.id}}" isActive="true">{{type.name}}</li>
+		</ul>
+
+	</div>
+
 	<div id="reply" ng-mouseleave="hideReply()">
 		<h3></h3>
 		<div class="blocContent">
@@ -36,8 +35,8 @@
 		<div class="shareReply">
 			<p class="txt">Partagez la réplique sur:</p>
 			<p>
-				<a ng-click="shareFB()" target="_blank" class="iconf-facebook-circled"><span></span></a>
-            	<a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
+				<a ng-click="share( facebook )" target="_blank" class="iconf-facebook-circled"><span></span></a>
+            	<a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
 			</p>
 		</div>
 	</div>
@@ -47,7 +46,7 @@
 		<li class="addReply" ng-click="showAddReply()">
 			<span class="fui-plus"></span>
 		</li>
-		<li class="filtersShow">
+		<li class="filtersShow" ng-click="showFilters()">
 			<span class="fui-search"></span>
 		</li>
 
