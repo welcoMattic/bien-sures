@@ -63,7 +63,7 @@
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="publisher"></a>
     <a href="https://plus.google.com/u/0/112605449457151257853" rel="contributor-to"></a>
   </div>
-  
+
   <div id="loader">
     <img src="<% URL::to('/') %>/images/logo_loader.png" alt="logo">
     <div class="txt">
@@ -128,7 +128,7 @@
     </div>
 
   <script>
-    
+
     __URL = "<% URL::to('/') %>/";
 
     // Adjectifs

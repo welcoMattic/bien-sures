@@ -7,8 +7,10 @@
  * # ContactCtrl
  * Controller of the BSApp
  */
-BSApp.controller('ContactCtrl', function ($scope, Mail) {
+BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
 
+  $rootScope.isSidebarActive = true;
+  $('#wrapper').css({'background-color':'#272727'});
   $scope.$from = $( '#formContact' );
 
   $scope.submit = function() {

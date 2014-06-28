@@ -11,7 +11,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
-
+  $('#wrapper').css({'background-color':'#00e0df'});
 
   $rootScope.reloadWall = function() {
     // $scope.$emit('iso-method', {name:null, params:null});
@@ -247,7 +247,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     var $target = $($event.target);
     $scope.$addReply.find( '.select .typeTxt' ).html( $target.html() );
     $scope.$addReply.find( '.select' ).attr( 'data-value', $target.attr('data-value') );
-    $scope.hideSelect(); 
+    $scope.hideSelect();
   }
 
   twttr.ready(function(twttr) {
