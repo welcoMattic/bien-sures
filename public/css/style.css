@@ -480,7 +480,9 @@ h1 a {
   z-index: 4;
   width: 401px;
   height: 401px;
-  background-color: #000;
+  background-color: rgb(39, 39, 39);
+  /*color: #939598;*/
+  color: #939598;
   /*border: 1px red solid;*/
   color: #939598;
   display: none;
@@ -668,7 +670,8 @@ h1 a {
   display: table;
   height: 200px;
   width: 200px;
-  background-color: #000;
+  background-color: rgb(39, 39, 39);
+  /*color: #939598;*/
   color: #939598;
   margin: 0 1px 1px 0;
   float: left;
