@@ -76,6 +76,14 @@ textarea {
 .hidden {
   display: none;
 }
+/**** UI ****/
+.btn-primary {
+  background-color: #00e0df;
+}
+.btn-primary:hover {
+  background-color: #00e0df;
+  opacity: 0.9;
+}
 
 #wrapper {
     padding-left: 60px;
@@ -257,6 +265,29 @@ h1 a {
   display: none;
   padding: 0 20px;
 }
+#wall #addReply ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  position: absolute;
+  z-index: 10;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  border-top: #000 solid 1px;
+}
+#wall #addReply ul li {
+  padding-bottom: 5px; 
+  font-size: 13px;
+  padding-left: 20px;
+  padding-right: 112px;
+  padding-top: 5px;
+}
+#wall #addReply ul li:hover {
+  background-color: #00e0df;
+  color: #fff;
+}
 #wall #reply {
   position: absolute;
   z-index: 4;
@@ -312,13 +343,13 @@ h1 a {
   opacity: 0.5;
 }
 .replyHover_1 {
-  background-color: #ee4649;
+  background-color: #28599a;
 }
 .replyHover_2 {
-  background-color: #f39c12;
+  background-color: #3184c3;
 }
 .replyHover_3 {
-  background-color: #ecba00;
+  background-color: #00e0df;
 }
 .replyHover_4 {
   background-color: #64ea8b;
@@ -327,19 +358,56 @@ h1 a {
   background-color: #2ecc71;
 }
 .replyHover_6 {
-  background-color: #00e0df;
+  background-color: #ecba00;
 }
 .replyHover_7 {
-  background-color: #3184c3;
+  background-color: #f39c12;
 }
 .replyHover_8 {
-  background-color: #28599a;
+  background-color: #ee4649;
 }
-
-/*.typologie {*/
 #wall #addReply h3, #wall #filters {
   font-style: italic;
   text-align: center;
+}
+#wall #addReply .select {
+  text-align: left;
+  margin: 0;
+  position: relative;
+  display: block;
+}
+#wall #addReply .btnList {
+     -webkit-transition-duration: 0.2s;
+     -moz-transition-duration: 0.2s;
+      -ms-transition-duration: 0.2s;
+       -o-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+}
+#wall #addReply .arrow {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  padding-left: 15px;
+  padding-top: 9px;
+  border-left: 1px solid #000;
+  height: 100%;
+}
+.open {
+  transition-duration: 0.8s;
+  -moz-transform: rotate(90deg); 
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+#wall #addReply p  {
+  margin: 10px 0;
+}
+#wall #addReply .addreply {
+  margin-top: 10px;
+}
+#wall #addReply p span {
+  float: right;
 }
 #wall #addReply textarea {
   width: 100%;
@@ -384,6 +452,10 @@ h1 a {
   padding: 25px 20px;
   cursor: pointer;
   text-align: center;
+}
+#wallContainer .itemWall:hover {
+    opacity: 0.6;
+
 }
 #wallContainer li p {
   display: table-cell;
