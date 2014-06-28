@@ -25,9 +25,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $scope.$wall = $('#wall');
 
+  $('#wrapper').css({'background-color':'#00e0df'});
+
   $scope.$addReply = $('#addReply');
   $scope.$addReplySelect = $('#addReply ul');
-  $scope.$reply = $('#reply');
+  $scope.$reply = $('#replyHover');
   $scope.$filters = $('#filters');
 
   $scope.replyLength = 140;
@@ -40,12 +42,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.Datas = response;
     $scope.filtredDatas = response;
   });
-
-  // $( '#main-icon' ).hide();
-  // $( '#main-icon' ).click(function(){
-  //   $scope.$emit('iso-method', {name:null, params:null});
-    // console.log( 'ok' );
-  // });
 
   $scope.filtersContexts = function( $event ) {
     var $element = $($event.target),
@@ -162,6 +158,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       elementPosition.top = elementPosition.top - 201;
     }
 
+    if($rootScope.isSidebarActive == false) {
+      elementPosition.left = elementPosition.left - 29;
+    }
+
     $scope.$reply.css({
       'top': elementPosition.top,
       'left': elementPosition.left
@@ -180,6 +180,9 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       $element = $element.parent();
     }
 
+    console.log($element);
+    console.log($scope.$reply);
+
     $scope.positionReply($element);
 
     $scope.$reply.find('h3').html(typology[0].name);
@@ -187,12 +190,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     $scope.$reply.removeClass();
     $scope.$reply.addClass('replyHover_' + data.typology_id);
-
-    // $element.animate(
-    //  {height: "401px", width: "401px" }
-    // ,500, function() {
-    //  $scope.$emit('iso-method', {name:null, params:null})
-    // });
 
     $scope.$reply.fadeIn();
   }
@@ -207,10 +204,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $scope.liveLength = function() {
     $scope.replyLength = 140 - ($scope.$addReply.find('textarea').val().length);
-    // if( $scope.replieLength == 0 )
-    // {
-    //  $scope.replieLength = "ERROR";
-    // }
   }
 
   $scope.addReply = function() {
@@ -226,8 +219,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     if (reply.length > 140) {
       return false;
     }
-
-    // return false;
 
     var newReply = new Reply();
     newReply.quote = reply;
@@ -265,9 +256,5 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       });
   });
 
-  $scope.$watch($rootScope.isSidebarActive, function(){
-    console.log('ok');
-    // $scope.$emit('iso-method', {name:null, params:null});
-  });
 
 });

@@ -89,7 +89,6 @@ var loader = new PxLoader(),
     image = loader.addImage( __URL + 'images/example-image.jpg');
 
 loader.addCompletionListener(function() {
-    console.log('ok');
     setTimeout(function(){
       $('#loader').animate({
         opacity: 0,

@@ -196,6 +196,7 @@
   <script src="<% asset('js/controllers/help.js') %>"></script>
   <script src="<% asset('js/controllers/about.js') %>"></script>
   <script src="<% asset('js/controllers/contact.js') %>"></script>
+  <script src="<% asset('js/controllers/mentions.js') %>"></script>
 
 
   <div id="fb-root"></div>
