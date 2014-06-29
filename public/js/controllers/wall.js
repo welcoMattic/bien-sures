@@ -13,8 +13,14 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   $rootScope.burgerActive = false;
   $('#wrapper').css({'background-color':'#00e0df'});
 
+  setTimeout(function() {
+    $scope.$emit('iso-method', {name:null, params:null});
+  }, 400);
+
   $rootScope.reloadWall = function() {
-    // $scope.$emit('iso-method', {name:null, params:null});
+    setTimeout(function() {
+      $scope.$emit('iso-method', {name:null, params:null});
+    }, 400);
   }
 
   $rootScope.$sideBar = $('#sidebar-wrapper');
@@ -180,9 +186,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       $element = $element.parent();
     }
 
-    console.log($element);
-    console.log($scope.$reply);
-
     $scope.positionReply($element);
 
     $scope.$reply.find('h3').html(typology[0].name);
@@ -243,7 +246,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$addReplySelect.hide();
   }
 
-  $scope.seltectRemplace = function( $event ) {
+  $scope.selectRemplace = function( $event ) {
     var $target = $($event.target);
     $scope.$addReply.find( '.select .typeTxt' ).html( $target.html() );
     $scope.$addReply.find( '.select' ).attr( 'data-value', $target.attr('data-value') );
@@ -255,6 +258,5 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           $scope.share( 'twitter' );
       });
   });
-
 
 });

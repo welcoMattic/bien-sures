@@ -82,7 +82,7 @@
 
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
-        <ul class="sidebar-nav" id="sidebar">
+        <ul class="sidebar-nav" id="sidebar" ng-controller="NavCtrl">
           <li id="burger">
             <div id="menu-toggle">
               <h1>
@@ -97,11 +97,11 @@
               </button>
             </div>
           </li>
-          <li><a href="<% URL::to('/') %>">Accueil</a></li>
-          <li><a href="<% URL::to('/#/mur-de-paroles') %>">Mur de paroles</a></li>
-          <li><a href="<% URL::to('/#/besoin-d-aide') %>">Besoin d'aide</a></li>
-          <li><a href="<% URL::to('/#/a-propos') %>">À propos</a></li>
-          <li><a href="<% URL::to('/#/nous-contacter') %>">Contact</a></li>
+          <li><a href="<% URL::to('/') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/']">Accueil</a></li>
+          <li><a href="<% URL::to('/#/mur-de-paroles') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/mur-de-paroles']">Mur de paroles</a></li>
+          <li><a href="<% URL::to('/#/besoin-d-aide') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/besoin-d-aide']">Besoin d'aide</a></li>
+          <li><a href="<% URL::to('/#/a-propos') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/a-propos']">À propos</a></li>
+          <li><a href="<% URL::to('/#/nous-contacter') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/nous-contacter']">Contact</a></li>
         </ul>
 
         <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">

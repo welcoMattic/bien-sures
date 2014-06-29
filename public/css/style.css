@@ -126,7 +126,6 @@ textarea {
   position: absolute;
   z-index: 99999;
   overflow: hidden;
-  display: none;
 }
 
 @-webkit-keyframes loader {
@@ -403,7 +402,7 @@ h1 a {
   padding: 10px 0 10px 0px;
 }
 
-.sidebar-nav li:not(#burger) a:hover {
+.sidebar-nav li:not(#burger) a:hover, .sidebar-nav li:not(#burger) a.displayed {
   color: #f6f6f6;
   text-decoration: none;
   background-color: #00e0df;
@@ -1243,6 +1242,7 @@ vg-controls {
 
 #formContactContainer label {
   color: #f6f6f6;
+  font-size: 18px;
 }
 
 #formContactContainer textarea {
@@ -1256,8 +1256,4 @@ vg-controls {
 
 #contact p.col-md-5 {
   margin-left: 70px;
-}
-
-#loader {
-  display: none;
 }
