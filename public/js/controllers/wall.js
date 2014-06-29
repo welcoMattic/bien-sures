@@ -133,20 +133,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       return false;
     }
 
-    FB.ui({
-      method: 'feed',
-      name: 'Bien Sûres ! Contre le harcèlement de rue',
-      caption: 'DÉNONCER RÉAGIR AIDER',
-      description: (
-        'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
-        '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
-      ),
-      link: __URL,
-      picture: __URL + 'images/share.jpg'
-    },
-    function(response) {
-      if (response && response.post_id) {} else {}
-    });
   }
 
   $scope.positionReply = function($element) {
@@ -156,16 +142,16 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
     elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
 
+    if($rootScope.isSidebarActive == false) {
+      elementPosition.left = elementPosition.left - 230;
+    }
+
     if (windowWidth < (elementPosition.left + 401)) {
       elementPosition.left = elementPosition.left - 201;
     }
 
     if (windowHeight < (elementPosition.top + 401)) {
       elementPosition.top = elementPosition.top - 201;
-    }
-
-    if($rootScope.isSidebarActive == false) {
-      elementPosition.left = elementPosition.left - 29;
     }
 
     $scope.$reply.css({
