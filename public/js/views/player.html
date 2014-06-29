@@ -1,15 +1,23 @@
-<div class="row onCompleted hidden">
-  <div class="col-md-12" ng-class="{true: 'col-md-offset-1', false: ''}[isSidebarActive]">
+<div class="onCompleted hidden">
+  <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
     <h4>Partage ton expérience sur :</h4>
     <div class="col-md-8 col-md-offset-2">
       <div class="sharingBtns">
-        <a ng-click="share('facebook')" target="_blank" class="iconf iconf-facebook-circled"><span></span></a>
+        <a ng-click="share('facebook')" target="_blank" href="#" class="iconf iconf-facebook-circled"><span></span></a>
         <a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf iconf-twitter-circled"><span></span></a>
       </div>
       <i class="glyphicon glyphicon-repeat" id="btn-replay" ng-click="API.play();"></i>
       <h4>Découvre les autres expériences :</h4>
-      <button ng-click="loadVideo(prevVideo)">lien</button>
-      <button ng-click="loadVideo(nextVideo)">lien</button>
+      <div class="center">
+        <a href="#" ng-click="loadVideo(prevVideo.id)" class="other-video">
+          <img ng-src="{{prevVideo.img}}" alt="Vidéo précédente" class="thumbnail-video">
+          <span><p>Vidéo {{prevVideo.id}}</p></span>
+        </a>
+        <a href="#" ng-click="loadVideo(nextVideo.id)" class="other-video">
+          <img ng-src="{{nextVideo.img}}" alt="Vidéo suivante" class="thumbnail-video">
+          <span><p>Vidéo {{nextVideo.id}}</p></span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
@@ -36,7 +44,7 @@
   <vg-poster-image vg-url='config.plugins.poster.url' vg-stretch="config.stretch.value"></vg-poster-image>
   <vg-buffering></vg-buffering>
   <vg-overlay-play></vg-overlay-play>
-  <vg-controls vg-autohide="config.autoHide" style="height: 50px;" class="vjs-control-bar">
+  <vg-controls vg-autohide="config.autoHide" style="height: 50px;">
     <vg-play-pause-button vg-play-icon="config.theme.playIcon" vg-pause-icon="config.theme.pauseIcon"></vg-play-pause-button>
     <vg-timeDisplay class="hidden">{{ currentTime }}</vg-timeDisplay>
     <vg-scrubBar class="hidden">

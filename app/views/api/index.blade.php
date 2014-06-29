@@ -185,7 +185,8 @@
   <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
   <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
+  <script src="<% asset('js/vendors/ui-bootstrap-custom-0.10.0.js') %>"></script>
+  <script src="<% asset('js/vendors/ui-bootstrap-custom-tpls-0.10.0.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
   <script src="<% asset('js/vendors/controls.min.js') %>"></script>

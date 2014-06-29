@@ -17,6 +17,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
 
   $scope.videoInit = function(video) {
+
     $scope.videoSrcMP4 = 'videos/' + video.file + '.mp4';
     $scope.videoSrcWEBM = 'videos/' + video.file + '.webm';
     $scope.videoSrcOGV = 'videos/' + video.file + '.ogv';
@@ -28,16 +29,16 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     ];
 
     if(video.file == 'BienSures_scenario1_1280x720') {
-      $scope.prevVideo = 3;
-      $scope.nextVideo = 2;
+      $scope.prevVideo = {id:3,img:'images/thumbnail3.jpg'};
+      $scope.nextVideo = {id:2,img:'images/thumbnail2.jpg'};;
       $scope.quizTimecode = 13;
     } else if(video.file == 'BienSures_scenario2_1280x720') {
-      $scope.prevVideo = 1;
-      $scope.nextVideo = 3;
+      $scope.prevVideo = {id:1,img:'images/thumbnail1.jpg'};;
+      $scope.nextVideo = {id:3,img:'images/thumbnail3.jpg'};;
       $scope.quizTimecode = 36;
     } else if(video.file == 'BienSures_scenario3_1280x720') {
-      $scope.prevVideo = 2;
-      $scope.nextVideo = 1;
+      $scope.prevVideo = {id:2,img:'images/thumbnail2.jpg'};;
+      $scope.nextVideo = {id:1,img:'images/thumbnail1.jpg'};;
       $scope.quizTimecode = 77;
     }
   };
@@ -49,6 +50,17 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
              + $scope.video.end3.adjectifs + ', '
              + $scope.video.end4.adjectifs;
   $scope.adjs = adjs.split(', ');
+
+  var output = [],
+      keys = [];
+  angular.forEach($scope.adjs, function(item) {
+    var key = item;
+    if(keys.indexOf(key) === -1) {
+      keys.push(key);
+      output.push(item);
+    }
+  });
+  $scope.adjs = output;
 
   $scope.selectedAdj = '';
 
@@ -105,6 +117,8 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.config = {
+    autoHide: true,
+    autoHideTime: 2000,
     autoPlay: false,
     stretch: {value: "fit"},
     responsive: false,
@@ -118,7 +132,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     ],
     plugins: {
       poster: {
-        url: "videos/poster.png"
+        url: "images/" + $scope.video.file + ".jpg"
       },
       quiz: {
         data: [{
@@ -143,6 +157,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.onQuizSubmit = function(result) {
     var reply = result.reply;
+    console.log($scope.videoEnds.length);
     for (var i = 0; i < $scope.videoEnds.length; i++) {
       var adjsArray = $scope.videoEnds[i].adjectifs.split(', ');
       var seekTime = 0;
@@ -152,7 +167,6 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
         break;
       } else {
         $('.onError').removeClass('hidden');
-        return false;
       }
     }
   };
@@ -179,14 +193,5 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
       return false;
     }
-  };
-
-  $scope.doSomething = function(input) {
-    $scope.adjs = $scope.adjs;
-    console.log('test');
-  };
-
-  $scope.doSomethingElse = function() {
-    console.log("Suggestion selected: " + suggestion );
   };
 });

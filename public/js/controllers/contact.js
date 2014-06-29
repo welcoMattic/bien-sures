@@ -15,7 +15,7 @@ BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
 
   $scope.submit = function() {
     var $elements = $scope.$from.find( 'input, textarea' ),
-      validToSent = true;
+        validToSent = true;
 
     angular.forEach($elements, function(element, key) {
       if( !$(element).val() ||
