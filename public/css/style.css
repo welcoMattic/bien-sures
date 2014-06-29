@@ -903,10 +903,6 @@ vg-overlay-play.onPause .iconButton.play {
   display: none;
 }
 
-vg-controls {
-  display: none !important;
-}
-
 /* Video form */
 
 .intro-form {
@@ -1250,7 +1246,7 @@ vg-controls {
 }
 
 #formContactContainer textarea {
-  height: 145px;
+  height: 152px;
 }
 
 #contact h3.col-md-12 {
