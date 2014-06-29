@@ -126,6 +126,7 @@ textarea {
   position: absolute;
   z-index: 99999;
   overflow: hidden;
+  display: none;
 }
 
 @-webkit-keyframes loader {
@@ -503,7 +504,7 @@ h1 a {
   padding-bottom: 5px;
   font-size: 13px;
   padding-left: 20px;
-  padding-right: 112px;
+  padding-right: 108px;
   padding-top: 5px;
 }
 #wall #addReply ul li:hover {
@@ -519,7 +520,7 @@ h1 a {
   color: #939598;
   display: none;
   padding: 0 20px;
-  background-image: url('/images/wall/bg_hover_item.png');
+  background-image: url('../images/wall/bg_hover_item.png');
   background-repeat: no-repeat;
 }
 #wall #replyHover h3 {
@@ -645,28 +646,28 @@ transition: border .25s linear, color .25s linear, background-color .25s linear;
   padding: 0;
 }
 .typology_1 {
-  background: url('/images/wall/bg_replies/1_regards-concupiscents.png');
+  background: url('../images/wall/bg_replies/1_regards-concupiscents.png');
 }
 .typology_2 {
-  background: url('/images/wall/bg_replies/2_sifflements.png');
+  background: url('../images/wall/bg_replies/2_sifflements.png');
 }
 .typology_3 {
-  background: url('/images/wall/bg_replies/3_bruits_de_baisers.png');
+  background: url('../images/wall/bg_replies/3_bruits_de_baisers.png');
 }
 .typology_4 {
-  background: url('/images/wall/bg_replies/4_coups_de_klaxons.png');
+  background: url('../images/wall/bg_replies/4_coups_de_klaxons.png');
 }
 .typology_5 {
-  background: url('/images/wall/bg_replies/5_commentaires_sur_apparence.png');
+  background: url('../images/wall/bg_replies/5_commentaires_sur_apparence.png');
 }
 .typology_6 {
-  background: url('/images/wall/bg_replies/6_gestes_vulgaires.png');
+  background: url('../images/wall/bg_replies/6_gestes_vulgaires.png');
 }
 .typology_7 {
-  background: url('/images/wall/bg_replies/7_exhibition_sexuelle.png');
+  background: url('../images/wall/bg_replies/7_exhibition_sexuelle.png');
 }
 .typology_8 {
-  background: url('/images/wall/bg_replies/8_frotteurisme.png');
+  background: url('../images/wall/bg_replies/8_frotteurisme.png');
 }
 #wallContainer li  {
   display: table;
@@ -980,12 +981,12 @@ vg-controls {
   color: #00e0df;
 }
 
-.onCompleted a.glyphicon {
+.onCompleted #btn-replay.glyphicon {
   font-size: 70px;
   color: #f6f6f6;
 }
 
-.onCompleted a.glyphicon:hover {
+.onCompleted #btn-replay.glyphicon:hover {
   color: #00e0df;
 }
 
@@ -993,6 +994,12 @@ vg-controls {
   text-align: center;
 }
 
+.onError {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
 /* help view */
 
@@ -1032,8 +1039,8 @@ vg-controls {
 #help .partners .col-md-4 a div {
   padding: 5px 15px;
   font-family: 'high_tidesans';
-  font-size: 23px;
-  line-height: 36px;
+  font-size: 19px;
+  line-height: 35px;
   background-color: #00e0df;
   color: #f6f6f6;
 }
@@ -1088,6 +1095,7 @@ vg-controls {
 }
 
 #mentions h4 {
+  font-size: 24px;
   color: #00e0df;
   font-style: italic;
 }
@@ -1098,12 +1106,13 @@ vg-controls {
   color: #f6f6f6;
 }
 
-#about h3 {
-  font-family: 'high_tidebold'
+h3 {
+  font-family: 'high_tidebold';
+  font-size: 30px;
 }
 
 #about .intro:nth-child(even) {
-  margin-left: 70px;
+  margin-left: 55px;
   margin-right: 40px;
 }
 

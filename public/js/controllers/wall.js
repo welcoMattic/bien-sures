@@ -201,10 +201,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$reply.hide();
   }
 
-  $scope.addReplySelect = function() {
-
-  }
-
   $scope.liveLength = function() {
     $scope.replyLength = 140 - ($scope.$addReply.find('textarea').val().length);
   }
@@ -221,7 +217,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       },2000);
       validToInsert = false;
     }
-    console.log(reply);
+
     if (!reply || reply == "null") {
       $scope.$addReply.find( 'textarea' ).css('background-color','#ee4649');
       setTimeout(function(){  
@@ -253,13 +249,19 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   }
 
   $scope.showSelect = function() {
+    if($scope.addReplySelectActibe == true ) {
+      $scope.hideSelect();      
+      return false;
+    }
     $( '.btnList' ).addClass( 'open' );
     $scope.$addReplySelect.show();
+    $scope.addReplySelectActibe = true;
   }
 
   $scope.hideSelect = function() {
     $( '.btnList' ).removeClass( 'open' );
     $scope.$addReplySelect.hide();
+    $scope.addReplySelectActibe = false;
   }
 
   $scope.selectRemplace = function( $event ) {
@@ -274,9 +276,5 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           $scope.share( 'twitter' );
       });
   });
-
-  // $scope.$watch(, function(){
-
-  // });
 
 });

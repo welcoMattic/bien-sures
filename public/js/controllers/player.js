@@ -13,12 +13,13 @@
 BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
 
   $rootScope.isSidebarActive = true;
-  $rootScope.onCompleted = false;
 
   $scope.videos = angular.fromJson(window.videos);
 
   $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
-  $scope.videoSrc = 'videos/' + $scope.video.file + '.mp4';
+  $scope.videoSrcMP4 = 'videos/' + $scope.video.file + '.mp4';
+  $scope.videoSrcWEBM = 'videos/' + $scope.video.file + '.webm';
+  $scope.videoSrcOGV = 'videos/' + $scope.video.file + '.ogv';
   $scope.videoEnds = [
     $scope.video.end1,
     $scope.video.end2,
@@ -26,15 +27,18 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.video.end4
   ];
 
-  if($scope.video.file == 'video1') {
+  if($scope.video.file == 'BienSures_scenario1_1280x720') {
     $scope.prevVideo = 3;
     $scope.nextVideo = 2;
-  } else if($scope.video.file == 'video2') {
+    $scope.quizTimecode = 13;
+  } else if($scope.video.file == 'BienSures_scenario2_1280x720') {
     $scope.prevVideo = 1;
     $scope.nextVideo = 3;
-  } else if($scope.video.file == 'video3') {
+    $scope.quizTimecode = 36;
+  } else if($scope.video.file == 'BienSures_scenario3_1280x720') {
     $scope.prevVideo = 2;
     $scope.nextVideo = 1;
+    $scope.quizTimecode = 77;
   }
 
   var adjs = $scope.video.end1.adjectifs;
@@ -43,7 +47,9 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.video.end3.adjectifs,
     $scope.video.end4.adjectifs
   );
-  $scope.adjs = adjs
+  $scope.adjs = adjs.split(', ');
+
+  $scope.selectedAdj = ''
 
   $scope.currentTime = 0;
   $scope.totalTime = 0;
@@ -58,28 +64,32 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
       $rootScope.isSidebarActive = false;
+      $('.onCompleted').addClass('hidden');
     });
   };
 
   $scope.onCompleteVideo = function() {
     $scope.$apply(function() {
       $rootScope.isSidebarActive = true;
-      $rootScope.onCompleted = true;
-      console.log($rootScope.onCompleted);
     });
+    $('.onCompleted').removeClass('hidden');
     $scope.isCompleted = true;
   };
 
   $scope.onUpdateState = function(state) {
+    if(state == 'pause') {
+      $('.overlayPlayContainer .iconButton').hide();
+    }
     $scope.state = state;
   };
 
   $scope.onUpdateTime = function(currentTime, totalTime) {
     var curr = parseFloat(currentTime).toFixed(0);
-    var seekTime = 0;
-    if($scope.video.file == 'video1' && ['17','44','68','96'].indexOf(curr)) seekTime = 142;
-    else if($scope.video.file == 'video2') seekTime = 142;
-    else if($scope.video.file == 'video3') seekTime = 142;
+    var seekTime = null;
+    if($scope.video.file == 'BienSures_scenario1_1280x720' && ['44','68','96','118'].indexOf(curr) > -1) seekTime = 141;
+    else if($scope.video.file == 'BienSures_scenario2_1280x720' && ['66','90','121','147'].indexOf(curr) > -1) seekTime = 177;
+    else if($scope.video.file == 'BienSures_scenario3_1280x720' && ['78','104','118','135'].indexOf(curr) > -1) seekTime = 168;
+    if(seekTime != null && seekTime != parseFloat(totalTime).toFixed(0)) $scope.API.seekTime(seekTime);
     $scope.currentTime = currentTime;
     $scope.totalTime = totalTime;
   };
@@ -106,7 +116,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       },
       quiz: {
         data: [{
-          "time": "1",
+          "time": $scope.quizTimecode,
           "background": "color",
           "background_src": "rgba(0,0,0,0.5)"
         }]
@@ -127,9 +137,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
           seekTime = $scope.videoEnds[i].timecode;
           break;
       } else {
-        if($scope.video.file == 'video1') seekTime = 120;
-        else if($scope.video.file == 'video2') seekTime = 120;
-        else if($scope.video.file == 'video3') seekTime = 120;
+        $('.onError').removeClass('hidden');
       }
     }
     $scope.API.seekTime(seekTime);
