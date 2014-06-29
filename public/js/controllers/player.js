@@ -5,8 +5,6 @@
  * @name BSApp.controller:PlayerCtrl
  * @description
  * This controller contains all code for the interactive video player.
- * Main functions are :
- *
  * # PlayerCtrl
  * Controller of the BSApp
  */
@@ -14,7 +12,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $rootScope.isSidebarActive = true;
 
-  $scope.videos = angular.fromJson(window.videos);
+  $scope.videos = angular.fromJson(__VIDEOS);
 
   $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
 

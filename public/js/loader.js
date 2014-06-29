@@ -1,8 +1,8 @@
 // LOADER
 var __LOADER = new PxLoader(),
-    videos = [ 'videos/video1.mp4',
-               'videos/video2.mp4',
-               'videos/video3.mp4' ],
+    videos = [ 'videos/BienSures_scenario1_1280x720.mp4',
+               'videos/BienSures_scenario2_1280x720.mp4',
+               'videos/BienSures_scenario3_1280x720.mp4' ],
     images = [ 'images/wall/bg_hover_item.png',
                'images/wall/bg_replies/1_regards-concupiscents.png',
                'images/wall/bg_replies/2_sifflements.png',
@@ -22,7 +22,7 @@ var __LOADER = new PxLoader(),
                'images/wall/filters/8_frotteurisme.png',
                'images/logo.png',
                'images/share.jpg' ];
-    
+
 for (var i = 0; i < videos.length; i++) {
   __LOADER.addVideo( __URL + videos[i] );
 }
@@ -32,9 +32,6 @@ for (var i = 0; i < images.length; i++) {
 }
 
 __LOADER.addCompletionListener(function(e) {
-  
-  console.log(e);
-  console.log( 'asstes loaded' );
 
     setTimeout(function(){
       $('#loader').animate({
@@ -42,7 +39,6 @@ __LOADER.addCompletionListener(function(e) {
         top: "-100%",
       }, 1500, function() {
         $(this).hide();
-        console.log( 'end load animation' );
       });
     },3000);
 
