@@ -214,12 +214,28 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       reply = $scope.$addReply.find('textarea').val(),
       validToInsert = true;
 
-    if (!typeId || !reply || typeId == "null") {
+    if (!typeId || typeId == "null") {
+      $scope.$addReply.find( '.select' ).css('background-color','#ee4649');
+      setTimeout(function(){  
+        $scope.$addReply.find( '.select' ).css('background-color','#00e0df');
+      },2000);
       validToInsert = false;
-      return false;
+    }
+    console.log(reply);
+    if (!reply || reply == "null") {
+      $scope.$addReply.find( 'textarea' ).css('background-color','#ee4649');
+      setTimeout(function(){  
+        $scope.$addReply.find( 'textarea' ).css('background-color','#FFF');
+      },2000);
+      validToInsert = false;
     }
 
     if (reply.length > 140) {
+      validToInsert = false;
+    }
+
+    if (validToInsert == false) 
+    {
       return false;
     }
 
@@ -258,5 +274,9 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           $scope.share( 'twitter' );
       });
   });
+
+  // $scope.$watch(, function(){
+
+  // });
 
 });
