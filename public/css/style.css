@@ -517,7 +517,7 @@ h1 a {
   color: #939598;
   display: none;
   padding: 0 20px;
-  background-image: url('/images/wall/bg_hover_item.png');
+  background-image: url('../images/wall/bg_hover_item.png');
   background-repeat: no-repeat;
 }
 #wall #reply h3 {
