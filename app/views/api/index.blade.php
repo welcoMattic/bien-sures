@@ -135,7 +135,6 @@
 
     __URL = "<% URL::to('/') %>/";
 
-    window.videos = '<% $videos %>';
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -171,6 +170,7 @@
     return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
     }(document, "script", "twitter-wjs"));
 
+    __VIDEOS = '<% $videos %>';
   </script>
 
   <script src="<% asset('js/vendors/jquery.min.js') %>"></script>
@@ -185,7 +185,8 @@
   <script src="<% asset('js/vendors/angular-route.min.js') %>"></script>
   <script src="<% asset('js/vendors/angular-isotope.min.js') %>"></script>
   <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
-  <script src="<% asset('js/vendors/autocomplete.js') %>"></script>
+  <script src="<% asset('js/vendors/ui-bootstrap-custom-0.10.0.js') %>"></script>
+  <script src="<% asset('js/vendors/ui-bootstrap-custom-tpls-0.10.0.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
   <script src="<% asset('js/vendors/controls.min.js') %>"></script>
@@ -193,6 +194,7 @@
   <script src="<% asset('js/vendors/poster.min.js') %>"></script>
   <script src="<% asset('js/vendors/quiz.js') %>"></script>
   <script src="<% asset('js/vendors/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/loader.js') %>"></script>
   <script src="<% asset('js/app.js') %>"></script>
   <script src="<% asset('js/controllers/player.js') %>"></script>
   <script src="<% asset('js/controllers/wall.js') %>"></script>

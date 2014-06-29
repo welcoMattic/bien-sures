@@ -19,7 +19,7 @@ class TypologyTableSeeder extends Seeder
       'name' => "Coups de klaxons"
     ));
     Typology::create(array(
-      'name' => "Commentaires sur l’apparence physique"
+      'name' => "Commentaires déplacés"
     ));
     Typology::create(array(
       'name' => "Gestes vulgaires"

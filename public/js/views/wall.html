@@ -1,24 +1,30 @@
 <div id="wall">
 
-  <div id="addReply" ng-mouseleave="hideAddReply()">
-
+  <div id="addReply">
+    <span aria-hidden="true" ng-click="hideAddReply()" class="pull-right close-cross">&times;</span><span class="sr-only">Close</span></button>
     <h3>Propose ta réplique</h3>
 
-    <a ng-click="showSelect( $event )" class="btn btn-block btn-lg btn-primary select" data-value="null"><div class="typeTxt">Type d'agression</div>
-      <div class="arrow">
-        <span class="fui-arrow-right btnList"></span>
-      </div>
-    </a>
+    <div class="response">
+      <p>notre équipe va lire votre post, on espère que vous avez été bien inspirée</p>
+    </div>
 
-    <ul ng-mouseleave="hideSelect()">
-      <li ng-repeat="type in Types" ng-click="selectRemplace( $event )" data-value="{{type.id}}">{{type.name}}</li>
-    </ul>
+    <form>
+      <a ng-click="showSelect( $event )" class="btn btn-block btn-lg btn-primary select" data-value="null"><div class="typeTxt">Type d'agression</div>
+        <div class="arrow">
+          <span class="fui-arrow-right btnList"></span>
+        </div>
+      </a>
 
-    <p>Réplique: <span>(<b ng-bind="replyLength"></b> caractères max)</span> </p>
+      <ul ng-mouseleave="hideSelect()">
+        <li ng-repeat="type in Types" ng-click="selectRemplace( $event )" data-value="{{type.id}}">{{type.name}}</li>
+      </ul>
 
-    <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
+      <p>Réplique: <span>(<b ng-bind="replyLength"></b> caractères max)</span> </p>
 
-    <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>
+      <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
+
+      <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>
+    </form>
 
   </div>
 
@@ -32,19 +38,19 @@
 
   </div>
 
-  <div id="reply" ng-mouseleave="hideReply()">
-    <h3></h3>
-    <div class="blocContent">
-      <p></p>
-    </div>
-    <div class="shareReply">
-      <p class="txt">Partagez la réplique sur:</p>
-      <p>
-        <a ng-click="share('facebook')" target="_blank" class="iconf-facebook-circled"><span></span></a>
-        <a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf-twitter-circled"><span></span></a>
-      </p>
-    </div>
-  </div>
+	<div id="replyHover" ng-mouseleave="hideReply()">
+		<h3></h3>
+		<div class="blocContent">
+			<p></p>
+		</div>
+		<div class="shareReply">
+			<p class="txt">Partagez la réplique sur :</p>
+			<p>
+				<a ng-click="share('facebook')" target="_blank" class="iconf-facebook-circled"><span></span></a>
+            	<a href="https://twitter.com/intent/tweet" data-url="http://bit.ly/1nNUhYb" data-text="Message" target="_blank" data-hashtags="BienSures" class="iconf-twitter-circled"><span></span></a>
+			</p>
+		</div>
+	</div>
 
   <ul id="wallContainer" isotope-container="isotope-container">
 
