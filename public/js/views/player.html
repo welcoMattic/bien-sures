@@ -28,7 +28,7 @@
   vg-stretch="config.stretch.value"
   vg-responsive="config.responsive">
   <vg-quiz vg-data='config.plugins.quiz.data' vg-quiz-submit="onQuizSubmit" vg-quiz-skip="onQuizSkip"></vg-quiz>
-  <video class='videoPlayer' preload='metadata'>
+  <video class='videoPlayer' preload='metadata' vg-src="config.sources">
     <source type="video/mp4" src="{{ videoSrcMP4 }}" />
     <source type="video/webm" src="{{ videoSrcWEBM }}" />
     <source type="video/ogv" src="{{ videoSrcOGV }}" />

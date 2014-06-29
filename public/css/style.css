@@ -939,6 +939,7 @@ vg-overlay-play.onPause .iconButton.play {
 .quiz-skip-button {
   margin-right: 54px;
   margin-top: 10px;
+  width: 104px;
 }
 
 /* onCompleted video screen*/
