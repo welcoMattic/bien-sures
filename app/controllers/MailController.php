@@ -6,6 +6,7 @@ class MailController extends \BaseController {
   public function index()
   {
     if(!Input::has('first_name','last_name','mail_from','subject','message')) {
+      return Input::all();
       return Response::json(array('status' => 'error', 'description' => 'missing fields'));
     }
 
@@ -14,12 +15,12 @@ class MailController extends \BaseController {
       'last_name'  => Input::get('last_name'),
       'mail_from'  => Input::get('mail_from'),
       'subject'    => Input::get('subject'),
-      'message'    => Input::get('message')
+      'body'    => Input::get('message')
     ];
 
     Mail::send('emails.contact', $data, function($message)
     {
-      $message->to('mathieu.santostefano@gmail.com', 'John Smith')->subject('Contact de bien-sures.fr : ' . Input::get('subject'));
+      $message->to('contact@bien-sures.fr', 'Bien Sûres')->subject('Contact de bien-sures.fr : ' . Input::get('subject'));
     });
 
     return Response::json(array('status' => 'success'));

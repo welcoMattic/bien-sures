@@ -1,10 +1,10 @@
-<h3>Message de <% first_name %> <% last_name %> (<% email %>)</h3>
+<h3>Message de <% $first_name %> <% $last_name %> (<% $mail_from %>)</h3>
 
-<div>Sujet : <% subject %></div>
+<div>Sujet : <% $subject %></div>
 <br><br>
 <div>
   <p>
-    <% message %>
+    <% $body %>
   </p>
 </div>
 <hr>

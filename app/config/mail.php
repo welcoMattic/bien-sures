@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'contact@bien-sures.fr', 'name' => 'HREN Armony'),
+	'from' => array('address' => 'contact@bien-sures.fr', 'name' => 'Bien Sûres'),
 
 	/*
 	|--------------------------------------------------------------------------
