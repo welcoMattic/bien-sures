@@ -22,6 +22,8 @@ Blade::setEscapedContentTags('<%%', '%%>');  // for escaped data
 // route to process the api initialization (app/views/api/index.blade.php)
 Route::get('/', ['uses' => 'ApiController@index']);
 
+Route::get('/api/tweet/', ['uses' => 'ApiController@tweet']);
+
 Route::group(['prefix' => 'api'], function()
 {
   // resource REST routes for user (app/views/admin/users/*.blade.php)

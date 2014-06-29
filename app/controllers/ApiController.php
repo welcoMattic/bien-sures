@@ -1,5 +1,9 @@
 <?php
 
+// echo __DIR__ . '/../lib/twitter/tmhOAuth.php';
+
+require __DIR__ . '/../lib/twitter/tmhOAuth.php';
+
 class ApiController extends \BaseController {
 
   public function index()
@@ -42,6 +46,31 @@ class ApiController extends \BaseController {
 
     return View::make('api.index')
       ->with(['videos' => json_encode($videos)]);
+  }
+
+  public function tweet() {
+
+    
+      $tmhOAuth = new tmhOAuth(array(
+        'consumer_key' => '',
+        'consumer_secret' => '',
+        'token' => '',
+        'secret' => '',
+      ));
+
+      $tmhOAuth->request('POST', $tmhOAuth->url('1.1/statuses/update'), array(
+        'status' => utf8_encode($message)
+      ));
+
+      if ($tmhOAuth->response['code'] == 200) {
+      // En cours de dév, afficher les informations retournées :
+      //  $tmhOAuth->pr(json_decode($tmhOAuth->response['response']));
+        return TRUE;
+      } else {
+      // En cours de dév, afficher les informations retournées :
+      //  $tmhOAuth->pr(htmlentities($tmhOAuth->response['response']));
+        return FALSE;
+      }
   }
 
 }
