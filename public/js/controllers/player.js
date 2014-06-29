@@ -17,29 +17,34 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   $scope.videos = angular.fromJson(window.videos);
 
   $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
-  $scope.videoSrcMP4 = 'videos/' + $scope.video.file + '.mp4';
-  $scope.videoSrcWEBM = 'videos/' + $scope.video.file + '.webm';
-  $scope.videoSrcOGV = 'videos/' + $scope.video.file + '.ogv';
-  $scope.videoEnds = [
-    $scope.video.end1,
-    $scope.video.end2,
-    $scope.video.end3,
-    $scope.video.end4
-  ];
 
-  if($scope.video.file == 'BienSures_scenario1_1280x720') {
-    $scope.prevVideo = 3;
-    $scope.nextVideo = 2;
-    $scope.quizTimecode = 13;
-  } else if($scope.video.file == 'BienSures_scenario2_1280x720') {
-    $scope.prevVideo = 1;
-    $scope.nextVideo = 3;
-    $scope.quizTimecode = 36;
-  } else if($scope.video.file == 'BienSures_scenario3_1280x720') {
-    $scope.prevVideo = 2;
-    $scope.nextVideo = 1;
-    $scope.quizTimecode = 77;
-  }
+  $scope.videoInit = function(video) {
+    $scope.videoSrcMP4 = 'videos/' + video.file + '.mp4';
+    $scope.videoSrcWEBM = 'videos/' + video.file + '.webm';
+    $scope.videoSrcOGV = 'videos/' + video.file + '.ogv';
+    $scope.videoEnds = [
+      video.end1,
+      video.end2,
+      video.end3,
+      video.end4
+    ];
+
+    if(video.file == 'BienSures_scenario1_1280x720') {
+      $scope.prevVideo = 3;
+      $scope.nextVideo = 2;
+      $scope.quizTimecode = 13;
+    } else if(video.file == 'BienSures_scenario2_1280x720') {
+      $scope.prevVideo = 1;
+      $scope.nextVideo = 3;
+      $scope.quizTimecode = 36;
+    } else if(video.file == 'BienSures_scenario3_1280x720') {
+      $scope.prevVideo = 2;
+      $scope.nextVideo = 1;
+      $scope.quizTimecode = 77;
+    }
+  };
+
+  $scope.videoInit($scope.video);
 
   var adjs = $scope.video.end1.adjectifs;
   adjs.concat(
@@ -110,6 +115,11 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     theme: {
       url: 'css/videogular.min.css'
     },
+    sources: [
+      {src: $sce.trustAsResourceUrl($scope.videoSrcMP4), type: "video/mp4"},
+      {src: $sce.trustAsResourceUrl($scope.videoSrcWEBM), type: "video/webm"},
+      {src: $sce.trustAsResourceUrl($scope.videoSrcOGV), type: "video/ogv"}
+    ],
     plugins: {
       poster: {
         url: "videos/poster.jpg"
@@ -126,6 +136,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.loadVideo = function(videoId) {
     $scope.video = $scope.videos[videoId - 1];
+    $scope.videoInit($scope.video);
+    $scope.config.sources = [
+      {src: $sce.trustAsResourceUrl($scope.videoSrcMP4), type: "video/mp4"},
+      {src: $sce.trustAsResourceUrl($scope.videoSrcWEBM), type: "video/webm"},
+      {src: $sce.trustAsResourceUrl($scope.videoSrcOGV), type: "video/ogv"}
+    ];
+    $scope.API.play();
   };
 
   $scope.onQuizSubmit = function(result) {
