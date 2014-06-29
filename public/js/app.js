@@ -61,15 +61,15 @@ BSApp.config(function ($routeProvider) {
 
 
 BSApp.factory('Typologies', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/api/typologies/');
+  return $resource('/beta/bien-sures/public/api/typologies/');
 }]);
 
 BSApp.factory('Reply', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/api/replies/');
+  return $resource('/beta/bien-sures/public/api/replies/');
 }]);
 
 BSApp.factory('Mail', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/api/sendmail/');
+  return $resource('/beta/bien-sures/public/api/sendmail/');
 }]);
 
 BSApp.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
