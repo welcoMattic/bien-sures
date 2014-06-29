@@ -33,6 +33,9 @@ for (var i = 0; i < images.length; i++) {
 
 __LOADER.addCompletionListener(function(e) {
 
+  console.log( e );
+  console.log( "ok" );
+
     setTimeout(function(){
       $('#loader').animate({
         opacity: 0,

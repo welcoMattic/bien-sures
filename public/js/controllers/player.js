@@ -118,7 +118,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     ],
     plugins: {
       poster: {
-        url: "videos/poster.jpg"
+        url: "videos/poster.png"
       },
       quiz: {
         data: [{
