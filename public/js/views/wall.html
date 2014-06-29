@@ -1,7 +1,7 @@
 <div id="wall">
 
-  <div id="addReply" ng-mouseleave="hideAddReply()">
-
+  <div id="addReply">
+    <span aria-hidden="true" ng-click="hideAddReply()" class="pull-right close-cross">&times;</span><span class="sr-only">Close</span></button>
     <h3>Propose ta réplique</h3>
 
     <div class="response">
@@ -23,7 +23,7 @@
 
       <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
 
-      <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>      
+      <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>
     </form>
 
   </div>

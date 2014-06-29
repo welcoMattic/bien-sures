@@ -1152,8 +1152,9 @@ label {
   color: #b2bcc5;
 }
 .form-control {
-  border: 2px solid #1abc9c;
+  border: 2px solid #00e0df;
   color: #34495e;
+  background-color: #F6F6F6;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.467;
@@ -1208,7 +1209,7 @@ select[multiple].input-sm {
   height: auto;
 }
 .input-lg {
-  height: 45px;
+  height: 50px;
   padding: 10px 15px;
   font-size: 17px;
   line-height: 1.235;
@@ -3265,9 +3266,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   border: none;
   display: block;
   margin-top: 8px;
-  opacity: 0;
   padding: 0;
-  visibility: hidden;
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: 0.25s;
@@ -3293,7 +3292,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
 .dropdown-menu li.selected > a,
 .dropdown-menu li.active > a.highlighted,
 .dropdown-menu li.selected > a.highlighted {
-  background: #1abc9c;
+  background: #00e0df;
   color: #ffffff;
 }
 .dropdown-menu li.active > a:hover,
@@ -3304,7 +3303,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
 .dropdown-menu li.selected > a:focus,
 .dropdown-menu li.active > a.highlighted:focus,
 .dropdown-menu li.selected > a.highlighted:focus {
-  background: #16a085;
+  background: #00e0df;
   color: #ffffff;
 }
 .dropdown-menu li > a {
@@ -4006,8 +4005,9 @@ body.vjs-full-window {
   padding: 0;
   height: 47px;
   color: #ffffff;
-  background: #273747;
+  background: #272727;
   border-radius: 0px;
+  opacity: .8;
 }
 .vjs-control-bar.vjs-fade-out {
   visibility: visible !important;
