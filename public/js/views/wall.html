@@ -1,36 +1,42 @@
 <div id="wall">
 
-	<div id="addReply" ng-mouseleave="hideAddReply()">
+  <div id="addReply" ng-mouseleave="hideAddReply()">
 
-		<h3>Propose ta réplique</h3>
+    <h3>Propose ta réplique</h3>
 
-		<a ng-click="showSelect( $event )" class="btn btn-block btn-lg btn-primary select" data-value="null"><div class="typeTxt">Type d'agression</div>
-			<div class="arrow">
-				<span class="fui-arrow-right btnList"></span>
-			</div>
-		</a>
+    <div class="response">
+      <p>notre équipe va lire votre post, on espère que vous avez été bien inspirée</p>
+    </div>
 
-		<ul ng-mouseleave="hideSelect()">
-			<li ng-repeat="type in Types" ng-click="selectRemplace( $event )" data-value="{{type.id}}">{{type.name}}</li>
-		</ul>
+    <form>
+      <a ng-click="showSelect( $event )" class="btn btn-block btn-lg btn-primary select" data-value="null"><div class="typeTxt">Type d'agression</div>
+        <div class="arrow">
+          <span class="fui-arrow-right btnList"></span>
+        </div>
+      </a>
 
-		<p>Réplique: <span>(<b ng-bind="replyLength"></b> caractères max)</span> </p>
+      <ul ng-mouseleave="hideSelect()">
+        <li ng-repeat="type in Types" ng-click="selectRemplace( $event )" data-value="{{type.id}}">{{type.name}}</li>
+      </ul>
 
-		<textarea ng-keyup="liveLength()" maxlength="140"></textarea>
+      <p>Réplique: <span>(<b ng-bind="replyLength"></b> caractères max)</span> </p>
 
-		<a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>
+      <textarea ng-keyup="liveLength()" maxlength="140"></textarea>
 
-	</div>
+      <a ng-click="addReply()" class="btn btn-block btn-lg btn-primary addreply">Envoyer</a>      
+    </form>
 
-	<div id="filters" ng-mouseleave="hideFilters()">
+  </div>
 
-		<h3>Choisis ton contexte</h3>
+  <div id="filters" ng-mouseleave="hideFilters()">
 
-		<ul>
-			<li ng-click="filtersContexts( $event )" ng-repeat="type in Types" class="filter_typologie_{{type.id}}" data-id="{{type.id}}" isActive="true">{{type.name}}</li>
-		</ul>
+    <h3>Choisis ton contexte</h3>
 
-	</div>
+    <ul>
+      <li ng-click="filtersContexts( $event )" ng-repeat="type in Types" class="filter_typologie_{{type.id}}" data-id="{{type.id}}" isActive="true">{{type.name}}</li>
+    </ul>
+
+  </div>
 
 	<div id="replyHover" ng-mouseleave="hideReply()">
 		<h3></h3>
@@ -46,20 +52,20 @@
 		</div>
 	</div>
 
-	<ul id="wallContainer" isotope-container="isotope-container">
+  <ul id="wallContainer" isotope-container="isotope-container">
 
-		<li class="addReply" ng-click="showAddReply()">
-			<span class="fui-plus"></span>
-		</li>
-		<li class="filtersShow" ng-click="showFilters()">
-			<span class="fui-search"></span>
-		</li>
+    <li class="addReply" ng-click="showAddReply()">
+      <span class="fui-plus"></span>
+    </li>
+    <li class="filtersShow" ng-click="showFilters()">
+      <span class="fui-search"></span>
+    </li>
 
-		<li ng-repeat="reply in filtredDatas" isotope-item="isotope-item" class="typology_{{reply.typology_id}} itemWall" ng-click="showReply( $event, reply )">
-			<p>{{reply.quote}}</p>
-			<div></div>
-		</li>
+    <li ng-repeat="reply in filtredDatas" isotope-item="isotope-item" class="typology_{{reply.typology_id}} itemWall" ng-click="showReply( $event, reply )">
+      <p>{{reply.quote}}</p>
+      <div></div>
+    </li>
 
-	</ul>
+  </ul>
 
 </div>

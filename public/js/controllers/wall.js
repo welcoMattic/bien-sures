@@ -240,9 +240,17 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
-        $scope.clearAddReply();
+        $scope.$addReply.find( 'form' ).fadeOut(function(){
+          $scope.$addReply.find( '.response' ).fadeIn();
+          setTimeout(function(){
+            $scope.clearAddReply();
+            $scope.hideAddReply();
+          },3000);
+        });
       }
-      $scope.hideAddReply();
+      else{
+        $scope.hideAddReply();
+      }
     });
 
     return false;

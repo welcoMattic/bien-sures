@@ -72,9 +72,10 @@ BSApp.factory('Mail', ['$resource',function($resource) {
   return $resource('/api/sendmail/');
 }]);
 
-BSApp.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
+BSApp.controller('NavCtrl', function($rootScope, $scope, $location) {
+  $rootScope.isSidebarActive = true;
   $scope.$location = $location;
-}]);
+});
 
 document.addEventListener("DOMContentLoaded", getWindowSize(), false);
 

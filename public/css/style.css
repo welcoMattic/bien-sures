@@ -488,6 +488,10 @@ h1 a {
   display: none;
   padding: 0 20px;
 }
+#wall #addReply .response {
+  text-align: center;
+  display: none;
+}
 #wall #addReply ul {
   display: none;
   list-style: none;
@@ -627,6 +631,9 @@ h1 a {
 }
 #wall #addReply p  {
   margin: 10px 0;
+}
+#wall #addReply .respnse p {
+  margin-top: 110px;
 }
 #wall #addReply .addreply {
   margin-top: 10px;
@@ -910,10 +917,6 @@ vg-overlay-play.onPause .iconButton.play {
   display: none;
 }
 
-vg-controls {
-  display: none !important;
-}
-
 /* Video form */
 
 .intro-form {
@@ -950,6 +953,7 @@ vg-controls {
 .quiz-skip-button {
   margin-right: 54px;
   margin-top: 10px;
+  width: 104px;
 }
 
 /* onCompleted video screen*/
@@ -1259,7 +1263,7 @@ h3 {
 }
 
 #formContactContainer textarea {
-  height: 145px;
+  height: 152px;
 }
 
 #contact h3.col-md-12 {
