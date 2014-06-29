@@ -219,7 +219,7 @@ app.directive('autocomplete', function() {
           e.preventDefault();
       });
     },
-    templateUrl: 'script/ac_template.html'
+    templateUrl: 'js/views/ac_template.html'
   };
 });
 

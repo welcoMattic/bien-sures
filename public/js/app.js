@@ -61,15 +61,15 @@ BSApp.config(function ($routeProvider) {
 
 
 BSApp.factory('Typologies', ['$resource',function($resource) {
-  return $resource('/api/typologies/');
+  return $resource('/beta/bien-sures/api/typologies/');
 }]);
 
 BSApp.factory('Reply', ['$resource',function($resource) {
-  return $resource('/api/replies/');
+  return $resource('/beta/bien-sures/api/replies/');
 }]);
 
 BSApp.factory('Mail', ['$resource',function($resource) {
-  return $resource('/api/sendmail/');
+  return $resource('/beta/bien-sures/api/sendmail/');
 }]);
 
 BSApp.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
@@ -89,8 +89,7 @@ function getWindowSize() {
 
 // LOADER
 var loader = new PxLoader(),
-    video = loader.addVideo( __URL + 'videos/video1.mp4'),
-    image = loader.addImage( __URL + 'images/example-image.jpg');
+    image = loader.addImage( __URL + 'videos/poster.jpg');
 
 loader.addCompletionListener(function() {
   setTimeout(function(){

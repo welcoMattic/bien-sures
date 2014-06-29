@@ -974,12 +974,12 @@ vg-controls {
   color: #00e0df;
 }
 
-.onCompleted a.glyphicon {
+.onCompleted #btn-replay.glyphicon {
   font-size: 70px;
   color: #f6f6f6;
 }
 
-.onCompleted a.glyphicon:hover {
+.onCompleted #btn-replay.glyphicon:hover {
   color: #00e0df;
 }
 
@@ -987,6 +987,12 @@ vg-controls {
   text-align: center;
 }
 
+.onError {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
 /* help view */
 
@@ -1254,8 +1260,4 @@ vg-controls {
 
 #contact p.col-md-5 {
   margin-left: 70px;
-}
-
-#loader {
-  display: none;
 }

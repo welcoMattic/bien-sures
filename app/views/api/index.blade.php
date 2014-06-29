@@ -50,6 +50,8 @@
   <link rel="stylesheet" href="<%asset('css/bootstrap.min.css')%>">
   <link rel="stylesheet" href="<%asset('css/flat-ui.css')%>">
   <link rel="stylesheet" href="<%asset('css/style.css')%>">
+  <link rel="stylesheet" href="<%asset('css/autocomplete.css')%>">
+  <link rel="stylesheet" href="<%asset('css/ngActivityIndicator.min.css')%>">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -97,7 +99,7 @@
               </button>
             </div>
           </li>
-          <li><a href="<% URL::to('/') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/']">Accueil</a></li>
+          <li><a href="<% URL::to('/#/') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/']">Accueil</a></li>
           <li><a href="<% URL::to('/#/mur-de-paroles') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/mur-de-paroles']">Mur de paroles</a></li>
           <li><a href="<% URL::to('/#/besoin-d-aide') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/besoin-d-aide']">Besoin d'aide</a></li>
           <li><a href="<% URL::to('/#/a-propos') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/a-propos']">À propos</a></li>
@@ -131,7 +133,6 @@
 
     __URL = "<% URL::to('/') %>/";
 
-    // Adjectifs
     window.videos = '<% $videos %>';
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
