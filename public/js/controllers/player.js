@@ -134,19 +134,38 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       var adjsArray = $scope.videoEnds[i].adjectifs.split(', ');
       var seekTime = 0;
       if($.inArray(reply, adjsArray) != -1) {
-          seekTime = $scope.videoEnds[i].timecode;
-          break;
+        $scope.API.seekTime($scope.videoEnds[i].timecode);
+        $scope.API.play();
+        break;
       } else {
         $('.onError').removeClass('hidden');
+        return false;
       }
     }
-    $scope.API.seekTime(seekTime);
-    $scope.API.play();
   };
 
   $scope.onQuizSkip = function() {
     var rand = Math.floor(Math.random() * (3 - 0 + 1));
     $scope.API.seekTime($scope.videoEnds[rand].timecode);
+  };
+
+  $scope.share = function( to ) {
+
+    if (to == "facebook") {
+      FB.ui({
+        method: 'feed',
+        name: 'Bien Sûres ! Contre le harcèlement de rue',
+        caption: 'DÉNONCER RÉAGIR AIDER',
+        description: ('Vidéo interactive'),
+        link: __URL,
+        picture: __URL + 'images/share.jpg'
+      },
+      function(response) {
+        if (response && response.post_id) {} else {}
+      });
+
+      return false;
+    }
   };
 
 });
