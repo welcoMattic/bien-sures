@@ -86,24 +86,3 @@ function getWindowSize() {
   $( 'html' ).attr('window-width', window.innerWidth );
   $( 'html' ).attr('window-height', window.innerHeight );
 }
-
-// LOADER
-var loader = new PxLoader(),
-    video = loader.addVideo( __URL + 'videos/video1.mp4'),
-    image = loader.addImage( __URL + 'images/example-image.jpg');
-
-loader.addCompletionListener(function() {
-  console.log( 'asstes loaded' );
-    setTimeout(function(){
-      $('#loader').animate({
-        opacity: 0,
-        top: "-100%",
-      }, 1500, function() {
-        $(this).hide();
-        console.log( 'end load animation' );
-      });
-    },3000);
-});
-
-// begin downloading images
-loader.start();

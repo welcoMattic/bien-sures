@@ -190,6 +190,7 @@
   <script src="<% asset('js/vendors/poster.min.js') %>"></script>
   <script src="<% asset('js/vendors/quiz.js') %>"></script>
   <script src="<% asset('js/vendors/mobile-detect.min.js') %>"></script>
+  <script src="<% asset('js/loader.js') %>"></script>
   <script src="<% asset('js/app.js') %>"></script>
   <script src="<% asset('js/controllers/player.js') %>"></script>
   <script src="<% asset('js/controllers/wall.js') %>"></script>
