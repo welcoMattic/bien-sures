@@ -1026,16 +1026,17 @@ vg-controls {
   padding: 0;
 }
 
-#help .partners .col-md-4:nth-child(even) {
-  margin-top: 47px;
-}
-
-#help .partners .col-md-4 div {
+#help .partners .col-md-4 a div {
   padding: 5px 15px;
   font-family: 'high_tidesans';
-  font-size: 24px;
+  font-size: 23px;
   line-height: 36px;
   background-color: #00e0df;
+  color: #f6f6f6;
+}
+
+#help .partners .col-md-4:nth-child(even) {
+  margin-top: 47px;
 }
 
 #help .partners .col-md-4 .caret {
