@@ -46,15 +46,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.videoInit($scope.video);
 
-  var adjs = $scope.video.end1.adjectifs;
-  adjs.concat(
-    $scope.video.end2.adjectifs,
-    $scope.video.end3.adjectifs,
-    $scope.video.end4.adjectifs
-  );
+  var adjs = $scope.video.end1.adjectifs + ', '
+             + $scope.video.end2.adjectifs + ', '
+             + $scope.video.end3.adjectifs + ', '
+             + $scope.video.end4.adjectifs;
   $scope.adjs = adjs.split(', ');
 
-  $scope.selectedAdj = ''
+  $scope.selectedAdj = '';
 
   $scope.currentTime = 0;
   $scope.totalTime = 0;
@@ -185,4 +183,12 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     }
   };
 
+  $scope.doSomething = function(input) {
+    $scope.adjs = $scope.adjs;
+    console.log('test');
+  };
+
+  $scope.doSomethingElse = function() {
+    console.log("Suggestion selected: " + suggestion );
+  };
 });
