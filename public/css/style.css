@@ -602,7 +602,7 @@ h1 a {
 .replyHover_8 {
     background-color: #ee4649;
 }
-#wall #addReply h3, #wall #filters {
+#wall #addReply h3, #wall #filters h3, #wall #filters ul li {
     font-style: italic;
     text-align: center;
 }
