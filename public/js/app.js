@@ -61,15 +61,15 @@ BSApp.config(function ($routeProvider) {
 
 
 BSApp.factory('Typologies', ['$resource',function($resource) {
-  return $resource('/api/typologies/');
+  return $resource('api/typologies/');
 }]);
 
 BSApp.factory('Reply', ['$resource',function($resource) {
-  return $resource('/api/replies/');
+  return $resource('api/replies/');
 }]);
 
 BSApp.factory('Mail', ['$resource',function($resource) {
-  return $resource('/api/sendmail/');
+  return $resource('api/sendmail/');
 }]);
 
 BSApp.controller('NavCtrl', function($rootScope, $scope, $location) {
