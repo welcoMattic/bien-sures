@@ -79,9 +79,11 @@
       <div></div>
     </div>
   </div>
-
+  <div class="overlay-mobile">
+    <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo.png" alt="Bien Sûres" /></a>
+    <p>L'expérience proposée lors de la visite de notre site est beaucoup plus immersive sur un ordinateur</p>
+  </div>
   <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
-
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav" id="sidebar">
