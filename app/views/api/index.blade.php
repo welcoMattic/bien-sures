@@ -100,7 +100,7 @@
             </div>
           </li>
           <span ng-controller="NavCtrl">
-            <li><a href="<% URL::to('/#/') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/']">Accueil</a></li>
+            <li><a href="<% URL::to('/#/player') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/player']">Accueil</a></li>
             <li><a href="<% URL::to('/#/mur-de-paroles') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/mur-de-paroles']">Mur de paroles</a></li>
             <li><a href="<% URL::to('/#/besoin-d-aide') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/besoin-d-aide']">Besoin d'aide</a></li>
             <li><a href="<% URL::to('/#/a-propos') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/a-propos']">À propos</a></li>
