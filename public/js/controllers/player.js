@@ -154,7 +154,8 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       {src: $sce.trustAsResourceUrl($scope.videoSrcWEBM), type: "video/webm"},
       {src: $sce.trustAsResourceUrl($scope.videoSrcOGV), type: "video/ogv"}
     ];
-    $scope.API.play();
+    $scope.config.plugins.poster.url = "images/" + $scope.video.file + ".jpg"
+    $scope.API.playPause();
   };
 
   $scope.onQuizSubmit = function(result) {
@@ -171,6 +172,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
         else if($scope.video.file == 'BienSures_scenario3_1280x720') seekTime = 150;
       }
     }
+    $('#reply').val('');
     $scope.API.seekTime(seekTime);
     $scope.API.play();
   };

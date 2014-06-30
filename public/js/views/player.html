@@ -9,14 +9,14 @@
       <i class="glyphicon glyphicon-repeat" id="btn-replay" ng-click="API.play();"></i>
       <h4>Découvre les autres expériences :</h4>
       <div class="center">
-        <a href="#" ng-click="loadVideo(prevVideo.id)" class="other-video">
+        <span ng-click="loadVideo(prevVideo.id)" class="other-video">
           <img ng-src="{{prevVideo.img}}" alt="Vidéo précédente" class="thumbnail-video">
           <span><p>Vidéo {{prevVideo.id}}</p></span>
-        </a>
-        <a href="#" ng-click="loadVideo(nextVideo.id)" class="other-video">
+        </span>
+        <span ng-click="loadVideo(nextVideo.id)" class="other-video">
           <img ng-src="{{nextVideo.img}}" alt="Vidéo suivante" class="thumbnail-video">
           <span><p>Vidéo {{nextVideo.id}}</p></span>
-        </a>
+        </span>
       </div>
     </div>
   </div>
