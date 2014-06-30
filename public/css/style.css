@@ -234,7 +234,7 @@ textarea {
     height: 30px;
     position: absolute;
     background-color: #00e0df;
-    /*top: 45%;*/
+    bottom: -40px;
     border-radius: 50%;
 }
 @-webkit-keyframes moveloader {
