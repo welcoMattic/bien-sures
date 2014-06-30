@@ -1,4 +1,4 @@
-<div class="onCompleted hidden">
+<div class="onCompleted">
   <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
     <h4>Partage ton expérience sur :</h4>
     <div class="col-md-8 col-md-offset-2">
@@ -17,6 +17,23 @@
           <img ng-src="{{nextVideo.img}}" alt="Vidéo suivante" class="thumbnail-video">
           <span><p>Vidéo {{nextVideo.id}}</p></span>
         </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+        <h4 class="modal-title" id="errorModalLabel">Oops</h4>
+      </div>
+      <div class="modal-body">
+        Tu compte réellement répondre ça en cas d’agression ? <br> Mauvaise idée, réessaye !
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Réessayer</button>
       </div>
     </div>
   </div>
