@@ -485,17 +485,14 @@ h1 a {
     background-color: #00e0df;
 }
 #wall #addReply, #wall #filters {
-    position: absolute;
-    z-index: 4;
-    width: 401px;
-    height: 401px;
-    background-color: rgb(39, 39, 39);
-    /*color: #939598;*/
-    color: #939598;
-    /*border: 1px red solid;*/
-    color: #939598;
-    display: none;
-    padding: 0 20px;
+  position: absolute;
+  z-index: 4;
+  width: 401px;
+  height: 401px;
+  background-color: rgb(39, 39, 39);
+  color: #939598;
+  display: none;
+  padding: 0 20px;
 }
 #wall #addReply .response {
     text-align: center;
@@ -602,10 +599,17 @@ h1 a {
 .replyHover_8 {
     background-color: #ee4649;
 }
-#wall #addReply h3, #wall #filters h3, #wall #filters ul li {
+#wall #filters ul li {
     font-style: italic;
-    text-align: center;
 }
+#wall #addReply h3, #wall #filters h3 {
+  font-family: 'high_tidebold';
+  font-size: 24px;
+  color: #F6F6F6;
+  font-style: normal;
+  text-align: center;
+}
+
 #wall #addReply .select {
     text-align: left;
     margin: 0;
@@ -902,7 +906,7 @@ vg-overlay-play.onPause .iconButton.play {
  .intro-form {
     margin-top: 200px;
 }
-.intro-form h4, .onCompleted h4 {
+.intro-form h4, .onCompleted h4, .alreadyPlayed h4 {
     text-align: center;
     margin-bottom: 25px;
     color: #f6f6f6;
@@ -932,15 +936,15 @@ vg-overlay-play.onPause .iconButton.play {
     width: 104px;
 }
 /* onCompleted video screen*/
- .onCompleted {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 85%;
-    height: 100%;
-    padding: 35px;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 10;
+ .onCompleted, .alreadyPlayed {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 85%;
+  height: 100%;
+  padding: 35px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
 .onCompleted #btn-replay {
     margin-bottom: 50px;
@@ -1258,8 +1262,7 @@ vg-overlay-play.onPause .iconButton.play {
     transform: translateY(-100%);
 }
 .center {
-    width:;
-    margin: 0 auto;
+  margin: 0 auto;
 }
 #loadingProgressG {
     width:110px;
@@ -1371,5 +1374,61 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 }
 
 .close-cross:hover {
-  opacity: .8
+  color: #00e0df;
+}
+
+.alreadyPlayed .other-video {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-left: 0;
+}
+
+.alreadyPlayed .col-md-12 .col-md-4:nth-child(odd) {
+  margin-top: 230px;
+}
+
+.alreadyPlayed .col-md-4 .title {
+  color: white;
+  z-index: 300;
+  text-align: center;
+  margin: 15px 0;
+  display: inline-block;
+  width: 100%;
+}
+
+.alreadyPlayed .col-md-4 .title .caret {
+  border-bottom-color: #F6F6F6;
+  border-top-color: #F6F6F6;
+  border-width: 10px 10px;
+}
+
+.alreadyPlayed .col-md-12 .col-md-4:nth-child(odd) .title {
+  border-bottom: solid 1px #F6F6F6;
+  padding-bottom: 20px;
+}
+
+.alreadyPlayed .col-md-12 .col-md-4:nth-child(odd) .caret {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  position: absolute;
+  right: 48%;
+  top: 56px;
+}
+
+.alreadyPlayed .col-md-12 .col-md-4:nth-child(even) .title {
+  border-top: solid 1px #F6F6F6;
+  padding-top: 20px;
+}
+
+.alreadyPlayed .col-md-12 .col-md-4:nth-child(even) .caret {
+  position: absolute;
+  right: 48%;
+  bottom: 56px;
 }

@@ -11,6 +11,7 @@
 BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
 
   $rootScope.isSidebarActive = true;
+  $rootScope.alreadyPlayed = $rootScope.alreadyPlayed != true ? false : true;
 
   $scope.videos = angular.fromJson(__VIDEOS);
 
@@ -78,9 +79,6 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
       $rootScope.isSidebarActive = false;
       $('.onCompleted').addClass('hidden');
-      // setTimeout(function(){
-      //   $('#errorModal').modal('hide');
-      // }, 2000);
     });
   };
 
@@ -88,6 +86,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.$apply(function() {
       $rootScope.isSidebarActive = true;
     });
+    $rootScope.alreadyPlayed = true;
     $('.onCompleted').removeClass('hidden');
     $scope.isCompleted = true;
   };
