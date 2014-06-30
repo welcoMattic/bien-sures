@@ -132,11 +132,10 @@ textarea {
 #loader {
     width: 100%;
     height: 100%;
-    background-color: #000;
+    background-color: rgb(39, 39, 39);
     position: absolute;
     z-index: 99999;
     overflow: hidden;
-    display: none;
 }
 @-webkit-keyframes loader {
     0% {
@@ -1128,18 +1127,15 @@ vg-overlay-play.onPause .iconButton.play {
 #about .col-md-offset-1 {
     margin-left: 14%;
 }
-#about .team .col-md-2:nth-child(even) {
-    margin-top: 123px;
-}
-#about .team .col-md-2:nth-child(even):hover {
-    margin-top: 33px;
-}
 #about .team .col-md-2 {
     padding: 0;
 }
 #about .team .col-md-2 .people {
     border: 2px solid #00e0df;
     text-align: center;
+}
+#about .team .col-md-2 .people img {
+  width: 100%;
 }
 #about .team .col-md-2 div.name {
     font-family:'high_tidebold';
@@ -1159,25 +1155,27 @@ vg-overlay-play.onPause .iconButton.play {
 }
 #about .team .col-md-2:nth-child(odd) .caret {
     top: 52px;
-    left: 125px;
+    left: 75%;
 }
 #about .team .col-md-2:nth-child(even) .caret {
-    bottom: 132px;
-    left: 125px;
+  bottom: 34%;
+  left: 75%;
 }
 #about .team .col-md-2 p {
     padding: 15px 10px 10px 10px;
     text-transform: none;
 }
 #about .team .col-md-2 .description, #about .team .col-md-2:hover .job {
-    display: none;
+  display: none;
+  height: 181px;
 }
 #about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
-    display: block;
-    color: #00e0df;
-    font-style: italic;
-    font-family:'Lato';
-    text-align: center;
+  display: block;
+  color: #00e0df;
+  font-style: italic;
+  font-family:'Lato';
+  text-align: center;
+  height: 181px;
 }
 /* contact */
  #contact {
@@ -1343,18 +1341,6 @@ vg-overlay-play.onPause .iconButton.play {
     }
 }
 
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape)
-and (-webkit-min-device-pixel-ratio: 1)  {
-  .btn-donation {
-    display: none;
-  }
-  .onCompleted {
-    padding: 20px;
-  }
-}
 
 .btn-donation {
   width: 55%;
@@ -1431,4 +1417,66 @@ and (-webkit-min-device-pixel-ratio: 1)  {
   position: absolute;
   right: 48%;
   bottom: 56px;
+}
+
+.overlay-mobile {
+  display: none;
+}
+
+/* media query for iPad resolution (landscape) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {
+  .btn-donation {
+    display: none;
+  }
+  .onCompleted {
+    padding: 20px;
+  }
+  #about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1250px) and (max-width: 1409px) {
+  #about .team .col-md-2:nth-child(even) .caret {
+    bottom: 29%;
+  }
+}
+
+/* media query for iphone resolution */
+@media only screen and (max-width : 767px) {
+	#loader {
+		display: none;
+	}
+ 	.overlay-mobile {
+	    width: 100%;
+	    height: 100%;
+	    background-color: rgb(39, 39, 39);
+	    display: block;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    text-align: center;
+	    font-family: 'high_tidebold';
+	    color: #fff;
+  	}
+  	.overlay-mobile #brand-logo {
+    	display: block;
+    	margin: 30px auto;
+  	}
+	 .overlay-mobile p {
+	    margin: 15px 50px;
+	}
+	#wrapper.active {
+	    display: none;
+	}
+	.overlay-mobile .social {
+	  	font-family: 'fontello';
+	}
+	.overlay-mobile .social a {
+	  	color: #00e0df;
+	  	font-size: 45px;
+  	}
+	.overlay-mobile .social a:hover {
+		opacity: 0.5;
+  	}
 }
