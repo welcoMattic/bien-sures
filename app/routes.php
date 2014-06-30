@@ -19,6 +19,17 @@ Blade::setEscapedContentTags('<%%', '%%>');  // for escaped data
  *  ------------------------------------------
  */
 
+// routes for pdf
+Route::get('bien-sures_communique_de_presse.pdf', function()
+{
+  return Response::make(File::get('pdf/bien-sures_communique_de_presse.pdf'), 200, array('content-type'=>'application/pdf'));
+});
+
+Route::get('bien-sures_charte_communautaire.pdf', function()
+{
+  return Response::make(File::get('pdf/bien-sures_charte_communautaire.pdf'), 200, array('content-type'=>'application/pdf'));
+});
+
 // route to process the api initialization (app/views/api/index.blade.php)
 Route::get('/', ['uses' => 'ApiController@index']);
 
