@@ -927,7 +927,7 @@ vg-overlay-play.onPause .iconButton.play {
     padding: 0;
 }
 .quiz-skip-button {
-    margin-right: 54px;
+    margin-left: 75%;
     margin-top: 10px;
     width: 104px;
 }
@@ -1347,6 +1347,9 @@ and (orientation : landscape)
 and (-webkit-min-device-pixel-ratio: 1)  {
   .btn-donation {
     display: none;
+  }
+  .onCompleted {
+    padding: 20px;
   }
 }
 
