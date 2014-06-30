@@ -1168,7 +1168,7 @@ vg-overlay-play.onPause .iconButton.play {
 }
 #about .team .col-md-2 .description, #about .team .col-md-2:hover .job {
   display: none;
-  height: 181px;
+  height: 203px;
 }
 #about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
   display: block;
@@ -1176,7 +1176,7 @@ vg-overlay-play.onPause .iconButton.play {
   font-style: italic;
   font-family:'Lato';
   text-align: center;
-  height: 181px;
+  height: 203px;
 }
 /* contact */
  #contact {
@@ -1432,7 +1432,11 @@ vg-overlay-play.onPause .iconButton.play {
   .onCompleted {
     padding: 20px;
   }
-  #about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
+}
+
+@media only screen and (min-width: 320px) and (max-width: 1249px) {
+  #about .team .col-md-2 .job, #about .team .col-md-2:hover .description,
+  #about .team .col-md-2 .job, #about .team .col-md-2:hover .job {
     display: none;
   }
 }
