@@ -1450,6 +1450,15 @@ vg-overlay-play.onPause .iconButton.play {
   #about .col-md-12 .stats .quote {
     margin-left: 105px;
   }
+  #help .partners:nth-child(odd) {
+    min-height: 480px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #help .partners .col-md-4 {
+    margin-top: 30px;
+  }
 }
 
 @media only screen and (max-width: 1012px) {
