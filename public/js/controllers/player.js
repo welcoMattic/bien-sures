@@ -119,13 +119,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.config = {
-    width: '100%',
-    height: '100%',
     autoHide: true,
     autoHideTime: 2000,
     autoPlay: false,
     stretch: {value: "fit"},
     responsive: true,
+    width: '100%',
+    height: '100%',
     theme: {
       url: 'css/videogular.min.css'
     },
