@@ -159,18 +159,20 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.onQuizSubmit = function(result) {
     var reply = result.reply;
-    console.log($scope.videoEnds.length);
     for (var i = 0; i < $scope.videoEnds.length; i++) {
       var adjsArray = $scope.videoEnds[i].adjectifs.split(', ');
       var seekTime = 0;
       if($.inArray(reply, adjsArray) != -1) {
-        $scope.API.seekTime($scope.videoEnds[i].timecode);
-        $scope.API.play();
-        break;
+          seekTime = $scope.videoEnds[i].timecode;
+          break;
       } else {
-        $('.onError').removeClass('hidden');
+        if($scope.video.file == 'BienSures_scenario1_1280x720') seekTime = 120;
+        else if($scope.video.file == 'BienSures_scenario2_1280x720') seekTime = 148;
+        else if($scope.video.file == 'BienSures_scenario3_1280x720') seekTime = 150;
       }
     }
+    $scope.API.seekTime(seekTime);
+    $scope.API.play();
   };
 
   $scope.onQuizSkip = function() {

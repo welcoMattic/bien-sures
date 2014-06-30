@@ -42,15 +42,17 @@ BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
         };
 
       Mail.get(data ,function( response ) {
+        $('#loadingProgressG').addClass('hidden');
         if( response.status == "success" ) {
-          // TODO: action after mail
           $($elements[0]).val('');
           $($elements[1]).val('');
           $($elements[2]).val('');
           $($elements[3]).val('');
           $($elements[4]).val('');
-          $('#loadingProgressG').addClass('hidden');
-          console.log(response);
+          $('#mail-submit').html('Message envoyé !');
+        } else {
+          $('#mail-submit').html('Erreur, verifie les champs');
+          // TODO : improve it
         }
       });
     }
