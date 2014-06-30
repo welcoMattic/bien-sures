@@ -1452,6 +1452,15 @@ vg-overlay-play.onPause .iconButton.play {
   }
 }
 
+@media only screen and (max-width: 1012px) {
+  #about .col-md-12 .stats {
+    display: none;
+  }
+  #about .intro {
+    margin-bottom: 50px;
+  }
+}
+
 @media only screen and (min-width: 1250px) and (max-width: 1409px) {
   #about .team .col-md-2:nth-child(even) .caret {
     bottom: 29%;
