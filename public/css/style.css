@@ -1366,3 +1366,7 @@ and (-webkit-min-device-pixel-ratio: 1)  {
 .modal-content {
   border-radius: 0;
 }
+
+.close-cross:hover {
+  opacity: .8
+}
