@@ -1069,6 +1069,7 @@ vg-overlay-play.onPause .iconButton.play {
 #about .intro:nth-child(even) {
     margin-left: 55px;
     margin-right: 40px;
+    margin-bottom: 60px;
 }
 #about .intro {
     border-bottom: 1px solid #f6f6f6;
@@ -1122,7 +1123,7 @@ vg-overlay-play.onPause .iconButton.play {
     font-size: 55px;
     color: #00e0df;
     float: left;
-    margin-left: 3%;
+    margin-left: 4%;
     margin-right: 10px;
 }
 #about .col-md-offset-1 {
@@ -1438,6 +1439,16 @@ vg-overlay-play.onPause .iconButton.play {
   #about .team .col-md-2 .job, #about .team .col-md-2:hover .description,
   #about .team .col-md-2 .job, #about .team .col-md-2:hover .job {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1249px) {
+  #about .col-md-12 .stats {
+    margin-top: 35%;
+    height: 145px;
+  }
+  #about .col-md-12 .stats .quote {
+    margin-left: 105px;
   }
 }
 
