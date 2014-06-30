@@ -100,13 +100,33 @@
             </div>
           </li>
           <span ng-controller="NavCtrl">
-            <li><a href="<% URL::to('/#/') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/']">Accueil</a></li>
+            <li><a href="<% URL::to('/#/player') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/player']">Accueil</a></li>
             <li><a href="<% URL::to('/#/mur-de-paroles') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/mur-de-paroles']">Mur de paroles</a></li>
             <li><a href="<% URL::to('/#/besoin-d-aide') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/besoin-d-aide']">Besoin d'aide</a></li>
             <li><a href="<% URL::to('/#/a-propos') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/a-propos']">À propos</a></li>
             <li><a href="<% URL::to('/#/nous-contacter') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/nous-contacter']">Contact</a></li>
           </span>
+          <li>
+            <button class="btn btn-success btn-donation" data-toggle="modal" data-target="#donationModal">Faire un don</button>
+          </li>
         </ul>
+
+        <div class="modal fade" id="donationModal" tabindex="-1" role="dialog" aria-labelledby="donationModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+                <h4 class="modal-title" id="donationModalLabel">Bien Sûres</h4>
+              </div>
+              <div class="modal-body">
+                Eh bien non, pas pour le moment. <br> Bien Sûres est un projet étudiant, pûrement bénévole.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fermer</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">
         <p class="joinSocial">Rejoignez nous sur:</p>
