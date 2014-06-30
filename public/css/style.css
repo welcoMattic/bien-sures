@@ -1342,21 +1342,6 @@ vg-overlay-play.onPause .iconButton.play {
     }
 }
 
-/* media query for iPad resolution (landscape) */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {
-  .btn-donation {
-    display: none;
-  }
-  .onCompleted {
-    padding: 20px;
-  }
-}
-
-@media only screen and (min-width: 1250px) and (max-width: 1409px) {
-  #about .team .col-md-2:nth-child(even) .caret {
-    bottom: 29%;
-  }
-}
 
 .btn-donation {
   width: 55%;
@@ -1437,6 +1422,25 @@ vg-overlay-play.onPause .iconButton.play {
 
 .overlay-mobile {
   display: none;
+}
+
+/* media query for iPad resolution (landscape) */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 1)  {
+  .btn-donation {
+    display: none;
+  }
+  .onCompleted {
+    padding: 20px;
+  }
+  #about .team .col-md-2 .job, #about .team .col-md-2:hover .description {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1250px) and (max-width: 1409px) {
+  #about .team .col-md-2:nth-child(even) .caret {
+    bottom: 29%;
+  }
 }
 
 /* media query for iphone resolution */
