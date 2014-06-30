@@ -1338,3 +1338,20 @@ vg-overlay-play.onPause .iconButton.play {
         margin-left:110px;
     }
 }
+
+.btn-donation {
+  width: 55%;
+  margin-top: 30px;
+  background: #F6F6F6;
+  border: 2px solid #00e0df;
+  color: #00e0df;
+}
+
+.btn-donation:hover {
+  background: #00e0df;
+  color: #F6F6F6;
+}
+
+.modal-content {
+  border-radius: 0;
+}
