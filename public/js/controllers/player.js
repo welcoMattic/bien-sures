@@ -49,7 +49,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
              + $scope.video.end2.adjectifs + ', '
              + $scope.video.end3.adjectifs + ', '
              + $scope.video.end4.adjectifs;
-  $scope.adjs = adjs.split(', ');
+  $scope.adjs = adjs.split(',');
 
   var output = [],
       keys = [];
