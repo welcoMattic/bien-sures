@@ -12,7 +12,7 @@
   <meta name="author" content="Bien Sûres" />
   <meta name="description" content="Bien Sûres : Un engagement collectif permanent, pour lutter contre la violence du harcèlement de rue rendue banale" />
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="@biensures">
   <meta name="twitter:title" content="Bien Sûres">
   <meta name="twitter:description" content="Bien Sûres : Un engagement collectif permanent, pour lutter contre la violence du harcèlement de rue rendue banale">
