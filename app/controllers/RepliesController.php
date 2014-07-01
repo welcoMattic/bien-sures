@@ -118,7 +118,7 @@ class RepliesController extends \BaseController {
   public function update($id)
   {
     // store validated data
-    $reply = reply::find($id);
+    $reply = Reply::find($id);
     $reply->status_ = Input::get('status_');
     $reply->save();
 

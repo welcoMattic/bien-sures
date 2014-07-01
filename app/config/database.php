@@ -57,7 +57,7 @@ return array(
 			'host'      => 'localhost',
 			'database'  => 'bien-sures',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'er7ymanne77s',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
