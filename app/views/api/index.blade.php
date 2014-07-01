@@ -139,11 +139,11 @@
         <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">
         <p class="joinSocial">Rejoignez nous sur :</p>
           <ul class="social-footer">
-            <li><a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled"><span>Facebook</span></a></li>
-            <li><a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span>Twitter</span></a></li>
-            <li><a href="http://instagram.com/biensures/" target="_blank" class="iconf-instagram-circled"><span>Instagram</span></a></li>
-            <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"><span>Pinterest</span></a></li>
-            <li><a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube"><span>YouTube</span></a></li>
+            <li><a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled" ga="['send', 'event', 'home', 'toSocialMedia', 'facebook']"><span>Facebook</span></a></li>
+            <li><a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled" ga="['send', 'event', 'home', 'toSocialMedia', 'twitter']"><span>Twitter</span></a></li>
+            <li><a href="http://instagram.com/biensures/" target="_blank" class="iconf-instagram-circled" ga="['send', 'event', 'home', 'toSocialMedia', 'instagram']"><span>Instagram</span></a></li>
+            <li><a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled" ga="['send', 'event', 'home', 'toSocialMedia', 'pinterest']"><span>Pinterest</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube" ga="['send', 'event', 'home', 'toSocialMedia', 'youtube']"><span>YouTube</span></a></li>
           </ul>
           <p class="copy">copyright © Bien Sûres - 2014 - <a href="<% URL::to('/#/mentions') %>">Mentions légales</a></p>
         </div>
