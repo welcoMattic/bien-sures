@@ -1,10 +1,10 @@
-<div class="onCompleted">
+<div class="onCompleted hidden">
   <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
     <h4>Partage ton expérience sur :</h4>
     <div class="col-md-8 col-md-offset-2">
       <div class="sharingBtns">
         <a ng-click="share('facebook')" target="_blank" href="#" class="iconf iconf-facebook-circled"><span></span></a>
-        <a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf iconf-twitter-circled"><span></span></a>
+        <a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf iconf-twitter-circled" ga="['send', 'event', 'player', 'share', 'twitter']"><span></span></a>
       </div>
       <i class="glyphicon glyphicon-repeat" id="btn-replay" ng-click="API.play();"></i>
       <h4>Découvre les autres expériences :</h4>
@@ -22,6 +22,35 @@
   </div>
 </div>
 
+<div ng-class="{true: 'alreadyPlayed', false: 'alreadyPlayed hidden'}[alreadyPlayed]">
+  <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
+    <h4>Choisis l'expérience à vivre :</h4>
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <span class="title">Camille se balade dans la rue</span>
+        <span ng-click="loadVideo(1)" class="other-video">
+          <img ng-src="images/thumbnail1.jpg" alt="Vidéo 1" class="thumbnail-video">
+          <span><p>Vidéo 2</p></span>
+        </span>
+      </div>
+        <div class="col-md-4">
+        <span ng-click="loadVideo(2)" class="other-video">
+          <img ng-src="images/thumbnail2.jpg" alt="Vidéo 2" class="thumbnail-video">
+          <span><p>Vidéo 2</p></span>
+        </span>
+        <span class="title">Camille prend le bus</span>
+        </div>
+        <div class="col-md-4">
+        <span class="title">Camille prend un verre avec ses amies</span>
+        <span ng-click="loadVideo(3)" class="other-video">
+          <img ng-src="images/thumbnail3.jpg" alt="Vidéo 3" class="thumbnail-video">
+          <span><p>Vidéo 3</p></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -30,7 +59,7 @@
         <h4 class="modal-title" id="errorModalLabel">Oops</h4>
       </div>
       <div class="modal-body">
-        Tu compte réellement répondre ça en cas d’agression ? <br> Mauvaise idée, réessaye !
+        Tu comptes réellement répondre ça en cas d’agression ? <br> Mauvaise idée, réessaye !
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Réessayer</button>

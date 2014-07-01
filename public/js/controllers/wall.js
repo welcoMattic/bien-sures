@@ -8,7 +8,8 @@
  * Controller of the BSApp
  */
 BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
-
+  ga('send', 'pageview', {title: 'Bien Sûres - Mur de paroles'});
+  $rootScope.alreadyPlayed = true;
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
   $('#wrapper').css({'background-color':'#00e0df'});
@@ -120,7 +121,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           name: 'Bien Sûres ! Contre le harcèlement de rue',
           caption: 'DÉNONCER RÉAGIR AIDER',
           description: (
-            'En réponse aux ' + agressionType.toLowerCase() + ':<b>' +
+            'En réponse aux ' + agressionType.toLowerCase() + ' : <b>' +
             '"' + $scope.$reply.find('.blocContent p').html() + '"</b>'
           ),
           link: __URL,
@@ -200,7 +201,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       $scope.$addReply.find( '.select' ).css('background-color','#ee4649');
       setTimeout(function(){
         $scope.$addReply.find( '.select' ).css('background-color','#00e0df');
-      },2000);
+      }, 2000);
       validToInsert = false;
     }
 
@@ -208,7 +209,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       $scope.$addReply.find( 'textarea' ).css('background-color','#ee4649');
       setTimeout(function(){
         $scope.$addReply.find( 'textarea' ).css('background-color','#FFF');
-      },2000);
+      }, 2000);
       validToInsert = false;
     }
 
@@ -226,12 +227,13 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
+        ga('send', 'event', 'wall', 'add', typeId);
         $scope.$addReply.find( 'form' ).fadeOut(function(){
           $scope.$addReply.find( '.response' ).fadeIn();
           setTimeout(function(){
             $scope.clearAddReply();
             $scope.hideAddReply();
-          },3000);
+          }, 3000);
         });
       }
       else{

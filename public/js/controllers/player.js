@@ -4,17 +4,23 @@
  * @ngdoc function
  * @name BSApp.controller:PlayerCtrl
  * @description
- * This controller contains all code for the interactive video player.
  * # PlayerCtrl
+ * This controller contains all code for the interactive video player.
+ * Main function are :
+ * - videoInit() : initialize $scope.video object to play video and fill in $scope.config object for videogular-quiz.js module
+ * - onQuizSubmit() : callback function after submit an adjective. Determines the correct timecode according to the adjective
+ * - others functions are called in these main functions or are callbacks for videogular module
  * Controller of the BSApp
  */
-BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
-
+BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS, ga) {
+  ga('send', 'pageview', {title: 'Bien Sûres - Player'});
   $rootScope.isSidebarActive = true;
+  $rootScope.alreadyPlayed = $rootScope.alreadyPlayed != true ? false : true;
 
   $scope.videos = angular.fromJson(__VIDEOS);
 
-  $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
+  $scope.videoRandId = Math.floor(Math.random() * 3);
+  $scope.video = $scope.videos[$scope.videoRandId];
 
   $scope.videoInit = function(video) {
 
@@ -76,11 +82,10 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
+      ga('send', 'event', 'player', 'play', $scope.videoRandId + 1);
       $rootScope.isSidebarActive = false;
+      $rootScope.alreadyPlayed = false;
       $('.onCompleted').addClass('hidden');
-      // setTimeout(function(){
-      //   $('#errorModal').modal('hide');
-      // }, 2000);
     });
   };
 
@@ -104,7 +109,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     var seekTime = null;
     if($scope.video.file == 'BienSures_scenario1_1280x720' && ['44','68','96','118'].indexOf(curr) > -1) seekTime = 141;
     else if($scope.video.file == 'BienSures_scenario2_1280x720' && ['66','90','121','147'].indexOf(curr) > -1) seekTime = 177;
-    else if($scope.video.file == 'BienSures_scenario3_1280x720' && ['78','104','118','135'].indexOf(curr) > -1) seekTime = 168;
+    else if($scope.video.file == 'BienSures_scenario3_1280x720' && ['104','118','135','149'].indexOf(curr) > -1) seekTime = 168;
     if(seekTime != null && seekTime != parseFloat(totalTime).toFixed(0)) $scope.API.seekTime(seekTime);
     $scope.currentTime = currentTime;
     $scope.totalTime = totalTime;
@@ -120,13 +125,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.config = {
-    width: '100%',
-    height: '100%',
     autoHide: true,
     autoHideTime: 2000,
     autoPlay: false,
     stretch: {value: "fit"},
     responsive: true,
+    width: '100%',
+    height: '100%',
     theme: {
       url: 'css/videogular.min.css'
     },
@@ -150,6 +155,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.loadVideo = function(videoId) {
+    ga('send', 'event', 'player', 'replay', videoId);
     $scope.video = $scope.videos[videoId - 1];
     $scope.videoInit($scope.video);
     $scope.config.sources = [
@@ -157,24 +163,39 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       {src: $sce.trustAsResourceUrl($scope.videoSrcWEBM), type: "video/webm"},
       {src: $sce.trustAsResourceUrl($scope.videoSrcOGV), type: "video/ogv"}
     ];
+    $scope.config.plugins.quiz = {
+      data: [{
+        "time": $scope.quizTimecode,
+        "background": "color",
+        "background_src": "rgba(0,0,0,0.5)"
+      }]
+    }
     $scope.config.plugins.poster.url = "images/" + $scope.video.file + ".jpg"
     $scope.API.playPause();
   };
 
   $scope.onQuizSubmit = function(result) {
     var reply = result.reply;
+    var error = false;
     for (var i = 0; i < $scope.videoEnds.length; i++) {
       var adjsArray = $scope.videoEnds[i].adjectifs.split(',');
       var seekTime = 0;
-      if($.inArray(reply, adjsArray) != -1) {
+      if($.inArray(reply, adjsArray) > -1) {
           seekTime = $scope.videoEnds[i].timecode;
+          error = false;
           break;
       } else {
-        seekTime = $scope.quizTimecode - 1;
-        $('#errorModal').modal('show');
+        error = true;
       }
     }
-    $('#reply').val('');
+    if(error) {
+      ga('send', 'event', 'player', 'submitAdjectifError', reply);
+      seekTime = $scope.quizTimecode - 1;
+      $('#errorModal').modal('show');
+    } else {
+      ga('send', 'event', 'player', 'submitAdjectifSuccess', reply);
+      $('#reply').val('');
+    }
     $scope.API.seekTime(seekTime);
     $scope.API.play();
   };
@@ -187,6 +208,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   $scope.share = function( to ) {
 
     if (to == "facebook") {
+      ga('send', 'event', 'player', 'share', 'facebook');
       FB.ui({
         method: 'feed',
         name: 'Bien Sûres ! Contre le harcèlement de rue',

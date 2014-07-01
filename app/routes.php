@@ -14,6 +14,28 @@
 Blade::setContentTags('<%', '%>');           // for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>');  // for escaped data
 
+App::missing(function($exception)
+{
+  return Redirect::to('/');
+});
+
+// Routes for youtube links redirection
+
+Route::get('facebook.php', function()
+{
+  return Redirect::to('https://facebook.php/biensures');
+});
+
+Route::get('twitter.php', function()
+{
+  return Redirect::to('https://twitter.php/biensures');
+});
+
+Route::get('google.php', function()
+{
+  return Redirect::to('https://plus.google.com/u/0/112605449457151257853');
+});
+
 /** ------------------------------------------
  *  API Routes
  *  ------------------------------------------

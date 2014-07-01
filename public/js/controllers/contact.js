@@ -5,10 +5,13 @@
  * @name BSApp.controller:ContactCtrl
  * @description
  * # ContactCtrl
+ * Set rootScope variables and background color for about.html view
+ * Main function is $scope.submit() which allow to send mail via Laravel API
  * Controller of the BSApp
  */
 BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
-
+  ga('send', 'pageview', {title: 'Bien Sûres - Contact'});
+  $rootScope.alreadyPlayed = true;
   $rootScope.isSidebarActive = true;
   $('#wrapper').css({'background-color':'#272727'});
   $scope.$from = $('#formContact');
@@ -50,9 +53,10 @@ BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
           $($elements[3]).val('');
           $($elements[4]).val('');
           $('#mail-submit').html('Message envoyé !');
+          ga('send', 'event', 'contact', 'send', 'success');
         } else {
           $('#mail-submit').html('Erreur, verifie les champs');
-          // TODO : improve it
+          ga('send', 'event', 'contact', 'send', 'fail');
         }
       });
     }
