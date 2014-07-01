@@ -1397,7 +1397,11 @@ vg-overlay-play.onPause .iconButton.play {
   text-align: center;
   margin: 15px 0;
   display: inline-block;
-  width: 100%;
+  width: 300px;
+}
+
+.alreadyPlayed .other-video span {
+  width: 300px;
 }
 
 .alreadyPlayed .col-md-4 .title .caret {
@@ -1418,7 +1422,7 @@ vg-overlay-play.onPause .iconButton.play {
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
   position: absolute;
-  right: 48%;
+  right: 156px;
   top: 56px;
 }
 
@@ -1429,7 +1433,7 @@ vg-overlay-play.onPause .iconButton.play {
 
 .alreadyPlayed .col-md-12 .col-md-4:nth-child(even) .caret {
   position: absolute;
-  right: 48%;
+  right: 156px;
   bottom: 56px;
 }
 
