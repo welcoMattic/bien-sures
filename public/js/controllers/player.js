@@ -183,13 +183,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       }
     }
     if(error) {
-      seekTime = $scope.quizTimecode - 0.1;
+      seekTime = $scope.quizTimecode - 1;
       $('#errorModal').modal('show');
     } else {
       $('#reply').val('');
-      $scope.API.seekTime(seekTime);
-      $scope.API.play();
     }
+    $scope.API.seekTime(seekTime);
+    $scope.API.play();
   };
 
   $scope.onQuizSkip = function() {
