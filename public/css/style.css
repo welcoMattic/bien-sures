@@ -1215,6 +1215,7 @@ vg-overlay-play.onPause .iconButton.play {
     border-right: 2px solid #00e0df;
     border-bottom: 2px solid #00e0df;
     border-radius: 0;
+    width: 87.666667%;
 }
 .form-container strong {
     font-weight: 400;
