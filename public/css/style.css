@@ -1471,6 +1471,12 @@ vg-overlay-play.onPause .iconButton.play {
   }
 }
 
+@media only screen and (max-height: 711px) {
+  .sidebar-nav li:not(#burger) {
+    line-height: 10px;
+  }
+}
+
 @media only screen and (max-width: 991px) {
   #help .partners .col-md-4 {
     margin-top: 30px;
