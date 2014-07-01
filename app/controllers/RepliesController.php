@@ -137,7 +137,14 @@ class RepliesController extends \BaseController {
    */
   public function destroy($id)
   {
-    //
+    // delete the reply
+    $reply = Reply::find($id);
+    $reply->delete();
+
+    // redirect
+    Session::flash('message', 'Réplique supprimée');
+    Session::flash('alertClass', "success");
+    return Redirect::to('admin/replies');
   }
 
 
