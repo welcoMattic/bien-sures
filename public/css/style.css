@@ -1277,7 +1277,7 @@ vg-overlay-play.onPause .iconButton.play {
   margin: 0 auto;
 }
 #loadingProgressG {
-    width:110px;
+    width:100%;
     height:9px;
     overflow:hidden;
     background-color:#00e0df;
