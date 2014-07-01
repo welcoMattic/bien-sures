@@ -63,10 +63,10 @@ class RepliesController extends \BaseController {
     } else {
 
       // store validated data
-      $Replie = new Reply;
-      $Replie->quote = Input::get('quote');
-      $Replie->typology_id = Input::get('typology_id');
-      $Replie->save();
+      $reply = new Reply;
+      $reply->quote = Input::get('quote');
+      $reply->typology_id = Input::get('typology_id');
+      $reply->save();
 
       if(Request::wantsJson() || Request::is('api/*')) {
         return Response::json(array('status' => 'success'));
