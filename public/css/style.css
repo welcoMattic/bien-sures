@@ -1258,7 +1258,7 @@ vg-overlay-play.onPause .iconButton.play {
     transition: all 300ms ease-out;
     left: 0;
     height: 45px;
-    width: 100%;
+    width: 300px;
     display: block;
     bottom: -45px;
     line-height: 45px;
