@@ -3,7 +3,7 @@ Bien Sûres
 
 ## Requirements
 
-Require : composer https://getcomposer.org/
+Require : https://getcomposer.org/
 
 
 ## Install project
