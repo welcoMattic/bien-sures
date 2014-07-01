@@ -1129,6 +1129,11 @@ vg-overlay-play.onPause .iconButton.play {
 #about .col-md-offset-1 {
     margin-left: 14%;
 }
+#about .team {
+  height: 440px;
+  max-height: 440px;
+  min-height: 440px;
+}
 #about .team .col-md-2 {
     padding: 0;
 }
