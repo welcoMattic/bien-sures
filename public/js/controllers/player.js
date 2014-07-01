@@ -78,7 +78,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
-      ga('send', 'event', 'player', 'play', $scope.videoRandId);
+      ga('send', 'event', 'player', 'play', $scope.videoRandId + 1);
       $rootScope.alreadyPlayed = false;
       $rootScope.isSidebarActive = false;
       $('.onCompleted').addClass('hidden');
@@ -153,6 +153,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.loadVideo = function(videoId) {
+    ga('send', 'event', 'player', 'replay', videoId);
     $scope.video = $scope.videos[videoId - 1];
     $scope.videoInit($scope.video);
     $scope.config.sources = [
@@ -186,9 +187,11 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       }
     }
     if(error) {
+      ga('send', 'event', 'player', 'submitAdjectifError', reply);
       seekTime = $scope.quizTimecode - 1;
       $('#errorModal').modal('show');
     } else {
+      ga('send', 'event', 'player', 'submitAdjectifSuccess', reply);
       $('#reply').val('');
     }
     $scope.API.seekTime(seekTime);
@@ -203,6 +206,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   $scope.share = function( to ) {
 
     if (to == "facebook") {
+      ga('send', 'event', 'player', 'share', 'facebook');
       FB.ui({
         method: 'feed',
         name: 'Bien Sûres ! Contre le harcèlement de rue',

@@ -8,7 +8,7 @@
  * Controller of the BSApp
  */
 BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
-
+  ga('send', 'pageview', {title: 'Bien Sûres - Contact'});
   $rootScope.isSidebarActive = true;
   $('#wrapper').css({'background-color':'#272727'});
   $scope.$from = $('#formContact');
