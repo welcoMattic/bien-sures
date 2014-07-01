@@ -16,7 +16,7 @@ At project root :
 
 (www-data is apache user of your OS, it could change between OS X and Linux)
 
-Create a database called bien-sure in your MySQL and execute :
+Create a database called bien-sures in your MySQL and execute :
 
 `php artisan migrate --seed`
 
