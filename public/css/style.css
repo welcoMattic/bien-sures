@@ -989,7 +989,7 @@ vg-overlay-play.onPause .iconButton.play {
     line-height: 24px;
 }
 #help p.intro {
-    margin-left: 55px;
+    margin-left: 39px;
     margin-bottom: 60px;
 }
 #help .partners:nth-child(odd) {
@@ -1081,7 +1081,7 @@ vg-overlay-play.onPause .iconButton.play {
 #about .col-md-12 {
     margin-bottom: 50px;
 }
-#about .colorized, #about .download-link:hover {
+#about .colorized, #help .colorized, #about .download-link:hover {
     color: #00e0df;
 }
 #about .caret, #about .download-link {
@@ -1196,7 +1196,7 @@ vg-overlay-play.onPause .iconButton.play {
     font-family:'high_tidebold';
 }
 #contact p.col-md-5 {
-    margin-left: 70px;
+    margin-left: 55px;
 }
 /* input in video */
  .form-container .dropdown-menu {
