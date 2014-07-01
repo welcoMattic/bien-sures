@@ -23,10 +23,10 @@
         </div>
         <div class="form-group row">
           <div class="col-xs-6">
-            <% Form::label('offensive_id', 'Agression') %>
-            <select name="offensive_id" id="offensive_id" class="form-control">
-              @foreach ($offensives as $offensive)
-                <% Form::getSelectOption($offensive->id . ' - ' .$offensive->quote, $offensive->id, 0); %>
+            <% Form::label('typology_id', 'Typologie') %>
+            <select name="typology_id" id="typology_id" class="form-control">
+              @foreach ($typologies as $typology)
+                <% Form::getSelectOption($typology->id . ' - ' .$typology->name, $typology->id, 0); %>
               @endforeach
             </select>
           </div>
