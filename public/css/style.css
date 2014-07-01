@@ -1453,7 +1453,7 @@ vg-overlay-play.onPause .iconButton.play {
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1249px) {
+@media only screen and (min-width: 992px) and (max-width: 1280px) {
   #about .col-md-12 .stats {
     margin-top: 35%;
     height: 145px;
