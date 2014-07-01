@@ -12,12 +12,13 @@
   <div class="col-md-offset-3 col-md-6">
     <form accept-charset="UTF-8" action="" method="post" role="form" name="replyForm" class="replyForm form-inline">
       <div class="col-md-9">
-        <!-- <autocomplete ng-model="result" attr-placeholder="type to search movies..." click-activation="true" data="movies" on-type="doSomething" on-select="doSomethingElse"></autocomplete> -->
-        <!-- <autocomplete attr-id="reply" attr-required attr-autofocus ng-model="selectedAdj" attr-placeholder="Écris un adjectif" click-activation="true" data="adjs" on-type="filterAdjsArray" on-select="fillInput"></autocomplete> -->
-        <input type="text" class="form-control input-lg" id="reply" name="reply" placeholder="écris un adjectif" autocomplete="off" required autofocus ng-autocomplete data="adjs" on-type="updateAdjs" ng-model="reply" />
+        <input type="text" class="form-control input-lg" id="reply" name="reply" style="width: 100%;"
+               placeholder="Écris un adjectif" autocomplete="off" required autofocus
+               ng-model="selectedAdj"
+               typeahead="adj for adj in $parent.adjs | filter:$viewValue | limitTo:5" typeahead-min-length="1"/>
       </div>
       <button class="btn btn-success quiz-submit-button" data-ng-click="quizSubmit()" type="submit" data-ng-show="submit" ng-disabled="replyForm.$invalid">Ok</button>
-      <button class="btn btn-inverse btn-xs pull-right quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Mode aléatoire</button>
+      <button class="btn btn-inverse btn-xs quiz-skip-button" data-ng-click="quizSkip()" type="button" data-ng-show="skip">Mode aléatoire</button>
     </form>
   </div>
 </div>

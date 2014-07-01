@@ -13,7 +13,8 @@ var BSApp = angular.module('BSApp', [
   "ngResource",
   "ngRoute",
   "ngSanitize",
-  "autocomplete",
+  "ui.bootstrap",
+  "ga",
   "ngActivityIndicator",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
@@ -61,20 +62,21 @@ BSApp.config(function ($routeProvider) {
 
 
 BSApp.factory('Typologies', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/public/api/typologies/');
+  return $resource('api/typologies/');
 }]);
 
 BSApp.factory('Reply', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/public/api/replies/');
+  return $resource('api/replies/');
 }]);
 
 BSApp.factory('Mail', ['$resource',function($resource) {
-  return $resource('/beta/bien-sures/public/api/sendmail/');
+  return $resource('api/sendmail/');
 }]);
 
-BSApp.controller('NavCtrl', ['$scope', '$location', function($scope, $location) {
+BSApp.controller('NavCtrl', function($rootScope, $scope, $location) {
+  $rootScope.isSidebarActive = true;
   $scope.$location = $location;
-}]);
+});
 
 document.addEventListener("DOMContentLoaded", getWindowSize(), false);
 
@@ -86,21 +88,3 @@ function getWindowSize() {
   $( 'html' ).attr('window-width', window.innerWidth );
   $( 'html' ).attr('window-height', window.innerHeight );
 }
-
-// LOADER
-var loader = new PxLoader(),
-    image = loader.addImage( __URL + 'videos/poster.jpg');
-
-loader.addCompletionListener(function() {
-  setTimeout(function(){
-    $('#loader').animate({
-      opacity: 0,
-      top: "-100%",
-    }, 1500, function() {
-      $(this).hide();
-    });
-  },3000);
-});
-
-// begin downloading images
-loader.start();

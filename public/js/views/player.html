@@ -1,15 +1,69 @@
-<div class="row onCompleted hidden">
-  <div class="col-md-12" ng-class="{true: 'col-md-offset-1', false: ''}[isSidebarActive]">
+<div class="onCompleted hidden">
+  <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
     <h4>Partage ton expérience sur :</h4>
     <div class="col-md-8 col-md-offset-2">
       <div class="sharingBtns">
-        <a class="iconf iconf-facebook-circled" href="#"></a>
-        <a class="iconf iconf-twitter-circled" href="#"></a>
+        <a ng-click="share('facebook')" target="_blank" href="#" class="iconf iconf-facebook-circled"><span></span></a>
+        <a href="https://twitter.com/intent/tweet?url=http://bit.ly/1nNUhYb&text=Message&hashtags=BienSures" target="_blank" class="iconf iconf-twitter-circled" ga="['send', 'event', 'player', 'share', 'twitter']"><span></span></a>
       </div>
       <i class="glyphicon glyphicon-repeat" id="btn-replay" ng-click="API.play();"></i>
       <h4>Découvre les autres expériences :</h4>
-      <button ng-click="loadVideo(prevVideo)">lien</button>
-      <button ng-click="loadVideo(nextVideo)">lien</button>
+      <div class="center">
+        <span ng-click="loadVideo(prevVideo.id)" class="other-video">
+          <img ng-src="{{prevVideo.img}}" alt="Vidéo précédente" class="thumbnail-video">
+          <span><p>Vidéo {{prevVideo.id}}</p></span>
+        </span>
+        <span ng-click="loadVideo(nextVideo.id)" class="other-video">
+          <img ng-src="{{nextVideo.img}}" alt="Vidéo suivante" class="thumbnail-video">
+          <span><p>Vidéo {{nextVideo.id}}</p></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-class="{true: 'alreadyPlayed', false: 'alreadyPlayed hidden'}[alreadyPlayed]">
+  <div ng-class="{true: 'col-md-11 col-md-offset-1', false: 'col-md-12'}[isSidebarActive]">
+    <h4>Choisis l'expérience à vivre :</h4>
+    <div class="col-md-12">
+      <div class="col-md-4">
+        <span class="title">Camille se balade dans la rue</span>
+        <span ng-click="loadVideo(1)" class="other-video">
+          <img ng-src="images/thumbnail1.jpg" alt="Vidéo 1" class="thumbnail-video">
+          <span><p>Vidéo 2</p></span>
+        </span>
+      </div>
+        <div class="col-md-4">
+        <span ng-click="loadVideo(2)" class="other-video">
+          <img ng-src="images/thumbnail2.jpg" alt="Vidéo 2" class="thumbnail-video">
+          <span><p>Vidéo 2</p></span>
+        </span>
+        <span class="title">Camille prend le bus</span>
+        </div>
+        <div class="col-md-4">
+        <span class="title">Camille prend un verre avec ses amies</span>
+        <span ng-click="loadVideo(3)" class="other-video">
+          <img ng-src="images/thumbnail3.jpg" alt="Vidéo 3" class="thumbnail-video">
+          <span><p>Vidéo 3</p></span>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Fermer</span></button>
+        <h4 class="modal-title" id="errorModalLabel">Oops</h4>
+      </div>
+      <div class="modal-body">
+        Tu comptes réellement répondre ça en cas d’agression ? <br> Mauvaise idée, réessaye !
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Réessayer</button>
+      </div>
     </div>
   </div>
 </div>
@@ -28,7 +82,7 @@
   vg-stretch="config.stretch.value"
   vg-responsive="config.responsive">
   <vg-quiz vg-data='config.plugins.quiz.data' vg-quiz-submit="onQuizSubmit" vg-quiz-skip="onQuizSkip"></vg-quiz>
-  <video class='videoPlayer' preload='metadata'>
+  <video class='videoPlayer' preload='metadata' vg-src="config.sources">
     <source type="video/mp4" src="{{ videoSrcMP4 }}" />
     <source type="video/webm" src="{{ videoSrcWEBM }}" />
     <source type="video/ogv" src="{{ videoSrcOGV }}" />
@@ -36,13 +90,13 @@
   <vg-poster-image vg-url='config.plugins.poster.url' vg-stretch="config.stretch.value"></vg-poster-image>
   <vg-buffering></vg-buffering>
   <vg-overlay-play></vg-overlay-play>
-  <vg-controls vg-autohide="config.autoHide" style="height: 50px;" class="vjs-control-bar">
+  <vg-controls vg-autohide="config.autoHide" style="height: 50px;">
     <vg-play-pause-button vg-play-icon="config.theme.playIcon" vg-pause-icon="config.theme.pauseIcon"></vg-play-pause-button>
-    <vg-timeDisplay>{{ currentTime }}</vg-timeDisplay>
-    <vg-scrubBar>
+    <vg-timeDisplay class="hidden">{{ currentTime }}</vg-timeDisplay>
+    <vg-scrubBar class="hidden">
       <vg-scrubbarcurrenttime></vg-scrubbarcurrenttime>
     </vg-scrubBar>
-    <vg-timeDisplay>{{ totalTime }}</vg-timeDisplay>
+    <vg-timeDisplay class="hidden">{{ totalTime }}</vg-timeDisplay>
     <vg-volume>
         <vg-mutebutton
           vg-volume-level-3-icon="config.theme.volumeLevel3Icon"

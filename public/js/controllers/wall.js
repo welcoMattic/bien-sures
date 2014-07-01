@@ -8,10 +8,15 @@
  * Controller of the BSApp
  */
 BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
-
+  ga('send', 'pageview', {title: 'Bien Sûres - Mur de paroles'});
+  $rootScope.alreadyPlayed = true;
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
   $('#wrapper').css({'background-color':'#00e0df'});
+
+  setTimeout(function() {
+    $scope.$emit('iso-method', {name:null, params:null});
+  }, 400);
 
   $rootScope.reloadWall = function() {
     setTimeout(function() {
@@ -27,9 +32,11 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
 
   $scope.$wall = $('#wall');
 
+  $('#wrapper').css({'background-color':'#00e0df'});
+
   $scope.$addReply = $('#addReply');
   $scope.$addReplySelect = $('#addReply ul');
-  $scope.$reply = $('#reply');
+  $scope.$reply = $('#replyHover');
   $scope.$filters = $('#filters');
 
   $scope.replyLength = 140;
@@ -42,12 +49,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.Datas = response;
     $scope.filtredDatas = response;
   });
-
-  // $( '#main-icon' ).hide();
-  // $( '#main-icon' ).click(function(){
-  //   $scope.$emit('iso-method', {name:null, params:null});
-    // console.log( 'ok' );
-  // });
 
   $scope.filtersContexts = function( $event ) {
     var $element = $($event.target),
@@ -120,7 +121,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           name: 'Bien Sûres ! Contre le harcèlement de rue',
           caption: 'DÉNONCER RÉAGIR AIDER',
           description: (
-            'En réponse aux ' + agressionType.toLowerCase() + ':<b>' +
+            'En réponse aux ' + agressionType.toLowerCase() + ' : <b>' +
             '"' + $scope.$reply.find('.blocContent p').html() + '"</b>'
           ),
           link: __URL,
@@ -133,20 +134,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       return false;
     }
 
-    FB.ui({
-      method: 'feed',
-      name: 'Bien Sûres ! Contre le harcèlement de rue',
-      caption: 'DÉNONCER RÉAGIR AIDER',
-      description: (
-        'En réponse aux ' + agressionType.toLowerCase() + ':<center><b>' +
-        '"' + $scope.$reply.find('.blocContent p').html() + '"</b></center>'
-      ),
-      link: __URL,
-      picture: __URL + 'images/share.jpg'
-    },
-    function(response) {
-      if (response && response.post_id) {} else {}
-    });
   }
 
   $scope.positionReply = function($element) {
@@ -155,6 +142,10 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       windowHeight = $('html').attr('window-height');
 
     elementPosition.left = elementPosition.left + $rootScope.$sideBar.width() - 10;
+
+    if($rootScope.isSidebarActive == false) {
+      elementPosition.left = elementPosition.left - 230;
+    }
 
     if (windowWidth < (elementPosition.left + 401)) {
       elementPosition.left = elementPosition.left - 201;
@@ -190,12 +181,6 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$reply.removeClass();
     $scope.$reply.addClass('replyHover_' + data.typology_id);
 
-    // $element.animate(
-    //  {height: "401px", width: "401px" }
-    // ,500, function() {
-    //  $scope.$emit('iso-method', {name:null, params:null})
-    // });
-
     $scope.$reply.fadeIn();
   }
 
@@ -203,16 +188,8 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
     $scope.$reply.hide();
   }
 
-  $scope.addReplySelect = function() {
-
-  }
-
   $scope.liveLength = function() {
     $scope.replyLength = 140 - ($scope.$addReply.find('textarea').val().length);
-    // if( $scope.replieLength == 0 )
-    // {
-    //  $scope.replieLength = "ERROR";
-    // }
   }
 
   $scope.addReply = function() {
@@ -220,38 +197,67 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
       reply = $scope.$addReply.find('textarea').val(),
       validToInsert = true;
 
-    if (!typeId || !reply || typeId == "null") {
+    if (!typeId || typeId == "null") {
+      $scope.$addReply.find( '.select' ).css('background-color','#ee4649');
+      setTimeout(function(){
+        $scope.$addReply.find( '.select' ).css('background-color','#00e0df');
+      }, 2000);
       validToInsert = false;
-      return false;
+    }
+
+    if (!reply || reply == "null") {
+      $scope.$addReply.find( 'textarea' ).css('background-color','#ee4649');
+      setTimeout(function(){
+        $scope.$addReply.find( 'textarea' ).css('background-color','#FFF');
+      }, 2000);
+      validToInsert = false;
     }
 
     if (reply.length > 140) {
-      return false;
+      validToInsert = false;
     }
 
-    // return false;
+    if (validToInsert == false)
+    {
+      return false;
+    }
 
     var newReply = new Reply();
     newReply.quote = reply;
     newReply.typology_id = typeId;
     newReply.$save(function(response) {
       if (response.status == "success") {
-        $scope.clearAddReply();
+        ga('send', 'event', 'wall', 'add', typeId);
+        $scope.$addReply.find( 'form' ).fadeOut(function(){
+          $scope.$addReply.find( '.response' ).fadeIn();
+          setTimeout(function(){
+            $scope.clearAddReply();
+            $scope.hideAddReply();
+          }, 3000);
+        });
       }
-      $scope.hideAddReply();
+      else{
+        $scope.hideAddReply();
+      }
     });
 
     return false;
   }
 
   $scope.showSelect = function() {
+    if($scope.addReplySelectActibe == true ) {
+      $scope.hideSelect();
+      return false;
+    }
     $( '.btnList' ).addClass( 'open' );
     $scope.$addReplySelect.show();
+    $scope.addReplySelectActibe = true;
   }
 
   $scope.hideSelect = function() {
     $( '.btnList' ).removeClass( 'open' );
     $scope.$addReplySelect.hide();
+    $scope.addReplySelectActibe = false;
   }
 
   $scope.selectRemplace = function( $event ) {
