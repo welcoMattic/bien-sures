@@ -24,5 +24,8 @@ Create a database called bien-sure in your MySQL and execute :
 
 Create a vhost called `bien-sures.dev` with public/ directory as target
 
-##
+## Configure database.php for local environment 
+
+Edit app/config/local/database.php
+Set your local MySQL config here
 
