@@ -41,11 +41,7 @@
   <link rel="publisher" href="https://plus.google.com/u/0/112605449457151257853"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <link rel="shortcut icon" href="<%% asset('assets/ico/favicon.png') %%>">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%% asset('assets/ico/apple-touch-icon-144-precomposed.png') %%>">
-  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<%% asset('assets/ico/apple-touch-icon-114-precomposed.png') %%>">
-  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<%% asset('assets/ico/apple-touch-icon-72-precomposed.png') %%>">
-  <link rel="apple-touch-icon-precomposed" href="<%% asset('assets/ico/apple-touch-icon-57-precomposed.png') %%>">
+  <link rel="shortcut icon" href="<%% asset('favicon.png') %%>">
 
   <link rel="stylesheet" href="<%asset('css/bootstrap.min.css')%>">
   <link rel="stylesheet" href="<%asset('css/flat-ui.css')%>">
