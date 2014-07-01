@@ -12,7 +12,7 @@
   <meta name="author" content="Bien Sûres" />
   <meta name="description" content="Bien Sûres : Un engagement collectif permanent, pour lutter contre la violence du harcèlement de rue rendue banale" />
 
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="photo">
   <meta name="twitter:site" content="@biensures">
   <meta name="twitter:title" content="Bien Sûres">
   <meta name="twitter:description" content="Bien Sûres : Un engagement collectif permanent, pour lutter contre la violence du harcèlement de rue rendue banale">
@@ -80,8 +80,18 @@
     </div>
   </div>
   <div class="overlay-mobile">
-    <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo.png" alt="Bien Sûres" /></a>
-    <p>L'expérience proposée lors de la visite de notre site est beaucoup plus immersive sur un ordinateur</p>
+    <a href="<% URL::to('/') %>" id="brand-logo" ng-class="{true: 'active', false: ''}[isSidebarActive]"><img src="images/logo_loader.png" width="275" alt="Bien Sûres" /></a>
+    <p>Merci d'agrandir votre navigateur si vous êtes sur ordinateur,</p>
+    <p>Si vous êtes sur une tablette, tournez la.</p>
+    <p>La navigation du site n'est pas accessible sur mobile.</p>
+    <p>Nous rejoindre sur :</p>
+    <p class="social">
+      <a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled"></a>
+      <a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"></a>
+      <a href="http://instagram.com/biensures/" target="_blank" class="iconf-instagram-circled"></a>
+      <a href="http://www.pinterest.com/biensures/" target="_blank" class="iconf-pinterest-circled"></a>
+      <a href="https://www.youtube.com/channel/UClMTubVyx3JJZjVELb-jsOA" target="_blank" class="iconf-youtube"></a>
+    </p>
   </div>
   <div id="wrapper" ng-class="{true: 'active', false: ''}[isSidebarActive]">
       <!-- Sidebar -->
