@@ -120,7 +120,7 @@ BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
           name: 'Bien Sûres ! Contre le harcèlement de rue',
           caption: 'DÉNONCER RÉAGIR AIDER',
           description: (
-            'En réponse aux ' + agressionType.toLowerCase() + ':<b>' +
+            'En réponse aux ' + agressionType.toLowerCase() + ' : <b>' +
             '"' + $scope.$reply.find('.blocContent p').html() + '"</b>'
           ),
           link: __URL,
