@@ -15,7 +15,8 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.videos = angular.fromJson(__VIDEOS);
 
-  $scope.video = $scope.videos[Math.floor(Math.random() * 3)];
+  $scope.videoRandId = Math.floor(Math.random() * 3);
+  $scope.video = $scope.videos[$scope.videoRandId];
 
   $scope.videoInit = function(video) {
 
@@ -77,6 +78,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
+      ga('send', 'event', 'player', 'play', $scope.videoRandId);
       $rootScope.alreadyPlayed = false;
       $rootScope.isSidebarActive = false;
       $('.onCompleted').addClass('hidden');
