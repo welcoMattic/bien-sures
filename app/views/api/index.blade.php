@@ -131,7 +131,7 @@
         </div>
 
         <div id="footer" ng-class="{true: '', false: 'inactive'}[isSidebarActive]">
-        <p class="joinSocial">Rejoignez nous sur:</p>
+        <p class="joinSocial">Rejoignez nous sur :</p>
           <ul class="social-footer">
             <li><a href="https://www.facebook.com/biensures/" target="_blank" class="iconf-facebook-circled"><span>Facebook</span></a></li>
             <li><a href="https://twitter.com/BienSures" target="_blank" class="iconf-twitter-circled"><span>Twitter</span></a></li>
@@ -164,7 +164,6 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-52124244-1', 'bien-sures.fr');
-    ga('send', 'pageview');
 
     window.fbAsyncInit = function() {
       FB.init({
@@ -209,6 +208,7 @@
   <script src="<% asset('js/vendors/ngActivityIndicator.min.js') %>"></script>
   <script src="<% asset('js/vendors/ui-bootstrap-custom-0.10.0.js') %>"></script>
   <script src="<% asset('js/vendors/ui-bootstrap-custom-tpls-0.10.0.js') %>"></script>
+  <script src="<% asset('js/vendors/ga.js') %>"></script>
   <script src="<% asset('js/vendors/videogular.min.js') %>"></script>
   <script src="<% asset('js/vendors/buffering.min.js') %>"></script>
   <script src="<% asset('js/vendors/controls.min.js') %>"></script>

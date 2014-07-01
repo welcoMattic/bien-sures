@@ -8,8 +8,8 @@
  * # PlayerCtrl
  * Controller of the BSApp
  */
-BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS) {
-
+BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS, ga) {
+  ga('send', 'pageview', {title: 'Bien Sûres - Player'});
   $rootScope.isSidebarActive = true;
   $rootScope.alreadyPlayed = $rootScope.alreadyPlayed != true ? false : true;
 
@@ -170,20 +170,26 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.onQuizSubmit = function(result) {
     var reply = result.reply;
+    var error = false;
     for (var i = 0; i < $scope.videoEnds.length; i++) {
       var adjsArray = $scope.videoEnds[i].adjectifs.split(',');
       var seekTime = 0;
-      if($.inArray(reply, adjsArray) != -1) {
+      if($.inArray(reply, adjsArray) > -1) {
           seekTime = $scope.videoEnds[i].timecode;
+          error = false;
           break;
       } else {
-        seekTime = $scope.quizTimecode - 0.1;
-        $('#errorModal').modal('show');
+        error = true;
       }
     }
-    $('#reply').val('');
-    $scope.API.seekTime(seekTime);
-    $scope.API.play();
+    if(error) {
+      seekTime = $scope.quizTimecode - 0.1;
+      $('#errorModal').modal('show');
+    } else {
+      $('#reply').val('');
+      $scope.API.seekTime(seekTime);
+      $scope.API.play();
+    }
   };
 
   $scope.onQuizSkip = function() {

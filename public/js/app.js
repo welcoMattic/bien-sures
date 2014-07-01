@@ -14,6 +14,7 @@ var BSApp = angular.module('BSApp', [
   "ngRoute",
   "ngSanitize",
   "ui.bootstrap",
+  "ga",
   "ngActivityIndicator",
   "com.2fdevs.videogular",
   "com.2fdevs.videogular.plugins.controls",
