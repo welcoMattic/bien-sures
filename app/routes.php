@@ -14,6 +14,11 @@
 Blade::setContentTags('<%', '%>');           // for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>');  // for escaped data
 
+App::missing(function($exception)
+{
+  return Redirect::to('/');
+});
+
 /** ------------------------------------------
  *  API Routes
  *  ------------------------------------------
