@@ -103,7 +103,6 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.onUpdateTime = function(currentTime, totalTime) {
     var curr = parseFloat(currentTime).toFixed(0);
-    console.log(curr);
     var seekTime = null;
     if($scope.video.file == 'BienSures_scenario1_1280x720' && ['44','68','96','118'].indexOf(curr) > -1) seekTime = 141;
     else if($scope.video.file == 'BienSures_scenario2_1280x720' && ['66','90','121','147'].indexOf(curr) > -1) seekTime = 177;

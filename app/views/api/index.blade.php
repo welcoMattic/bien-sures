@@ -115,7 +115,7 @@
             <li><a href="<% URL::to('/#/nous-contacter') %>" ng-class="{true: 'displayed', false: ''}[$location.path() == '/nous-contacter']">Contact</a></li>
           </span>
           <li>
-            <button class="btn btn-success btn-donation" data-toggle="modal" data-target="#donationModal">Faire un don</button>
+            <button class="btn btn-success btn-donation" data-toggle="modal" data-target="#donationModal" ga="['send', 'event', 'home', 'donationPopIn', 'opened']">Faire un don</button>
           </li>
         </ul>
 
