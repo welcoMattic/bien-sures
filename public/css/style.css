@@ -1114,6 +1114,7 @@ vg-overlay-play.onPause .iconButton.play {
     width: 100%;
     height: 95px;
     margin-top: 21%;
+    margin-bottom: 6%;
 }
 #about .stats .col-md-4 {
     text-transform: uppercase;
