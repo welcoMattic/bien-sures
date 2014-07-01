@@ -102,10 +102,10 @@ class RepliesController extends \BaseController {
   {
     // get the offensive
     $reply = Reply::find($id);
-    $offensives = Offensive::get();
+    $typologies = Typology::get();
 
     // show the edit form and pass the user
-    return View::make('admin.replies.edit', compact('reply', 'offensives'));
+    return View::make('admin.replies.edit', compact('reply', 'typologies'));
   }
 
 
