@@ -15,7 +15,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
   $scope.videos = angular.fromJson(__VIDEOS);
 
-  $scope.video = $scope.videos[Math.floor(Math.random() * (2 - 0 + 1))];
+  $scope.video = $scope.videos[Math.floor(Math.random() * 3)];
 
   $scope.videoInit = function(video) {
 
@@ -77,6 +77,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.API.setSize(window.innerWidth - 64, window.innerHeight);
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
+      $rootScope.alreadyPlayed = false;
       $rootScope.isSidebarActive = false;
       $('.onCompleted').addClass('hidden');
     });
@@ -156,6 +157,13 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
       {src: $sce.trustAsResourceUrl($scope.videoSrcWEBM), type: "video/webm"},
       {src: $sce.trustAsResourceUrl($scope.videoSrcOGV), type: "video/ogv"}
     ];
+    $scope.config.plugins.quiz = {
+      data: [{
+        "time": $scope.quizTimecode,
+        "background": "color",
+        "background_src": "rgba(0,0,0,0.5)"
+      }]
+    }
     $scope.config.plugins.poster.url = "images/" + $scope.video.file + ".jpg"
     $scope.API.playPause();
   };
@@ -169,7 +177,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
           seekTime = $scope.videoEnds[i].timecode;
           break;
       } else {
-        seekTime = $scope.quizTimecode - 1;
+        seekTime = $scope.quizTimecode - 0.1;
         $('#errorModal').modal('show');
       }
     }
