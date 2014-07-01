@@ -5,6 +5,7 @@
  * @name BSApp.controller:HelpCtrl
  * @description
  * # HelpCtrl
+ * Set rootScope variables and background color for help.html view
  * Controller of the BSApp
  */
 BSApp.controller('HelpCtrl', function ($rootScope, $scope) {

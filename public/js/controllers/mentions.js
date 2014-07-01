@@ -5,6 +5,7 @@
  * @name BSApp.controller:MentionsCtrl
  * @description
  * # MentionsCtrl
+ * Set rootScope variables and background color for mentions.html view
  * Controller of the BSApp
  */
 BSApp.controller('MentionsCtrl', function ($rootScope, $scope) {

@@ -5,6 +5,7 @@
  * @name BSApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
+ * Set rootScope variables and background color for about.html view
  * Controller of the BSApp
  */
 BSApp.controller('AboutCtrl', function ($rootScope, $scope) {

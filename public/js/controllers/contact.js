@@ -5,6 +5,8 @@
  * @name BSApp.controller:ContactCtrl
  * @description
  * # ContactCtrl
+ * Set rootScope variables and background color for about.html view
+ * Main function is $scope.submit() which allow to send mail via Laravel API
  * Controller of the BSApp
  */
 BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
