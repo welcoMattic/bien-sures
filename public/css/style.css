@@ -707,6 +707,7 @@ h1 a {
     display: table-cell;
     vertical-align: middle;
     font-size: 13px;
+    line-height: 20px;
 }
 #wallContainer li div {
     display: none;
@@ -1178,6 +1179,7 @@ vg-overlay-play.onPause .iconButton.play {
   font-family:'Lato';
   text-align: center;
   height: 203px;
+  line-height: 27px;
 }
 /* contact */
  #contact {
