@@ -50,9 +50,10 @@ BSApp.controller('ContactCtrl', function ($rootScope, $scope, Mail) {
           $($elements[3]).val('');
           $($elements[4]).val('');
           $('#mail-submit').html('Message envoyé !');
+          ga('send', 'event', 'contact', 'send', 'success');
         } else {
           $('#mail-submit').html('Erreur, verifie les champs');
-          // TODO : improve it
+          ga('send', 'event', 'contact', 'send', 'fail');
         }
       });
     }
