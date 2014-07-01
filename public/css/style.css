@@ -1186,7 +1186,7 @@ vg-overlay-play.onPause .iconButton.play {
   line-height: 27px;
 }
 #about .team .col-md-2:nth-child(odd) .job, #about .team .col-md-2:nth-child(odd):hover .description {
-  padding-top: 70%;
+  padding-top: 65%;
 }
 /* contact */
  #contact {
