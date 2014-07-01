@@ -9,6 +9,7 @@
  */
 BSApp.controller('WallCtrl', function($rootScope, $scope, Typologies, Reply) {
   ga('send', 'pageview', {title: 'Bien Sûres - Mur de paroles'});
+  $rootScope.alreadyPlayed = true;
   $rootScope.isSidebarActive = true;
   $rootScope.burgerActive = false;
   $('#wrapper').css({'background-color':'#00e0df'});

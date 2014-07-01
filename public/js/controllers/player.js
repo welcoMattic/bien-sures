@@ -79,8 +79,8 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
 
     $rootScope.$on(VG_EVENTS.ON_PLAY, function() {
       ga('send', 'event', 'player', 'play', $scope.videoRandId + 1);
-      $rootScope.alreadyPlayed = false;
       $rootScope.isSidebarActive = false;
+      $rootScope.alreadyPlayed = false;
       $('.onCompleted').addClass('hidden');
     });
   };
@@ -89,7 +89,6 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
     $scope.$apply(function() {
       $rootScope.isSidebarActive = true;
     });
-    $rootScope.alreadyPlayed = true;
     $('.onCompleted').removeClass('hidden');
     $scope.isCompleted = true;
   };

@@ -971,6 +971,7 @@ vg-overlay-play.onPause .iconButton.play {
 .onCompleted .col-md-8 {
     text-align: center;
 }
+
 .onError {
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
