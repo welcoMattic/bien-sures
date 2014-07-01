@@ -207,7 +207,7 @@ textarea {
     animation: loader 2.5s infinite;
 }
 #loader .txt {
-    margin-top: 400px;
+    margin-top: 430px;
 }
 #loader p {
     color: #fff;
