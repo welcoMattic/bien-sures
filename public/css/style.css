@@ -1482,7 +1482,7 @@ vg-overlay-play.onPause .iconButton.play {
   }
 }
 
-@media onyl screen and (max-width: 1441px) {
+@media only screen and (min-width: 1441px) {
   #about .team .col-md-2:nth-child(odd) .job, #about .team .col-md-2:nth-child(odd):hover .description {
     padding-top: 45%;
   }
