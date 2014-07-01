@@ -7,8 +7,9 @@
  * # PlayerCtrl
  * This controller contains all code for the interactive video player.
  * Main function are :
- * - videoInit() : initialize $scope.video object to play video and fill in $scope.config object for videogular-quiz.js plugin
+ * - videoInit() : initialize $scope.video object to play video and fill in $scope.config object for videogular-quiz.js module
  * - onQuizSubmit() : callback function after submit an adjective. Determines the correct timecode according to the adjective
+ * - others functions are called in these main functions or are callbacks for videogular module
  * Controller of the BSApp
  */
 BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVENTS, ga) {
