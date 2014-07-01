@@ -1510,16 +1510,15 @@ vg-overlay-play.onPause .iconButton.play {
 		display: none;
 	}
  	.overlay-mobile {
-	    width: 100%;
-	    height: 100%;
-	    background-color: rgb(39, 39, 39);
-	    display: block;
-	    position: absolute;
-	    top: 0;
-	    left: 0;
-	    text-align: center;
-	    font-family: 'high_tidebold';
-	    color: #fff;
+    width: 100%;
+    background-color: rgb(39, 39, 39);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-family: 'high_tidebold';
+    color: #fff;
   	}
   	.overlay-mobile #brand-logo {
     	display: block;
