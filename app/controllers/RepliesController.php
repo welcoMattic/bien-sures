@@ -120,7 +120,7 @@ class RepliesController extends \BaseController {
     // store validated data
     $reply = Reply::find($id);
     if(Input::has('quote')) $reply->quote = Input::get('quote');
-    if(Input::has('typology_id')) $reply->quote = Input::get('typology_id');
+    if(Input::has('typology_id')) $reply->typology_id = Input::get('typology_id');
     $reply->status_ = Input::get('status_');
     $reply->save();
 
