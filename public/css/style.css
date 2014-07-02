@@ -197,9 +197,8 @@ textarea {
     display: block;
     width: 290px;
     position: absolute;
-    top: 50%;
     left: 50%;
-    margin-top: -290px;
+    margin-top: 70px;
     margin-left: -150px;
     -webkit-animation: loader 2.5s infinite;
     -moz-animation: loader 2.5s infinite;
