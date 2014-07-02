@@ -45,7 +45,7 @@
 
   <link rel="stylesheet" href="<%asset('css/bootstrap.min.css')%>">
   <link rel="stylesheet" href="<%asset('css/flat-ui.css')%>">
-  <link rel="stylesheet" href="<%asset('css/style.css')%>">
+  <link rel="stylesheet" href="<%asset('css/style.min.css')%>">
   <link rel="stylesheet" href="<%asset('css/autocomplete.css')%>">
   <link rel="stylesheet" href="<%asset('css/ngActivityIndicator.min.css')%>">
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
