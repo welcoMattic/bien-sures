@@ -90,6 +90,7 @@ BSApp.controller('PlayerCtrl', function ($rootScope, $scope, $sce, $http, VG_EVE
   };
 
   $scope.onCompleteVideo = function() {
+    $scope.API.toggleFullScreen();
     $scope.$apply(function() {
       $rootScope.isSidebarActive = true;
     });
